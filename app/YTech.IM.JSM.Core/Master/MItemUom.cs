@@ -5,13 +5,29 @@ using SharpArch.Core;
 
 namespace YTech.IM.JSM.Core.Master
 {
-    public class MBrand : EntityWithTypedId<string>, IHasAssignedId<string>
+    public class MItemUom : EntityWithTypedId<string>, IHasAssignedId<string>
     {
+        protected MItemUom() { }
+
+        public MItemUom(MItem item)
+        {
+            Check.Require(item != null, "item may not be null");
+
+            ItemId = item;
+        }
+
         [DomainSignature]
         [NotNull, NotEmpty]
+        
+        public virtual MItem ItemId { get; protected set; }
+        public virtual string ItemUomName { get; set; }
 
-        public virtual string BrandName { get; set; }
-        public virtual string BrandDesc { get; set; }
+        public virtual MItemUom ItemUomRefId { get; set; }
+        public virtual string ItemUomConverterValue { get; set; }
+        public virtual decimal? ItemUomSalePrice { get; set; }
+        public virtual decimal? ItemUomPurchasePrice { get; set; }
+        public virtual decimal? ItemUomHppPrice { get; set; }
+        public virtual string ItemUomDesc { get; set; }
 
         public virtual string DataStatus { get; set; }
         public virtual string CreatedBy { get; set; }

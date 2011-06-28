@@ -66,6 +66,13 @@
     <Compile Include="..\..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="NHibernateMaps\Master\MBrandMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MCustomerMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MItemCatMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MItemMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MItemUomMap.cs" />
+    <Compile Include="NHibernateMaps\Master\RefAddressMap.cs" />
+    <Compile Include="NHibernateMaps\Master\RefPersonMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -5,13 +5,13 @@ using SharpArch.Core;
 
 namespace YTech.IM.JSM.Core.Master
 {
-    public class MBrand : EntityWithTypedId<string>, IHasAssignedId<string>
+    public class MItemCat : EntityWithTypedId<string>, IHasAssignedId<string>
     {
         [DomainSignature]
         [NotNull, NotEmpty]
 
-        public virtual string BrandName { get; set; }
-        public virtual string BrandDesc { get; set; }
+        public virtual string ItemCatName { get; set; }
+        public virtual string ItemCatDesc { get; set; }
 
         public virtual string DataStatus { get; set; }
         public virtual string CreatedBy { get; set; }
