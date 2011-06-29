@@ -67,10 +67,15 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="NHibernateMaps\Master\MBrandMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MCostCenterMap.cs" />
     <Compile Include="NHibernateMaps\Master\MCustomerMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MDepartmentMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MEmployeeMap.cs" />
     <Compile Include="NHibernateMaps\Master\MItemCatMap.cs" />
     <Compile Include="NHibernateMaps\Master\MItemMap.cs" />
     <Compile Include="NHibernateMaps\Master\MItemUomMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MSupplierMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MWarehouseMap.cs" />
     <Compile Include="NHibernateMaps\Master\RefAddressMap.cs" />
     <Compile Include="NHibernateMaps\Master\RefPersonMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
