@@ -153,18 +153,6 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Master\Customer\Search.aspx.cs">
-      <DependentUpon>Search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Master\Customer\Search.aspx.designer.cs">
-      <DependentUpon>Search.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Master\Department\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Master\Department\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\buttons.css" />
@@ -354,9 +342,6 @@
       <Name>YTech.IM.JSM.Data</Name>
     </ProjectReference>
   </ItemGroup>
-<<<<<<< HEAD
-  <ItemGroup />
-=======
   <ItemGroup>
     <None Include="Content\Images\icons\Thumbs.db" />
     <Content Include="Views\Shared\MasterPopup.master" />
@@ -364,7 +349,6 @@
     <Content Include="Views\Shared\ParentMaster.Master" />
     <Content Include="Views\Shared\UIMaster.Master" />
   </ItemGroup>
->>>>>>> db1dac3d5efa6066558873b5ec1f4a1c24e7ff85
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <Target Name="BeforeBuild">
