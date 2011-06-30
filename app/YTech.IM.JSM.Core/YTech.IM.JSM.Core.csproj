@@ -74,11 +74,21 @@
     <Compile Include="Master\RefAddress.cs" />
     <Compile Include="Master\RefPerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryInterfaces\IMBrandRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMCostCenterRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMCustomerRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMDepartmentRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMEmployeeRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMItemRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMItemCatRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMItemUomRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMSupplierRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMWarehouseRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IRefAddressRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IRefPersonRepository.cs" />
     <Compile Include="Transaction\Inventory\TStock.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="RepositoryInterfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
