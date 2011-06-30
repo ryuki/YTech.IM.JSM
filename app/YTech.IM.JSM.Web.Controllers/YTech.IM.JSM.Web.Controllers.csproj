@@ -50,13 +50,20 @@
     <Reference Include="MvcContrib, Version=2.0.96.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\lib\MvcContrib.dll</HintPath>
     </Reference>
+    <Reference Include="MvcMembership">
+      <HintPath>..\..\lib\MvcMembership.dll</HintPath>
+    </Reference>
     <Reference Include="NHibernate.Validator, Version=1.3.0.1001, Culture=neutral, PublicKeyToken=70154e18752585bd, processorArchitecture=MSIL">
       <HintPath>..\..\lib\NHibernate.Validator.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\..\lib\PagedList.dll</HintPath>
     </Reference>
     <Reference Include="SharpArch, Version=1.9.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\lib\SharpArch.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -87,6 +94,12 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteRegistrar.cs" />
+    <Compile Include="Utility\UserAccountController.cs" />
+    <Compile Include="Utility\UserAdministrationController.cs" />
+    <Compile Include="Utility\UtilityAreaRegistration.cs" />
+    <Compile Include="ViewModel\UserAdministration\DetailsViewModel.cs" />
+    <Compile Include="ViewModel\UserAdministration\IndexViewModel.cs" />
+    <Compile Include="ViewModel\UserAdministration\RoleViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YTech.IM.JSM.Core\YTech.IM.JSM.Core.csproj">
@@ -96,6 +109,10 @@
     <ProjectReference Include="..\YTech.IM.JSM.ApplicationServices\YTech.IM.JSM.ApplicationServices.csproj">
       <Project>{EA00777D-3D7A-4406-8BFB-E5A90CF0E8A9}</Project>
       <Name>YTech.IM.JSM.ApplicationServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YTech.IM.JSM.Enums\YTech.IM.JSM.Enums.csproj">
+      <Project>{455A8C9C-DD24-4C6B-8292-F363A159DA99}</Project>
+      <Name>YTech.IM.JSM.Enums</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

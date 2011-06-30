@@ -155,14 +155,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Master\Customer\Search.aspx.cs">
       <DependentUpon>Search.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Master\Customer\Search.aspx.designer.cs">
       <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Master\Department\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Master\Department\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>

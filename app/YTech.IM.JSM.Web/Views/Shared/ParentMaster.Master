@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>
+        <asp:ContentPlaceHolder ID="title" runat="server">
+        </asp:ContentPlaceHolder>
+    </title>
+   <% Html.RenderPartial("Js"); %>
+    
+    <script type="text/javascript">
+        $(function () {
+            $("#accordion").accordion({
+                autoHeight: false,
+                navigation: true
+            });
+
+            var path = location.pathname.substring(1);
+            if (path)
+                $('#accordion a[href$="' + path + '"]').parent().attr('class', 'selected');
+
+        });
+    </script>
+    <style type="text/css">
+    .selected 
+    {
+        background-color : #F6E46F;
+        border : 1px blue solid;
+    }
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="page-container clearFix">
+        <div class="sbheader">
+            <div class="navigation-menu">
+            </div>
+        </div>
+        <div class="content">
+            <div class="left-content">
+                <div class="panel ">
+                    <div class="panel-header">
+                        <div class="panel-header-left">
+                        </div>
+                        <div class="panel-header-middle">
+                            <label>
+                                <%--<%=ViewData["Heading"].ToString()%>--%></label>
+                        </div>
+                        <div class="panel-header-right">
+                        </div>
+                    </div>
+                    <div class="panel-container">
+                     <% Html.RenderPartial("Menu"); %>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="panel-footer-left">
+                        </div>
+                        <div class="panel-footer-middle">
+                        </div>
+                        <div class="panel-footer-right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+              <div class="panel sample-panel-header">
+        <div class="panel-header">
+            <div class="panel-header-left">
+            </div>
+            <div class="panel-header-middle">
+                <label>
+                    <%--<%= Html.Encode(ViewData["CurrentParent"]) %>--%></label>
+            </div>
+            <div class="panel-header-right">
+            </div>
+        </div>
+    </div>
+    <div class="panel sample-panel">
+        <div class="panel-container clearFix">
+            <label>
+                <%= Html.Encode(ViewData["CurrentItem"]) %></label>
+            <%--<div class="SkinsSelector"> <div class="SkinsText">Skins </div>
+                 <div title="Themes" class="SkinsLink">
+                            <img id="SkinChooser" src="<%= Url.Content("~/Content/Images/color_palette.png") %>"
+                                alt="Color Palette" /></div> </div>--%>
+            <hr />
+                <asp:ContentPlaceHolder ID="SampleContent" runat="server">
+                </asp:ContentPlaceHolder>
+                 </div>
+       <%-- <div class="panel sample-panel sourcecode">--%>
+            <%--        <div class="panel-header">
+            <div class="panel-header-left">
+            </div>
+            <div class="panel-header-middle">
+                <label>
+                    Description and Source Code</label>
+            </div>
+            <div class="panel-header-right">
+            </div>
+        </div>--%>
+           <%-- <div class="panel-container clearFix">--%>
+                <%= ViewData["TabContent"]
+                %>
+                <%-- <%= Html.Tab( "tabModel").TargetControlId("main_Tab")%>--%>
+           <%-- </div>
+        </div>--%>
+        <div class="panel-footer">
+            <div class="panel-footer-left">
+            </div>
+            <div class="panel-footer-middle">
+            </div>
+            <div class="panel-footer-right">
+            </div>
+        </div>
+    </div>
+                <div class="footer">
+                    <hr />
+                    <div class="footer-left">
+                    </div>
+                    <div class="footer-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
