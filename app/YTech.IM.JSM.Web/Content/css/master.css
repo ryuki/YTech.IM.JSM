@@ -1,0 +1,96 @@
+﻿
+/* table div style */
+.tablediv
+{
+    display: table;
+    width: 100%;
+}
+.celldiv
+{
+    float: left; /*fix for  buggy browsers*/
+    display: table-cell;
+    padding: 5px 0px 5px 0px;
+    width: 42%;
+    height:20px;
+}
+.rowdiv
+{
+    display: table-row;
+    width: auto;
+}
+.rightalignment
+{
+    float: right;
+}
+.sample-panel
+{
+    width: 98%;
+}
+.control-panel
+{
+    float: left;
+    width: 55%;
+}
+.menuclass
+{
+ 
+ width : 320px;
+ *width:325px;
+ zoom:1;
+}
+.maintab
+{
+    overflow: auto;
+    height:300px;
+    padding:8px 2px;
+}
+.property-panel
+{
+    float: right;
+    width: 42%;
+}
+
+.eventLog
+{
+    width: 280px;
+    color: rgb(0, 21, 84);
+    height: 150px;
+    font-family: Trebuchet MS;
+    font-size: 12px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.maskedEventLog
+{
+    width: 340px;
+    color: rgb(0, 21, 84);
+    height: 150px;
+    font-family: Trebuchet MS;
+    font-size: 12px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.RTEdialog
+{
+    height: 50px;
+    width: 100px;
+}
+
+.TreeViewMaster
+{
+    font-size: 12px;
+    font-family: Trebuchet MS;
+}
+
+.sample-panel-margin
+{
+    border:10px;
+    overflow:hidden;
+    padding:10px;
+}
+
+.Syncfusion-Grid-Office2007Blue .TemplateCell {
+    color:Red !Important;
+    text-decoration:underline;
+}    

@@ -1,0 +1,1065 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+html
+{
+    /* background : #5F5F5F url(../images/html_bg.png) repeat-x scroll 0 0;*/
+
+}
+
+body
+{
+    font-size: 11px;
+    font-family: Verdana;
+    margin: 0;
+    padding: 0;
+    background: /*#5E9CC1 url(../images/background.jpg)*/ no-repeat scroll center top;
+}
+
+input, select
+{
+   font-size: 11px;
+    font-family: Verdana; 
+}
+
+a:link
+{
+    color: #696969;
+    text-decoration: none;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #696969;
+    text-decoration: underline;
+}
+a:active
+{
+    color: #12eb87;
+}
+
+img
+{
+    border: none;
+}
+div.clearFix:after
+{
+    content: ".";
+    display: block;
+    height: 1000;
+    clear: both;
+    visibility: hidden;
+}
+
+
+/* this rule styles <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+div.page-container
+{
+    margin: 0 auto;
+    width: /*1250px;    */ 98%;
+    min-height: 768px;
+}
+div.content
+{
+}
+
+div.sbheader
+{
+    /*background: transparent url(../images/sfheader.png) no-repeat scroll left top;*/
+    background: transparent url(../images/logo.jpg) no-repeat scroll left top;
+    height: /*50px*/ 66px;
+    margin-left:/*30px*/ 10px ;
+    margin-top:/*20px*/ 0px ;
+}
+div.navigation-menu
+{
+    float: right;
+    margin-top: 30px;
+    margin-right:10px;
+}
+div.navigation-menu
+{
+    float: right;
+	margin: 10px 20px 0px 0px;
+}
+
+.DownloadTrial
+{
+    position:relative;
+    top:4px;
+}
+
+div.navigation-menu a
+{
+    padding: 5px;    
+}
+div.left-content
+{
+    float: left;
+    width: 25%;
+}
+div.right-content
+{
+    float: right;
+    width: 75%;
+}
+/*panel css */
+div.panel
+{
+}
+
+div.panel div.panel-header
+{
+    height: 30px;
+    color: White;
+    font-size: 12px;
+    font-weight: bold;
+   
+}
+
+div.panel div.panel-header div.panel-header-left, div.panel-header-right
+{
+    background: url(../images/top-left.png) no-repeat left bottom;
+    height: 31px;
+    width: 9px;
+    float: left;
+}
+div.panel div.panel-header div.panel-header-right
+{
+    background: url(../images/top-right.png) no-repeat right bottom;
+    
+        
+}
+div.panel  div.panel-header div.panel-header-middle
+{
+    background: url(../images/top-middle.png) repeat;
+    height: 25px;
+    float: left;
+    line-height: 25px;
+    width:90%;
+}
+div.sample-panel-header
+{
+    margin-left:10px;
+}
+
+div.sample-panel-header div.panel-header div.panel-header-middle
+{
+    
+
+    width:97.1%;
+}
+
+
+div.panel div.panel-footer
+{
+    height: 20px;
+    background:#5e9cc1 ;
+}
+
+div.panel div.panel-footer div.panel-footer-left, div.panel-footer-right
+{
+    background: url(../images/bot-left.png) no-repeat left bottom;
+    width: 10px;
+    height:20px;
+    float: left;
+}
+div.panel div.panel-footer div.panel-footer-right
+{
+    background: url(../images/bot-right.png) no-repeat right bottom;
+    
+        
+}
+div.panel  div.panel-footer div.panel-footer-middle
+{
+    background: url(../images/bot-middle.png) repeat;
+    float: left;
+    height:20px;
+    
+        line-height: 25px;
+    width:90%;
+}
+
+div.sample-panel div.panel-footer div.panel-footer-middle
+{
+
+   width: /*97.75%;*/97.5%;
+}
+
+div.panel div.panel-container
+{
+   /*border: 1px solid #6F8BAB;*/
+    padding: 10px;
+    background: white;
+    width:90%;
+}
+div.Products
+{
+    text-align:justify;
+}
+div.Products li
+{
+    color:#5e9cc1;
+    padding : 0.3em;
+    font-weight:bold;
+    cursor:pointer;
+    text-decoration:none;
+    
+}
+div.compatibility-panel
+{
+    margin-top: 10px;
+}
+div.sample-panel
+{
+    margin-left: 10px;
+    background:white;
+}
+div.sourcecode
+{
+    margin-top: 10px;
+}
+div.sample-panel div.panel-container
+{
+    background: white;
+    min-height: 100px;
+}
+div.sourcecode div.panel-container
+{
+    min-height: 300px;
+}
+div.footer 
+{
+    text-align: right;
+    color: White;
+    float: right;
+    width: 98%;
+    margin:10px 0 60px 0;
+    height:60px;
+    }
+    div.footer hr
+{
+    padding: 5px 0 5px 0;
+
+    }
+div.footer div.footer-left
+{
+    float:left;
+        height:60px;
+    width:50%;
+   /* background: url(../images/compability.png) no-repeat left bottom;*/
+}
+div.footer div.footer-right
+{
+    float:right;
+    height:35px;
+    width:48%;
+    margin-top:20px;
+   /* background: url(../images/fooer_logo.png) no-repeat left bottom;*/
+}
+
+/*property panel syle*/
+div.propertypanel
+{
+    clear: both;
+    max-width: 2400px;
+}
+
+div.propertypanel div.top-outer
+{
+    background: url(../images/topleft.png) no-repeat left bottom;
+    padding: 0px;
+    width: 100%;
+}
+
+div.propertypanel div.top-outer div.top-inner
+{
+    background: url(../images/topright.png) no-repeat right bottom;
+    margin-left: 8px;
+}
+
+div.propertypanel div.top-outer div.top-inner div.top
+{
+    background: url(../images/topbg.png) repeat;
+    height: 23px;
+    margin-right: 8px;
+    color: White;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+div.propertypanel div.mid-outer
+{
+    background: url(../images/l.gif) left repeat-y;
+    clear: both;
+    width: 100%;
+}
+
+div.propertypanel div.mid-outer div.mid-inner
+{
+    background: url(../images/r.gif) right repeat-y;
+    margin-left: 8px;
+    height: 100%;
+}
+
+div.propertypanel div.mid-outer div.mid-inner div.mid
+{
+    margin-right: 8px;
+}
+
+div.propertypanel div.bottom-outer
+{
+    background: url(../images/bottomleft.png) no-repeat left top;
+    clear: both;
+    padding: 0px;
+    width: 100%;
+}
+
+div.propertypanel div.bottom-outer div.bottom-inner
+{
+    background: url(../images/bottomright.png) no-repeat right top;
+    margin-left: 8px;
+}
+
+div.propertypanel div.bottom-outer div.bottom-inner div.bottom
+{
+    background: url(../images/bottombg.png) repeat;
+    height: 16px;
+    margin-right: 8px;
+    font-size: .01em;
+}
+
+#copycode
+{
+    float: right;
+    font-size: 12px;
+}
+#copycode a
+{
+    color: #25367C;
+}
+hr
+{
+    border: solid 0.1em #6B8AAD;
+    border-width: 1px 0px 0px 0px;
+    width:100%;
+}
+
+
+.validator
+{
+    width: 12%;
+    float: left;
+}
+
+.LeftDatePicker
+{
+    float: left;
+    padding-top: 5px;
+}
+.datePickerStyle
+{
+    float: left;
+    padding-top: 20px;
+}
+.rtestyle
+{
+    width: 500px;
+    height: 50px;
+}
+.rtecasestudy
+{
+    width: 520px;
+}
+
+.LeftPositionSlider
+{
+    float: left;
+    width: 200px;
+}
+
+.sliderAutoformat
+{
+    width: 50px;
+    float: left;
+}
+.sliderImagehead
+{
+    /*width: 300px;     position: relative;     left: 70px;     top: 10px;*/
+    width: 100%;
+    height: 150px;
+}
+.sliderHead
+{
+    width: 250px;
+}
+
+.PageHeadingTab
+{
+    font-size: 15px;
+}
+.demo
+{
+    width: 450px;
+    height: 200px;
+    float: left;
+}
+.treeView
+{
+    visibility: hidden;
+    display: none;
+}
+.treeviewmodel
+{
+    width: 250px;
+}
+.clearlog
+{
+    width: 250px;
+    color: rgb(0, 21, 84);
+    height: 150px;
+    font-family: Trebuchet MS;
+    font-size: 12px;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+.Popup
+{
+    background-image: url(images/indicator_black.gif);
+    background-color: gray;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+/*Volume Control */
+
+.VolumeControl
+{
+    height: 370px;
+    width: 493px;
+    margin-left: 100px;
+}
+
+.Devices
+{
+    border: 1px solid rgb(213, 223, 229);
+    float: left;
+    width: 120px;
+    height: 369px;
+}
+
+.Application
+{
+    float: left;
+    height: 369px;
+    width: 363px;
+    border: solid 1px rgb(213,223,229);
+    margin-left: 5px;
+}
+
+.Caption
+{
+    margin-top: 0px;
+    margin-left: 5px;
+    float: left;
+}
+
+.VolumeControl .OuterWrapper
+{
+    float: left;
+    width: 120px;
+    height: 350px;
+}
+
+.VolumeControl .SpeakerImage
+{
+    float: left;
+    background: url(../images/VolumeControl/VolumeControl_Sprite1.png) no-repeat;
+    float: left;
+    height: 50px;
+    margin-left: 36px;
+    margin-top: 10px;
+    width: 70px;
+    background-position: -20px -238px;
+}
+
+
+.VolumeControl .LeftCaption
+{
+    clear: both;
+    float: left;
+    margin-left: 10px;
+    font-size: small;
+    margin-top: 7px;
+}
+
+.VolumeControl .HSlide
+{
+    float: left;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 10px;
+    width: 70px;
+}
+
+.VolumeControl .RCaption
+{
+    float: left;
+    margin-left: 5px;
+    font-size: small;
+    margin-top: 7px;
+}
+
+.VolumeControl .VSlide
+{
+    float: left;
+    height: 200px;
+    margin-left: 51px;
+    width: 50px;
+}
+
+.VolumeControl .VolumeImage
+{
+    float: left;
+    background: url(   '../images/VolumeControl/VolumeControl_Sprite.png' ) no-repeat;
+    float: left;
+    height: 30px;
+    margin-left: 48px;
+    margin-top: 20px;
+    width: 70px;
+    background-position: -20px -318px;
+}
+
+
+div.control-panel
+{
+    width: 40%;
+}
+#btn
+{
+    float: right;
+    text-align: right;
+}
+div.property-panel
+{
+    width: 60%;
+}
+.txtalign
+{
+    text-align: right;
+    width: 100%;
+}
+.newcelldiv
+{
+    width: 100%;
+}
+.idcell
+{
+    width: 10%;
+    text-align: center;
+}
+.contentcells
+{
+    width: 80%;
+}
+.Linkcell
+{
+    width: 10%;
+}
+.divCSS
+{
+    margin-bottom: 15px;
+    margin-top: 10px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+.over
+{
+    /* background-color: Red;*/
+    border-bottom: 1px solid gray;
+    width: 100%;
+}
+.controlDiv
+{
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+.celldiv
+{
+    display: table-cell;
+    float: left;
+    padding: 5px 0;
+    width: 10%;
+}
+.rtecasestudys
+{
+    width: 200px;
+}
+.OuterdivCSS
+{
+    border: 2px solid #7AA4DD;
+    height: 450px;
+}
+.heading_container
+{
+    background-color: #7AA4DD;
+    clear: both;
+    margin-top: 6px;
+    padding: 0;
+}
+.heading_container, .heading_right_top, .heading_bottom, .heading_bottom span
+{
+    background: transparenturl(../Images/bg_heading.png)no-repeatscroll00;
+    position: relative;
+}
+.heading_right_top
+{
+    background-position: 0 -70px;
+    float: right;
+    height: 5px;
+    overflow: hidden;
+    width: 5px;
+}
+.bucket_container
+{
+    background: transparent url(./i/bg_bucket_alt.png) repeat-x scroll 0 -92px;
+    min-height: 1px;
+    position: relative;
+}
+.heading_container, .heading_right_top, .heading_bottom, .heading_bottom span
+{
+    background: transparenturl(../Images/bg_heading.png)no-repeatscroll00;
+    position: relative;
+}
+.bucket_container
+{
+    background: transparent url(../../Images/bg_bucket_alt.png) repeat-x scroll 0 -92px;
+    min-height: 1px;
+    position: relative;
+}
+.region_absminheight
+{
+    min-height: 40px;
+}
+.bucket_content
+{
+    border-left: 2px solid #9FBDE5;
+    border-right: 2px solid #9FBDE5;
+    min-height: 1px;
+    padding: 010px;
+    position: relative;
+}
+.clear
+{
+    clear: both;
+    font-size: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+}
+.bucket_bottom
+{
+    background: transparent url(../../Images/bg_bucket.png) no-repeat scroll 0 -22px;
+    height: 10px;
+    margin-bottom: 4px;
+}
+.heading_right_top
+{
+    background-position: 0 -70px;
+    float: right;
+    height: 5px;
+    overflow: hidden;
+    width: 5px;
+}
+.Heading
+{
+    background-color: #7AA4DD;
+    clear: both;
+    color: White;
+    height: 28px;
+    padding: 0 0 0;
+    position: relative;
+}
+.ForumPostHeaderRight
+{
+    background: transparent url(Images/bg_heading.png) no-repeat scroll 0 -70px;
+    float: right;
+    height: 5px;
+    overflow: hidden;
+    position: relative;
+    width: 5px;
+}
+
+div.control-panel
+{
+    width: 40%;
+}
+#btn
+{
+    float: right;
+    text-align: right;
+}
+div.property-panel
+{
+    width: 60%;
+}
+.txtalign
+{
+    text-align: right;
+    width: 100%;
+}
+.newcelldiv
+{
+    width: 100%;
+}
+.seperator
+{
+    padding-top: 10px;
+}
+
+.contentdiv
+{
+    border: 1px solid #7AA4DD;
+    padding: 5px;
+}
+
+.Rteclass
+{
+    border: 1px solid #7AA4DD;
+    padding: 20px;
+}
+.error
+{
+    /*height: 100%; 	width: auto; 	border: 1px dotted #F68E41;*/
+}
+.validation-summary-errors
+{
+    color: #FF6C00;
+    font-weight: bold;
+    padding-bottom: 5px;
+    position: relative;
+    list-style: none;
+}
+
+
+
+#doclink:link
+{
+   color: #0000FF ;
+   text-decoration: none;
+}
+#doclink:visited
+{
+    color: #191970;    
+}
+#doclink:hover
+{
+    color: #696969;
+    text-decoration: underline;
+}
+#doclink:active
+{
+    color: #0000FF;
+}
+div.SkinsImagerowclass
+{
+    left:6px;
+    top:18px;
+    position:relative;
+    height:63px;
+    width:301px;
+    z-index:2;
+    background:transparent url(../images/hoverSkins.png) no-repeat;
+}
+div.SkinsCellDiv
+{
+    display:table-cell;
+    background:transparent url(../images/SkinsSelection.png) no-repeat;
+    float:left;
+}
+div.SkinsCellParentDiv
+{
+    margin-left:5px;
+    margin-top:6px;
+    
+}
+div.SkinsImageCellDiv
+{
+    float:left;
+}
+
+div.Skinsrowdiv
+{
+    background:transparent url(../images/holdernew.png) no-repeat;
+    display:table-row;
+    float:left;
+    position:relative;
+    width:270px;
+    height:40px;
+    z-index:1;
+}
+span#SelectedText
+{
+    font-family:Trebuchet MS;
+    font-size:0.95em;
+    top:9px;
+    position:relative;
+    color:Black;
+}
+span#MoueMoveText
+{
+    font-family:Trebuchet MS;
+    font-weight:bolder;
+    font-size:11px;
+    left:-110px;
+    top:11px;
+    position:relative;
+    color:Black;
+}
+div.SelectedSkins
+{
+   background:transparent url(../images/DynamicSelectedSkins.png) no-repeat;
+   position:static;
+margin-left:155px;
+margin-top:-10px;
+height:25px;
+text-align:center;
+float:left;
+}
+
+.SkinsPanel
+{
+    display:none;
+    position:absolute;  
+}
+.SkinsLink
+{
+    float:right;
+    margin-top:-12px;
+}
+
+div.hoverOffice2007Blue { background-position: 0 0; } 
+div.hoverOffice2007Silver { background-position: -352px 0; } 
+div.hoverOffice2007Black { background-position: -688px 0; } 
+div.hoverVista { background-position: -1015px 0; } 
+div.hoverOlive { background-position: -1332px 0; } 
+div.hoverMidnight { background-position: -1314px -163px; } 
+div.hoverBlueBerry { background-position: -263px 0; } 
+div.hoverAlmond { background-position: -243px -163px; } 
+div.hoverTurquoise { background-position: -592px -163px; } 
+div.hoverMarble { background-position: -911px -163px; } 
+div.hoverBlend { background-position: -1226px -163px; } 
+div.hoverMonochrome { background-position: -1535px -163px; } 
+div.hoverVS2010 { background-position: 144px -326px; } 
+div.hoverSandune { background-position: -203px -326px; } 
+
+div.sprite-a1 { background-position: 0 0; width: 18px; height: 25px; } 
+div.sprite-a2 { background-position: -28px 0; width: 18px; height: 25px; } 
+div.sprite-a3 { background-position: -56px 0; width: 18px; height: 25px; } 
+div.sprite-a4 { background-position: -84px 0; width: 18px; height: 25px; } 
+div.sprite-a5 { background-position: -112px 0; width: 18px; height: 25px; } 
+div.sprite-a6 { background-position: -140px 0; width: 18px; height: 25px; } 
+div.sprite-a7 { background-position: -168px 0; width: 18px; height: 25px; } 
+div.sprite-a8 { background-position: -196px 0; width: 18px; height: 25px; } 
+div.sprite-a9 { background-position: -224px 0; width: 18px; height: 25px; } 
+div.sprite-b1 { background-position: -252px 0; width: 18px; height: 25px; } 
+div.sprite-b2 { background-position: -280px 0; width: 18px; height: 25px; } 
+div.sprite-b3 { background-position: -308px 0; width: 18px; height: 25px; } 
+div.sprite-b4 { background-position: -336px 0; width: 18px; height: 25px; } 
+div.sprite-b5 { background-position: -364px 0; width: 18px; height: 25px; } 
+
+div.SelectedSprite-a1 { background-position: 0 0; width: 92px; height: 26px; } 
+div.SelectedSprite-a2 { background-position: -312px 0; width: 92px; height: 26px; } 
+div.SelectedSprite-a3 { background-position: -624px 0; width: 92px; height: 26px; } 
+div.SelectedSprite-a4 { background-position: -936px 0; width: 92px; height: 26px; } 
+div.SelectedSprite-a5 { background-position: -1248px 0; width: 92px; height: 26px; } 
+div.SelectedSprite-a6 { background-position: -1560px 0; width: 92px; height: 26px; } 
+div.SelectedSprite-a7 { background-position: 0 -126px; width: 92px; height: 26px; } 
+div.SelectedSprite-a8 { background-position: -312px -126px; width: 92px; height: 26px; } 
+div.SelectedSprite-a9 { background-position: -624px -126px; width: 92px; height: 26px; } 
+div.SelectedSprite-b1 { background-position: -936px -126px; width: 92px; height: 26px; } 
+div.SelectedSprite-b2 { background-position: -1248px -126px; width: 92px; height: 26px; } 
+div.SelectedSprite-b3 { background-position: -1560px -126px; width: 92px; height: 26px; } 
+div.SelectedSprite-b4 { background-position: 0 -252px; width: 92px; height: 26px; } 
+div.SelectedSprite-b5 { background-position: -312px -252px; width: 92px; height: 26px; }
+div.Remove
+{
+        background:transparent url(../images/remove.png) no-repeat;
+        background-position:0 0;
+        width:9px;
+        height:8px;
+        float:left;
+}
+div.TShirt
+{
+        background:transparent url(../images/SmallImages.png) no-repeat;
+        background-position:0 -11px;
+        width:22px;
+        height:19px;
+        float:left;
+}
+div.Toy
+{
+        background:transparent url(../images/SmallImages.png) no-repeat;
+        background-position:-2px -208px;
+        width:19px;
+        height:21px;
+        float:left;
+}
+div.Watch
+{
+        background:transparent url(../images/SmallImages.png) no-repeat;
+        background-position:-2px -248px;
+        width:19px;
+        height:21px;
+        float:left;
+}
+div.Mobile
+{
+        background:transparent url(../images/SmallImages.png) no-repeat;
+        background-position:-5px -130px;
+        width:19px;
+        height:21px;
+        float:left;
+}
+div.Journal
+{
+        background:transparent url(../images/SmallImages.png) no-repeat;
+        background-position:-3px -52px;
+        width:17px;
+        height:14px;
+        float:left;
+}
+div.Camera
+{
+        background:transparent url(../images/SmallImages.png) no-repeat;
+        background-position:-3px -92px;
+        width:17px;
+        height:14px;
+        float:left;
+}
+.shoppingcartItem item
+{
+    width: 50px;
+    height:50px;
+}
+.shoppingcartItem
+{
+    height:110px !important;
+    width:130px !important;
+}
+.ItemsDraggable .item
+{
+    height:100px;
+    margin-left:-40px;
+    width:100px;
+}
+.ItemsRate .item
+{
+    margin-left:10px;
+}
+.shoppingcartGrid
+{
+    width:400px;    
+}
+.shoppingcartSample
+{
+    height:450px !important;
+}
+.ShoppingCartitemDiv
+{
+    width:50% !important;
+}
+.ItemsDraggable
+{
+    text-align:center;
+}
+.DragandDropTable
+{
+    width:900px !important;   
+}
+.Source,.DropTarget
+{
+   height: auto !important;
+   width:auto !important;
+}
+.field-validation-error
+{
+    background:transparent url(../images/Mvc2Validation.png) no-repeat scroll;
+    margin-left:-141px;
+    margin-top:19px;
+    padding:22px 12px;
+    position:absolute;
+    width:244px;
+    text-align:center;
+    vertical-align:middle;
+}
+.SkinsPanel
+{
+    background:transparent url(../images/shadow.png) no-repeat scroll;
+    background-position:7px 37px;
+    height:125px;
+    width:300px;    
+}
+#SkinsTable
+{
+    margin-left:18px;
+    margin-top:-15px;
+}
+.SkinsSelector
+{
+    float:right;
+    font-weight:bolder;
+    color:graytext;
+}
+.SkinsText
+{
+vertical-align:middle; 
+width:45px; 
+height:30px;
+float:left;
+}
+.shoppingcartGridPanel
+{
+    height:30px;
+}
+.ShoppingCartReset
+{
+    margin-left:23px;
+}
+.shoppingcartResetBtn
+{
+    float:right;
+}
+
+ #toolbar
+    {
+        padding: 10px 4px;
+    }
+    
+    #tooltip {
+	position: absolute;
+	z-index: 3000;
+	border: 1px solid #111;
+	background-color: #eee;
+	padding: 5px;
+	opacity: 0.85;
+}
+#tooltip h3, #tooltip div { margin: 0; }

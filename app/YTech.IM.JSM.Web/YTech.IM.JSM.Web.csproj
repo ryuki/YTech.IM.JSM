@@ -155,17 +155,162 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\buttons.css" />
+    <Content Include="Content\css\complex.css" />
+    <Content Include="Content\css\layout-default-latest.css" />
+    <Content Include="Content\css\master.css" />
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\samplebrowser.css" />
+    <Content Include="Content\css\start\images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="Content\css\start\images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="Content\css\start\images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="Content\css\start\images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="Content\css\start\images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="Content\css\start\images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="Content\css\start\images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="Content\css\start\images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="Content\css\start\images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Content\css\start\images\ui-icons_0078ae_256x240.png" />
+    <Content Include="Content\css\start\images\ui-icons_056b93_256x240.png" />
+    <Content Include="Content\css\start\images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Content\css\start\images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="Content\css\start\images\ui-icons_f5e175_256x240.png" />
+    <Content Include="Content\css\start\images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="Content\css\start\images\ui-icons_fcd113_256x240.png" />
+    <Content Include="Content\css\start\jquery-ui.css" />
+    <Content Include="Content\ellipsis-xbl.xml" />
+    <Content Include="Content\Images\cross.gif" />
+    <Content Include="Content\Images\icons\activity.png" />
+    <Content Include="Content\Images\icons\activityadd.png" />
+    <Content Include="Content\Images\icons\activitydelete.png" />
+    <Content Include="Content\Images\icons\activitywarn.png" />
+    <Content Include="Content\Images\icons\add.png" />
+    <Content Include="Content\Images\icons\address.png" />
+    <Content Include="Content\Images\icons\addressdelete.png" />
+    <Content Include="Content\Images\icons\addresssearch.png" />
+    <Content Include="Content\Images\icons\adressadd.png" />
+    <Content Include="Content\Images\icons\book.png" />
+    <Content Include="Content\Images\icons\bookadd.png" />
+    <Content Include="Content\Images\icons\bookdelete.png" />
+    <Content Include="Content\Images\icons\booksearch.png" />
+    <Content Include="Content\Images\icons\bulb.png" />
+    <Content Include="Content\Images\icons\chart.png" />
+    <Content Include="Content\Images\icons\comment.png" />
+    <Content Include="Content\Images\icons\commentadd.png" />
+    <Content Include="Content\Images\icons\commentuseradd.png" />
+    <Content Include="Content\Images\icons\commentuserdelete.png" />
+    <Content Include="Content\Images\icons\commentusersearch.png" />
+    <Content Include="Content\Images\icons\delete.png" />
+    <Content Include="Content\Images\icons\edit.png" />
+    <Content Include="Content\Images\icons\email.png" />
+    <Content Include="Content\Images\icons\emailadd.png" />
+    <Content Include="Content\Images\icons\emaildelete.png" />
+    <Content Include="Content\Images\icons\fav.png" />
+    <Content Include="Content\Images\icons\folder.png" />
+    <Content Include="Content\Images\icons\folderadd.png" />
+    <Content Include="Content\Images\icons\folderdelete.png" />
+    <Content Include="Content\Images\icons\info.png" />
+    <Content Include="Content\Images\icons\lock.png" />
+    <Content Include="Content\Images\icons\lockopen.png" />
+    <Content Include="Content\Images\icons\page.png" />
+    <Content Include="Content\Images\icons\pageadd.png" />
+    <Content Include="Content\Images\icons\pagedelete.png" />
+    <Content Include="Content\Images\icons\rss.png" />
+    <Content Include="Content\Images\icons\search.png" />
+    <Content Include="Content\Images\icons\time.png" />
+    <Content Include="Content\Images\icons\user.png" />
+    <Content Include="Content\Images\icons\useradd.png" />
+    <Content Include="Content\Images\icons\userdelete.png" />
+    <Content Include="Content\Images\icons\userinfo.png" />
+    <Content Include="Content\Images\icons\usersearch.png" />
+    <Content Include="Content\Images\icons\warning.png" />
     <Content Include="Content\Images\sharp_arch.jpg" />
     <Content Include="Content\Images\sharp_arch_small.gif" />
+    <Content Include="Content\Images\white.jpg" />
+    <Content Include="Content\Images\window16.gif" />
+    <Content Include="Content\img\80ade5_40x100_textures_04_highlight_hard_100.png" />
+    <Content Include="Content\img\D1E6FC_40x100_textures_10_dots_medium_90.png" />
+    <Content Include="Content\img\d6d6d6_40x100_textures_02_glass_80.png" />
+    <Content Include="Content\img\eeeeee_40x100_textures_02_glass_90.png" />
+    <Content Include="Content\img\go-dn-off.gif" />
+    <Content Include="Content\img\go-dn-on.gif" />
+    <Content Include="Content\img\go-lt-off.gif" />
+    <Content Include="Content\img\go-lt-on.gif" />
+    <Content Include="Content\img\go-rt-off.gif" />
+    <Content Include="Content\img\go-rt-on.gif" />
+    <Content Include="Content\img\go-up-off.gif" />
+    <Content Include="Content\img\go-up-on.gif" />
+    <Content Include="Content\img\pin-dn-off.gif" />
+    <Content Include="Content\img\pin-dn-on.gif" />
+    <Content Include="Content\img\pin-up-off.gif" />
+    <Content Include="Content\img\pin-up-on.gif" />
+    <Content Include="Content\img\resizable-e.gif" />
+    <Content Include="Content\img\resizable-n.gif" />
+    <Content Include="Content\img\resizable-s.gif" />
+    <Content Include="Content\img\resizable-w.gif" />
+    <Content Include="Content\img\toggle-dn.gif" />
+    <Content Include="Content\img\toggle-lt.gif" />
+    <Content Include="Content\img\toggle-rt.gif" />
+    <Content Include="Content\img\toggle-up.gif" />
+    <Content Include="Content\MvcMembership.css" />
+    <Content Include="Content\MvcMembership\MvcMembership.css" />
+    <Content Include="Content\ui.jqgrid.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="NHibernate.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\autoNumeric-1.6.2.js" />
+    <Content Include="Scripts\complex.js" />
+    <Content Include="Scripts\date.format.js" />
+    <Content Include="Scripts\default.js" />
+    <Content Include="Scripts\grid.locale-en.js" />
+    <Content Include="Scripts\jquery-1.5.2-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.2.min.js" />
+    <Content Include="Scripts\jquery-1.6.1.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.jqGrid.min.js" />
+    <Content Include="Scripts\jquery.layout.min.js" />
+    <Content Include="Scripts\jquery.layout.state.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.2.2.min.js" />
+    <Content Include="Scripts\jquery.mousewheel-3.0.4.js" />
+    <Content Include="Scripts\jquery.tooltip.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\NumberFormat.js" />
+    <Content Include="Scripts\plugins\grid.addons.js" />
+    <Content Include="Scripts\plugins\grid.postext.js" />
+    <Content Include="Scripts\plugins\grid.setcolumns.js" />
+    <Content Include="Scripts\plugins\jquery.contextmenu.js" />
+    <Content Include="Scripts\plugins\jquery.searchFilter.js" />
+    <Content Include="Scripts\plugins\jquery.tablednd.js" />
+    <Content Include="Scripts\plugins\ui.multiselect.css" />
+    <Content Include="Scripts\plugins\ui.multiselect.js" />
+    <Content Include="Scripts\samplebrowser.js" />
+    <Content Include="Scripts\Templates\MicrosoftAjax.js" />
+    <Content Include="Scripts\Templates\MicrosoftAjaxAdoNet.js" />
+    <Content Include="Scripts\Templates\MicrosoftAjaxTemplates.js" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Shared\Error.aspx" />
     <Content Include="Views\Shared\DebugFormSubmission.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Views\Shared\Js.ascx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Menu.ascx" />
+    <Content Include="Views\Shared\Status.ascx" />
+    <Content Include="Views\Utility\UserAccount\ChangePassword.aspx" />
+    <Content Include="Views\Utility\UserAccount\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Utility\UserAccount\LogOn.aspx" />
+    <Content Include="Views\Utility\UserAccount\Register.aspx" />
+    <Content Include="Views\Utility\UserAdministration\Details.aspx" />
+    <Content Include="Views\Utility\UserAdministration\Index.aspx" />
+    <Content Include="Views\Utility\UserAdministration\ListUsers.aspx" />
+    <Content Include="Views\Utility\UserAdministration\Password.aspx" />
+    <Content Include="Views\Utility\UserAdministration\Role.aspx" />
+    <Content Include="Views\Utility\UserAdministration\UsersRoles.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery-1.4.2.js" />
     <Content Include="Scripts\jquery-1.4.2.min.js" />
@@ -190,6 +335,13 @@
       <Name>YTech.IM.JSM.Data</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\Images\icons\Thumbs.db" />
+    <Content Include="Views\Shared\MasterPopup.master" />
+    <Content Include="Views\Shared\MyMaster.master" />
+    <Content Include="Views\Shared\ParentMaster.Master" />
+    <Content Include="Views\Shared\UIMaster.Master" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <Target Name="BeforeBuild">
@@ -201,12 +353,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1062</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost:81/JSM</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -1,38 +1,21 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" AutoEventWireup="true"
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/MyMaster.Master" AutoEventWireup="true"
     Inherits="System.Web.Mvc.ViewPage" %>
-<%@ Import Namespace="YTech.IM.JSM.Web.Controllers" %>
 
-<asp:Content ID="indexContent" ContentPlaceHolderID="MainContentPlaceHolder" runat="server">
-    <h2>S#arp Architecture Project</h2>
-    <h3>
-        What next?</h3>
-    <p>
-        Your S#arp Architecture 1.5 project is now setup and ready to go. This release is built on the RTM verion of ASP.NET MVC 2. The only tasks remaining
-        are to:
-        <ol>
-            <li>
-                <span style="font-weight:bold; font-style:italic">Create your database and set the connection string
-                within YTech.IM.JSM.Web/NHibernate.config</span>
-	        </li>
-            <li>
-                Optionally, modify the Fluent NHibernate preferences within YTech.IM.JSM.Data.NHibernateMaps.GetConventions()
-                if you don't like the default settings.  There's lots of terrific info about Fluent NHibernate
-                at <a href="http://wiki.fluentnhibernate.org/show/HomePage">http://wiki.fluentnhibernate.org/show/HomePage</a>.
-	        </li>
-            <li>
-                Open YTech.IM.JSM.Tests.dll via NUnit and make sure all the tests are turning green.
-	        </li>
-            <li>
-                Add your first entity with CRUD scaffolding via /Code Generation/CrudScaffolding/ScaffoldingGeneratorCommand.tt.
-                (If you include a namespace, be sure to setup the appropriate view area within
-                YTech.IM.JSM.Web.Controllers.RouteRegistrar.RegisterRoutesTo() after the scaffolding generator has completed.)
-	        </li>
-        </ol>
-    </p>
-    <p>
-        If you need direction on what to do next, take a look at the documentation found in the
-        /docs folder of the S#arp Architecture release package which provides a solid tutorial.
-        You can also ask for assitance and guidance on the
-        <a href="http://groups.google.com/group/sharp-architecture">S#arp Architecture discussion boards</a>.
-    </p>
+<asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
+ <% if (false)
+       { %>
+    <script src="../../Scripts/jquery-1.5-vsdoc.js" type="text/javascript"></script>
+    <% } %>
+    <h2>Sistem Informasi Manajemen Inventori JSM</h2>
+    <%--<input type="button" id="btnTest" value='line 1&#13;&#10;line 2' />
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var i = 3;
+            $("#btnTest").click(function () {
+                $("#btnTest").val($("#btnTest").val() + "\nline " + i); 
+                i = i + 1;
+            });
+        });
+    </script>--%>
 </asp:Content>
