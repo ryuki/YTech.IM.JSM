@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudScaffoldingForEnterpris
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YTech.IM.JSM.WinForms", "app\YTech.IM.JSM.WinForms\YTech.IM.JSM.WinForms.csproj", "{B62C07BB-420E-42A9-A3E8-5540E1767689}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YTech.IM.JSM.Enums", "app\YTech.IM.JSM.Enums\YTech.IM.JSM.Enums.csproj", "{455A8C9C-DD24-4C6B-8292-F363A159DA99}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,16 @@ Global
 		{B62C07BB-420E-42A9-A3E8-5540E1767689}.Release|Mixed Platforms.Build.0 = Release|x86
 		{B62C07BB-420E-42A9-A3E8-5540E1767689}.Release|x86.ActiveCfg = Release|x86
 		{B62C07BB-420E-42A9-A3E8-5540E1767689}.Release|x86.Build.0 = Release|x86
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{455A8C9C-DD24-4C6B-8292-F363A159DA99}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
