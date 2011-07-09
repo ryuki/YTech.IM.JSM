@@ -43,7 +43,7 @@
                 , closeAfterEdit: true
                 , modal: true
                 , afterShowForm: function (eparams) {
-                    $('#Id').attr('disabled', '');
+                    $('#Id').removeAttr('disabled');
 
                 }
                 , afterComplete: function (response, postdata, formid) {
@@ -92,13 +92,13 @@
                 ondblClickRow: function (rowid, iRow, iCol, e) {
                     $("#list").editGridRow(rowid, editDialog);
                 }
-            }).navGrid('#listPager',
-                {
-                    edit: true, add: true, del: true, search: false, refresh: true
-                },
-                editDialog,
+            });
+            jQuery("#list").jqGrid('navGrid', '#listPager',
+                 { edit: true, add: true, del: true, search: false, refresh: true }, //options 
+                  editDialog,
                 insertDialog,
-                deleteDialog
+                deleteDialog,
+                {}
             );
         });       
     </script>
