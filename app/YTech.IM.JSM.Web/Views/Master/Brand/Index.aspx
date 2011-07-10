@@ -13,8 +13,7 @@
 
 
             var editDialog = {
-                url: '<%= Url.Action("Update", "Brand") %>'
-                , closeAfterAdd: true
+                closeAfterAdd: true
                 , closeAfterEdit: true
                 , modal: true
 
@@ -38,8 +37,7 @@
                 }
             };
             var insertDialog = {
-                url: '<%= Url.Action("Insert", "Brand") %>'
-                , closeAfterAdd: true
+                 closeAfterAdd: true
                 , closeAfterEdit: true
                 , modal: true
                 , afterShowForm: function (eparams) {
@@ -89,6 +87,7 @@
                 height: 300,
                 caption: 'Daftar Merek',
                 autowidth: true,
+                editurl: '<%= Url.Action("InsertOrUpdate", "Brand") %>',
                 ondblClickRow: function (rowid, iRow, iCol, e) {
                     $("#list").editGridRow(rowid, editDialog);
                 }
