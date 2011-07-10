@@ -44,7 +44,7 @@
 
             var path = location.pathname + location.search + location.hash;
             if (path)
-                $('#accordion a[href$="' + path + '"]').parent().attr('class', 'selected');
+                $('#accordion a[href$="' + path + '"]').attr('class', 'selected');
             /*******************************
             ***  CUSTOM LAYOUT BUTTONS  ***
             *******************************
