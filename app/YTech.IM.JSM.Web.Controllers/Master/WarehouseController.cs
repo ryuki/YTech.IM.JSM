@@ -22,19 +22,16 @@ namespace YTech.IM.JSM.Web.Controllers.Master
         private readonly IMWarehouseRepository _mWarehouseRepository;
         private readonly IRefAddressRepository _refAddressRepository;
         private readonly IMEmployeeRepository _mEmployeeRepository;
-        private readonly IMCostCenterRepository _mCostCenterRepository;
         
         public WarehouseController(IMWarehouseRepository mWarehouseRepository, IRefAddressRepository refAddressRepository, IMEmployeeRepository mEmployeeRepository, IMCostCenterRepository mCostCenterRepository)
         {
             Check.Require(mWarehouseRepository != null, "mWarehouseRepository may not be null");
             Check.Require(refAddressRepository != null, "refAddressRepository may not be null");
             Check.Require(mEmployeeRepository != null, "mEmployeeRepository may not be null");
-            Check.Require(mCostCenterRepository != null, "mCostCenterRepository may not be null");
         
             this._mWarehouseRepository = mWarehouseRepository;
             this._refAddressRepository = refAddressRepository;
             this._mEmployeeRepository = mEmployeeRepository;
-            this._mCostCenterRepository = mCostCenterRepository;
         }
 
 
@@ -64,11 +61,9 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                         cell = new string[] {
                             warehouse.Id, 
                             warehouse.WarehouseName, 
-                             warehouse.WarehouseStatus,
+                            warehouse.WarehouseStatus,
                             warehouse.EmployeeId != null?  warehouse.EmployeeId.Id : null,
                             warehouse.EmployeeId != null?  warehouse.EmployeeId.PersonId.PersonFirstName : null,
-                            warehouse.CostCenterId != null?  warehouse.CostCenterId.CostCenterName : null,
-                            warehouse.CostCenterId != null?  warehouse.CostCenterId.Id : null,
                             warehouse.AddressId != null?  warehouse.AddressId.AddressLine1 : null,
                             warehouse.AddressId != null?  warehouse.AddressId.AddressLine2 : null,
                             warehouse.AddressId != null?  warehouse.AddressId.AddressLine3 : null,
@@ -98,7 +93,6 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             MWarehouse mWarehouseToInsert = new MWarehouse();
             TransferFormValuesTo(mWarehouseToInsert, viewModel);
             mWarehouseToInsert.EmployeeId = _mEmployeeRepository.Get(formCollection["EmployeeId"]);
-            mWarehouseToInsert.CostCenterId = _mCostCenterRepository.Get(formCollection["CostCenterId"]);
             mWarehouseToInsert.SetAssignedIdTo(viewModel.Id);
             mWarehouseToInsert.CreatedDate = DateTime.Now;
             mWarehouseToInsert.CreatedBy = User.Identity.Name;
@@ -177,7 +171,6 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             MWarehouse mWarehouseToUpdate = _mWarehouseRepository.Get(viewModel.Id);
             TransferFormValuesTo(mWarehouseToUpdate, viewModel);
             mWarehouseToUpdate.EmployeeId = _mEmployeeRepository.Get(formCollection["EmployeeId"]);
-            mWarehouseToUpdate.CostCenterId = _mCostCenterRepository.Get(formCollection["CostCenterId"]);
             mWarehouseToUpdate.ModifiedDate = DateTime.Now;
             mWarehouseToUpdate.ModifiedBy = User.Identity.Name;
             mWarehouseToUpdate.DataStatus = EnumDataStatus.Updated.ToString();

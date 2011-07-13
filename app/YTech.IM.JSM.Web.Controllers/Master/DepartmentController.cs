@@ -14,20 +14,19 @@ using YTech.IM.JSM.Enums;
 namespace YTech.IM.JSM.Web.Controllers.Master
 {
     [HandleError]
-    public class BrandController : Controller
+    public class DepartmentController : Controller
     {
-        //public BrandController()
-        //    : this(new MBrandRepository())
-        //{
-        //}
+        //public DepartmentController()
+        //  : this(new MDepartmentRepository())
+        //{ }
 
-        public BrandController(IMBrandRepository mBrandRepository)
+        private readonly IMDepartmentRepository _mDepartmentRepository;
+        public DepartmentController(IMDepartmentRepository mDepartmentRepository)
         {
-            Check.Require(mBrandRepository != null, "mBrandRepository may not be null");
+            Check.Require(mDepartmentRepository != null, "mDepartmentRepository may not be null");
 
-            this._mBrandRepository = mBrandRepository;
+            this._mDepartmentRepository = mDepartmentRepository;
         }
-        private readonly IMBrandRepository _mBrandRepository;
 
 
         public ActionResult Index()
@@ -39,7 +38,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
         public virtual ActionResult List(string sidx, string sord, int page, int rows)
         {
             int totalRecords = 0;
-            var itemCats = _mBrandRepository.GetPagedBrandList(sidx, sord, page, rows, ref totalRecords);
+            var itemCats = _mDepartmentRepository.GetPagedDepartmentList(sidx, sord, page, rows, ref totalRecords);
             int pageSize = rows;
             int totalPages = (int)Math.Ceiling((float)totalRecords / (float)pageSize);
 
@@ -55,8 +54,8 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                         i = itemCat.Id.ToString(),
                         cell = new string[] {
                             itemCat.Id, 
-                            itemCat.BrandName, 
-                            itemCat.BrandDesc
+                            itemCat.DepartmentName, 
+                            itemCat.DepartmentDesc
                         }
                     }).ToArray()
             };
@@ -66,28 +65,25 @@ namespace YTech.IM.JSM.Web.Controllers.Master
         }
 
         [Transaction]
-        public ActionResult Insert(MBrand viewModel, FormCollection formCollection)
+        public ActionResult Insert(MDepartment viewModel, FormCollection formCollection)
         {
-            if (!(ViewData.ModelState.IsValid && viewModel.IsValid()))
-            {
 
-            }
-            MBrand mCompanyToInsert = new MBrand();
+            MDepartment mCompanyToInsert = new MDepartment();
             TransferFormValuesTo(mCompanyToInsert, viewModel);
             mCompanyToInsert.SetAssignedIdTo(viewModel.Id);
             mCompanyToInsert.CreatedDate = DateTime.Now;
             mCompanyToInsert.CreatedBy = User.Identity.Name;
             mCompanyToInsert.DataStatus = EnumDataStatus.New.ToString();
-            _mBrandRepository.Save(mCompanyToInsert);
+            _mDepartmentRepository.Save(mCompanyToInsert);
 
             try
             {
-                _mBrandRepository.DbContext.CommitChanges();
+                _mDepartmentRepository.DbContext.CommitChanges();
             }
             catch (Exception e)
             {
 
-                _mBrandRepository.DbContext.RollbackTransaction();
+                _mDepartmentRepository.DbContext.RollbackTransaction();
 
                 //throw e.GetBaseException();
                 return Content(e.GetBaseException().Message);
@@ -97,23 +93,23 @@ namespace YTech.IM.JSM.Web.Controllers.Master
         }
 
         [Transaction]
-        public ActionResult Delete(MBrand viewModel, FormCollection formCollection)
+        public ActionResult Delete(MDepartment viewModel, FormCollection formCollection)
         {
-            MBrand mCompanyToDelete = _mBrandRepository.Get(viewModel.Id);
+            MDepartment mCompanyToDelete = _mDepartmentRepository.Get(viewModel.Id);
 
             if (mCompanyToDelete != null)
             {
-                _mBrandRepository.Delete(mCompanyToDelete);
+                _mDepartmentRepository.Delete(mCompanyToDelete);
             }
 
             try
             {
-                _mBrandRepository.DbContext.CommitChanges();
+                _mDepartmentRepository.DbContext.CommitChanges();
             }
             catch (Exception e)
             {
 
-                _mBrandRepository.DbContext.RollbackTransaction();
+                _mDepartmentRepository.DbContext.RollbackTransaction();
 
                 return Content(e.GetBaseException().Message);
             }
@@ -121,11 +117,12 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content("success");
         }
 
+
         //since upgrade to jqgrid 4, url property not run well
         //so use formcollection "oper" to filter the action
         //this just for insert and update, delete filter not change
         [Transaction]
-        public ActionResult InsertOrUpdate(MBrand viewModel, FormCollection formCollection)
+        public ActionResult InsertOrUpdate(MDepartment viewModel, FormCollection formCollection)
         {
             if (formCollection["oper"].Equals("add"))
             {
@@ -144,23 +141,23 @@ namespace YTech.IM.JSM.Web.Controllers.Master
 
 
         [Transaction]
-        public ActionResult Update(MBrand viewModel, FormCollection formCollection)
+        public ActionResult Update(MDepartment viewModel, FormCollection formCollection)
         {
-            MBrand mCompanyToUpdate = _mBrandRepository.Get(viewModel.Id);
+            MDepartment mCompanyToUpdate = _mDepartmentRepository.Get(viewModel.Id);
             TransferFormValuesTo(mCompanyToUpdate, viewModel);
             mCompanyToUpdate.ModifiedDate = DateTime.Now;
             mCompanyToUpdate.ModifiedBy = User.Identity.Name;
             mCompanyToUpdate.DataStatus = EnumDataStatus.Updated.ToString();
-            _mBrandRepository.Update(mCompanyToUpdate);
+            _mDepartmentRepository.Update(mCompanyToUpdate);
 
             try
             {
-                _mBrandRepository.DbContext.CommitChanges();
+                _mDepartmentRepository.DbContext.CommitChanges();
             }
             catch (Exception e)
             {
 
-                _mBrandRepository.DbContext.RollbackTransaction();
+                _mDepartmentRepository.DbContext.RollbackTransaction();
 
                 return Content(e.GetBaseException().Message);
             }
@@ -168,24 +165,25 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content("success");
         }
 
-        private void TransferFormValuesTo(MBrand mCompanyToUpdate, MBrand mCompanyFromForm)
+        private void TransferFormValuesTo(MDepartment mCompanyToUpdate, MDepartment mCompanyFromForm)
         {
-            mCompanyToUpdate.BrandName = mCompanyFromForm.BrandName;
-            mCompanyToUpdate.BrandDesc = mCompanyFromForm.BrandDesc;
+            mCompanyToUpdate.DepartmentName = mCompanyFromForm.DepartmentName;
+            mCompanyToUpdate.DepartmentDesc = mCompanyFromForm.DepartmentDesc;
+            mCompanyToUpdate.DepartmentStatus = mCompanyFromForm.DepartmentStatus;
         }
 
 
         [Transaction]
         public virtual ActionResult GetList()
         {
-            var brands = _mBrandRepository.GetAll();
+            var brands = _mDepartmentRepository.GetAll();
             StringBuilder sb = new StringBuilder();
-            MBrand mBrand = new MBrand();
-            sb.AppendFormat("{0}:{1};", string.Empty, "-Pilih Merek-");
+            MDepartment mDepartment;
+            sb.AppendFormat("{0}:{1};", string.Empty, "-Pilih Departemen-");
             for (int i = 0; i < brands.Count; i++)
             {
-                mBrand = brands[i];
-                sb.AppendFormat("{0}:{1}", mBrand.Id, mBrand.BrandName);
+                mDepartment = brands[i];
+                sb.AppendFormat("{0}:{1}", mDepartment.Id, mDepartment.DepartmentName);
                 if (i < brands.Count - 1)
                     sb.Append(";");
             }

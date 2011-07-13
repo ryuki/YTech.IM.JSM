@@ -93,6 +93,7 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Master\BrandController.cs" />
+    <Compile Include="Master\DepartmentController.cs" />
     <Compile Include="Master\MasterAreaRegistration.cs" />
     <Compile Include="Master\WarehouseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,25 +4,37 @@
 
 
 <div id="accordion">
-    <h3>
-        <a href="#">Home</a></h3>
+    <h3><a href="#">Home</a></h3>
     <div>
         <div>
-            <%=Html.ActionLinkForAreas<HomeController>(c => c.Index(), "Home") %></div>
+            <%=Html.ActionLinkForAreas<HomeController>(c => c.Index(), "Home") %>
+        </div>
     </div>
+
     <% if (Request.IsAuthenticated)
        {
-           
-%>      <h3><a href="#">Data Pokok</a></h3>
+    %>      
+
+        <h3><a href="#">Data Pokok</a></h3>
         <div>
             <div>
-            <%= Html.ActionLinkForAreas<BrandController>(c => c.Index(),"Master Merek") %></div>
+                <%= Html.ActionLinkForAreas<BrandController>(c => c.Index(),"Master Merek") %>
+            </div>
             <div>
-            <%= Html.ActionLinkForAreas<WarehouseController>(c => c.Index(),"Master Gudang") %></div>
+                <%= Html.ActionLinkForAreas<WarehouseController>(c => c.Index(),"Master Gudang") %>
+            </div>
       
-            
+        <div>
+            <hr />
+        </div>
+
+        <div>
+            <%= Html.ActionLinkForAreas<DepartmentController>(c => c.Index(),"Master Departemen") %>
+        </div>
+       
+
   
     <%
         }
-%>
+    %>
 </div>

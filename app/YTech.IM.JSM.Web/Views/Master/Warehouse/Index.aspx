@@ -1,15 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/MyMaster.master" AutoEventWireup="true"
     Inherits="System.Web.Mvc.ViewPage" %>
 
-<asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
-
-
-    <table id="list" class="scroll" cellpadding="0" cellspacing="0">
-    </table>
-    <div id="listPager" class="scroll" style="text-align: center;">
-    </div>
-    <div id="listPsetcols" class="scroll" style="text-align: center;">
-    </div>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
     <script type="text/javascript">
 
@@ -30,7 +22,7 @@
             });
 
             var editDialog = {
-                , closeAfterAdd: true
+                closeAfterAdd: true
                 , closeAfterEdit: true
                 , modal: true
 
@@ -56,8 +48,7 @@
                 }
             };
             var insertDialog = {
-                url: '<%= Url.Action("Insert", "Warehouse") %>'
-                , closeAfterAdd: true
+                closeAfterAdd: true
                 , closeAfterEdit: true
                 , modal: true
                 , afterShowForm: function (eparams) {
@@ -94,15 +85,13 @@
                 url: '<%= Url.Action("List", "Warehouse") %>',
                 datatype: 'json',
                 mtype: 'GET',
-                colNames: ['Kode Gudang', 'Nama', 'Status Aktif', 'Penanggung Jawab', 'Penanggung Jawab', 'Cost Center', 'Cost Center', 'Alamat', '', '', 'Telp', 'Kota', 'Keterangan'],
+                colNames: ['Kode Gudang', 'Nama', 'Status Aktif', 'Penanggung Jawab', 'Penanggung Jawab', 'Alamat', '', '', 'Telp', 'Kota', 'Keterangan'],
                 colModel: [
                     { name: 'Id', index: 'Id', width: 100, align: 'left', key: true, editrules: { required: true, edithidden: false }, hidedlg: true, hidden: false, editable: true },
                     { name: 'WarehouseName', index: 'WarehouseName', width: 200, align: 'left', editable: true, edittype: 'text', editrules: { required: true }, formoptions: { elmsuffix: ' *'} },
                    { name: 'WarehouseStatus', index: 'WarehouseStatus', width: 200, sortable: false, align: 'left', editable: true, edittype: 'checkbox', editoptions: { value: "Aktif:Tidak Aktif" }, editrules: { required: false} },
                      { name: 'EmployeeId', index: 'EmployeeId', width: 200, align: 'left', editable: true, edittype: 'select', editrules: { edithidden: true }, hidden: true },
                     { name: 'EmployeeName', index: 'EmployeeName', width: 200, align: 'left', editable: false, edittype: 'select', editrules: { edithidden: true} },
-                     { name: 'CostCenterId', index: 'CostCenterId', width: 200, align: 'left', editable: true, edittype: 'select', editrules: { edithidden: true }, hidden: true },
-                    { name: 'CostCenterName', index: 'CostCenterName', width: 200, align: 'left', editable: false, edittype: 'select', editrules: { edithidden: true} },
                     { name: 'AddressLine1', index: 'AddressLine1', width: 200, align: 'left', editable: true, edittype: 'text', editrules: { required: false} },
                    { name: 'AddressLine2', index: 'AddressLine2', width: 200, hidden: true, align: 'left', editable: true, edittype: 'text', editrules: { required: false, edithidden: true} },
                    { name: 'AddressLine3', index: 'AddressLine3', width: 200, hidden: true, align: 'left', editable: true, edittype: 'text', editrules: { required: false, edithidden: true} },
@@ -139,9 +128,7 @@
             );
         });    
             var employees = $.ajax({ url: '<%= Url.Action("GetList","Employee") %>', async: false, cache: false, success: function (data, result) { if (!result) alert('Failure to retrieve the employees.'); } }).responseText;
-            var costCenters = $.ajax({ url: '<%= Url.Action("GetList","CostCenter") %>', async: false, cache: false, success: function (data, result) { if (!result) alert('Failure to retrieve the costCenters.'); } }).responseText;
-        
-    
+               
 
          
     </script>
@@ -151,5 +138,18 @@
     </div>
     <div id='popup'>
         <iframe width='100%' height='380px' id="popup_frame" frameborder="0"></iframe>
+    </div>
+</asp:Content>
+
+
+<asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
+    <table id="list" class="scroll" cellpadding="0" cellspacing="0">
+    </table>
+    <div id="listPager" class="scroll" style="text-align: center;">
+    </div>
+    <div id="listPsetcols" class="scroll" style="text-align: center;">
+    </div>
+    <div id="Div1" title="Status">
+        <p></p>
     </div>
 </asp:Content>
