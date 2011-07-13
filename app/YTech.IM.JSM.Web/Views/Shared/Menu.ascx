@@ -12,13 +12,14 @@
     </div>
     <% if (Request.IsAuthenticated)
        {
-%>
-
-            <h3><a href="#">Data Pokok</a></h3>
-
+           
+%>      <h3><a href="#">Data Pokok</a></h3>
+        <div>
             <div>
             <%= Html.ActionLinkForAreas<BrandController>(c => c.Index(),"Master Merek") %></div>
-       
+            <div>
+            <%= Html.ActionLinkForAreas<WarehouseController>(c => c.Index(),"Master Gudang") %></div>
+      
             
   
     <%
