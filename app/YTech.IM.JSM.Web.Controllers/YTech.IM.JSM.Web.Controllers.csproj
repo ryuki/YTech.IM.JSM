@@ -94,7 +94,9 @@
     </Compile>
     <Compile Include="Master\BrandController.cs" />
     <Compile Include="Master\DepartmentController.cs" />
+    <Compile Include="Master\EmployeeController.cs" />
     <Compile Include="Master\MasterAreaRegistration.cs" />
+    <Compile Include="Master\PacketCommController.cs" />
     <Compile Include="Master\WarehouseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteRegistrar.cs" />

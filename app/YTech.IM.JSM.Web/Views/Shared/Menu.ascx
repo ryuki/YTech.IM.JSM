@@ -32,7 +32,12 @@
             <%= Html.ActionLinkForAreas<DepartmentController>(c => c.Index(),"Master Departemen") %>
         </div>
        
+        <div>
+            <%= Html.ActionLinkForAreas<EmployeeController>(c => c.Index(), "Master Karyawan")%>
+        </div>
+          
 
+        </div>
   
     <%
         }

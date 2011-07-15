@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/MyMaster.master" AutoEventWireup="true"
-    Inherits="System.Web.Mvc.ViewPage<IEnumerable<MEmployee>>" %>
+    Inherits="System.Web.Mvc.ViewPage" %>
+
+
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
     <table id="list" class="scroll" cellpadding="0" cellspacing="0">
@@ -15,6 +17,10 @@
     <div id='popup'>
         <iframe width='100%' height='340px' id="popup_frame" frameborder="0"></iframe>
     </div>
+
+
+
+
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -34,8 +40,7 @@
             });
 
             var editDialog = {
-                url: '<%= Url.Action("Update", "Employee") %>'
-                , closeAfterAdd: true
+                closeAfterAdd: true
                 , closeAfterEdit: true
                 , modal: true
 
@@ -59,8 +64,7 @@
                 }
             };
             var insertDialog = {
-                url: '<%= Url.Action("Insert", "Employee") %>'
-                , closeAfterAdd: true
+                closeAfterAdd: true
                 , closeAfterEdit: true
                 , modal: true
                 , afterShowForm: function (eparams) {
@@ -134,6 +138,8 @@
                 height: 300,
                 caption: 'Daftar Karyawan',
                 autowidth: true,
+                editurl: '<%= Url.Action("InsertOrUpdate", "Employee") %>',
+
                 loadComplete: function () {
                     $('#list').setColProp('DepartmentId', { editoptions: { value: departments} });
                     $('#list').setColProp('EmployeeCommissionProductType', { editoptions: { value: commissiontype} });
@@ -159,13 +165,13 @@
                 ondblClickRow: function (rowid, iRow, iCol, e) {
                     $("#list").editGridRow(rowid, editDialog);
                 }
-            }).navGrid('#listPager',
-                {
-                    edit: true, add: true, del: true, search: false, refresh: true
-                },
-                editDialog,
+            });
+            jQuery("#list").jqGrid('navGrid', '#listPager',
+                 { edit: true, add: true, del: true, search: false, refresh: true }, //options 
+                  editDialog,
                 insertDialog,
-                deleteDialog
+                deleteDialog,
+                {}
             );
         });       
 
