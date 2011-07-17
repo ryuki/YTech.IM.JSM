@@ -29,6 +29,14 @@
         </div>
 
         <div>
+            <%= Html.ActionLinkForAreas<CustomerController>(c => c.Index(),"Master Konsumen") %>
+        </div>
+
+        <div>
+            <hr />
+        </div>
+
+        <div>
             <%= Html.ActionLinkForAreas<DepartmentController>(c => c.Index(),"Master Departemen") %>
         </div>
        

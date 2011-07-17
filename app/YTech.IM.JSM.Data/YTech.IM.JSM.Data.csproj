@@ -79,6 +79,7 @@
     <Compile Include="NHibernateMaps\Master\RefAddressMap.cs" />
     <Compile Include="NHibernateMaps\Master\RefPersonMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\EnumReferenceType.cs" />
     <Compile Include="Repository\MBrandRepository.cs" />
     <Compile Include="Repository\MCostCenterRepository.cs" />
     <Compile Include="Repository\MCustomerRepository.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Repository\MWarehouseRepository.cs" />
     <Compile Include="Repository\RefAddressRepository.cs" />
     <Compile Include="Repository\RefPersonRepository.cs" />
+    <Compile Include="Repository\TReferenceRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\YTech.IM.JSM.Core\YTech.IM.JSM.Core.csproj">

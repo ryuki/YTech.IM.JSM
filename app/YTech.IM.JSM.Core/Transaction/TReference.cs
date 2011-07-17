@@ -5,24 +5,16 @@ using System;
 using SharpArch.Core;
 using YTech.IM.JSM.Core.Master;
 
-namespace YTech.IM.JSM.Core.Transaction.Inventory
+namespace YTech.IM.JSM.Core.Transaction
 {
-    public class TStock : EntityWithTypedId<string>, IHasAssignedId<string>
+    public class TReference : EntityWithTypedId<string>, IHasAssignedId<string>
     {
-
         [DomainSignature]
         [NotNull, NotEmpty]
-
-        public virtual MItem ItemId { get; set; }
-        public virtual MWarehouse WarehouseId { get; set; }
-        public virtual TTransDet TransDetId { get; set; }
-        public virtual DateTime? StockDate { get; set; }
-        public virtual decimal? StockQty { get; set; }
-        public virtual decimal? StockPrice { get; set; }
-        public virtual string StockStatus { get; set; }
-        public virtual string StockDesc { get; set; }
-
-        //public virtual IList<TStockRef> StockRefs { get; protected set; }
+        public virtual string ReferenceType { get; set; }
+        public virtual string ReferenceValue { get; set; }
+        public virtual string ReferenceStatus { get; set; }
+        public virtual string ReferenceDesc { get; set; }
 
         public virtual string DataStatus { get; set; }
         public virtual string CreatedBy { get; set; }
