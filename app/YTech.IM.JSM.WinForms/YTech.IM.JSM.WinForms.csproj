@@ -64,6 +64,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="RptPrintFactur.rdlc" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +77,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Content Include="RptAnalyzeBudgetDetail.rdlc" />
+    <Content Include="RptBrand.rdlc" />
+    <Content Include="RptCostCenter.rdlc" />
+    <Content Include="RptStockCard.rdlc" />
+    <Content Include="RptStockItem.rdlc" />
+    <Content Include="RptTransDetail.rdlc" />
+    <Content Include="RptTransDetailByTransBy.rdlc" />
+    <None Include="Properties\DataSources\YTech.IM.JSM.Web.Controllers.ViewModel.Reports.StockCardViewModel.datasource" />
+    <None Include="Properties\DataSources\YTech.IM.JSM.Web.Controllers.ViewModel.Reports.StockItemViewModel.datasource" />
+    <None Include="Properties\DataSources\YTech.IM.JSM.Web.Controllers.ViewModel.Reports.TransDetViewModel.datasource" />
+    <None Include="Properties\DataSources\YTech.IM.JSM.Web.Controllers.ViewModel.Reports.TransTotalViewModel.datasource" />
+    <None Include="Properties\DataSources\YTech.IM.JSM.Web.Controllers.ViewModel.Reports.TransViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -85,6 +98,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YTech.IM.JSM.Web.Controllers\YTech.IM.JSM.Web.Controllers.csproj">
+      <Project>{518B2E4B-2B9B-48EF-8736-DDB6A0F78E79}</Project>
+      <Name>YTech.IM.JSM.Web.Controllers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

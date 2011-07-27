@@ -534,6 +534,17 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
                 return SaveTransaction(Trans, formCollection, false);
             else if (formCollection["btnDelete"] != null)
                 return SaveTransaction(Trans, formCollection, true);
+            else if (formCollection["btnPrint"] != null)
+            {
+                SetReportDataForPrint(formCollection["Trans.Id"]);
+
+                var e = new
+                {
+                    Success = false,
+                    Message = "redirect"
+                };
+                return Json(e, JsonRequestBehavior.AllowGet);
+            }
 
             return View();
         }
@@ -596,7 +607,7 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
                         isEdit = false;
                         //if 
                         tr = new TTrans();
-                        tr.SetAssignedIdTo(Guid.NewGuid().ToString());
+                        tr.SetAssignedIdTo(formCollection["Trans.Id"]);
                         tr.CreatedDate = DateTime.Now;
                         tr.CreatedBy = User.Identity.Name;
                         tr.DataStatus = Enums.EnumDataStatus.New.ToString();
@@ -690,7 +701,7 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
 
             foreach (TransDetViewModel det in ListDetTrans)
             {
-                detToSave=new TransDetViewModel();
+                detToSave = new TransDetViewModel();
                 detToSave.IsNew = det.IsNew;
 
                 if (det.IsNew)
@@ -944,6 +955,60 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
                 detViewModel.IsNew = false;
                 ListDetTrans.Add(detViewModel);
             }
+        }
+
+
+
+        public ActionResult PrintFactur(string TransId)
+        {
+            bool Success = true;
+            string Message = string.Empty;
+            try
+            {
+                SetReportDataForPrint(TransId);
+                Success = true;
+            }
+            catch (Exception ex)
+            {
+                Success = false;
+                Message = ex.GetBaseException().Message;
+            }
+            var e = new
+            {
+                Success,
+                Message
+            };
+
+            return Json(e, JsonRequestBehavior.AllowGet);
+        }
+
+        private void SetReportDataForPrint(string TransId)
+        {
+            ReportDataSource[] repCol = new ReportDataSource[3];
+            TTrans trans = _tTransRepository.Get(TransId);
+
+            IList<TTransDet> listDetail = trans.TransDets;
+            var listDet = from det in listDetail
+                          select new
+                          {
+                              ItemId = det.ItemId.Id,
+                              det.ItemId.ItemName,
+                              det.TransDetPrice,
+                              det.TransDetQty,
+                              det.TransDetDisc,
+                              det.TransDetNo,
+                              det.TransDetTotal,
+                              CustomerName = Helper.CommonHelper.GetCustomerName(_mCustomerRepository, det.TransId.TransBy),
+                              det.TransId.TransFactur,
+                              det.TransId.TransDate,
+                              det.TransId.TransBy,
+                              det.TransId.TransGrandTotal
+                          }
+      ;
+            ReportDataSource reportDataSource = new ReportDataSource("TransTotalViewModel", listDet.ToList());
+            repCol[1] = reportDataSource;
+
+            Session["ReportData"] = repCol;
         }
     }
 }

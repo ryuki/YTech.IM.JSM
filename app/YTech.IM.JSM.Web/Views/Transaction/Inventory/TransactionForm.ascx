@@ -34,11 +34,14 @@
         Baru</a>
         <button id="btnSave" name="btnSave" type="submit">
             Simpan</button>
+            <% if (ViewData.Model.Trans.TransStatus.Equals(EnumTransactionStatus.Sales.ToString())) { %>
+        <button id="btnPrint" name="btnPrint" type="submit">
+            Cetak Faktur</button>
+            <% } %>
         <button id="btnDelete" name="btnDelete" type="submit">
-            Hapus
-            <%= ViewData.Model.Title %></button>
+            Hapus</button>
         <button id="btnList" name="btnList" type="button">
-            Daftar
+            Edit
             <%= ViewData.Model.Title %></button>
     </span>
 </div>

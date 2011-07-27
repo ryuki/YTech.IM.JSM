@@ -394,7 +394,6 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
             ReportDataSource reportDataSource = new ReportDataSource("Brand", _mBrandRepository.GetAll());
             return reportDataSource;
         }
-
     }
 
     public enum EnumViewTrans

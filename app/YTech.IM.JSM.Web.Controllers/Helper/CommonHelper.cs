@@ -222,5 +222,18 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
             // Return the first if there was a match.
             return attribs.Length > 0 ? attribs[0].StringValue : value.ToString();
         }
+
+        internal static object GetCustomerName(IMCustomerRepository _mCustomerRepository, string customerId)
+        {
+            if (!string.IsNullOrEmpty(customerId))
+            {
+                MCustomer cust = _mCustomerRepository.Get(customerId);
+                if (cust != null)
+                {
+                    return cust.PersonId.PersonName;
+                }
+            }
+            return string.Empty;
+        }
     }
 }

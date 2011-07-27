@@ -139,6 +139,7 @@ namespace YTech.IM.JSM.Web.Controllers.ViewModel
                     viewModel.ViewTransBy = true;
                     viewModel.ViewDate = true;
                     viewModel.ViewFactur = true;
+                    viewModel.ViewPrice = true;
                     viewModel.ViewPaymentMethod = false;
                     viewModel.TransByText = "Supplier :";
                     viewModel.TransByList = GetSupplierList();

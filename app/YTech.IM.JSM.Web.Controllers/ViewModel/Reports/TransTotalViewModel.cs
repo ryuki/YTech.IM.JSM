@@ -18,6 +18,8 @@ namespace YTech.IM.JSM.Web.Controllers.ViewModel.Reports
         public decimal? TransSubTotal { get; set; }
         public string TransPaymentMethod { get; set; }
         public string TransName { get; set; }
+        public string TransBy { get; set; }
+        public string CustomerName { get; set; }
 
         public bool ViewWarehouse { get;  set; }
         public bool ViewWarehouseTo { get;  set; }

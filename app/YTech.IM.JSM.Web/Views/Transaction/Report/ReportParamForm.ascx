@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" Inherits="System.Web.Mvc.ViewUserControl<YTech.IM.JSM.Web.Controllers.ViewModel.ReportParamViewModel>" %>
+<%@ Import Namespace="YTech.IM.JSM.Web.Controllers.Helper" %>
 <%--<% using (Html.BeginForm())
    { %>--%>
      <% using (Ajax.BeginForm(new AjaxOptions
@@ -70,7 +71,7 @@
         </td>
     </tr>
     <% } %>
-    <% if (ViewData.Model.ShowCostCenter)
+   <%-- <% if (ViewData.Model.ShowCostCenter)
        {	%>
     <tr>
         <td>
@@ -81,7 +82,7 @@
             <%= Html.DropDownList("CostCenterId", Model.CostCenterList)%>
         </td>
     </tr>
-    <% } %>
+    <% } %>--%>
     <% if (ViewData.Model.ShowSupplier)
        {	%>
     <tr>
@@ -94,7 +95,7 @@
         </td>
     </tr>
     <% } %>
-    <% if (ViewData.Model.ShowRecPeriod)
+    <%--<% if (ViewData.Model.ShowRecPeriod)
        {	%>
     <tr>
         <td>
@@ -117,7 +118,7 @@
             <%= Html.DropDownList("ShiftNo", Model.ShiftNoList)%>
         </td>
     </tr>
-    <% } %>
+    <% } %>--%>
     <tr>
         <td colspan="2" align="center">
             <button id="Save" type="submit" name="Save">

@@ -153,6 +153,13 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportViewer.aspx.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.aspx.designer.cs">
+      <DependentUpon>ReportViewer.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\buttons.css" />
@@ -260,6 +267,7 @@
     <Content Include="NHibernate.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="ReportViewer.aspx" />
     <Content Include="Scripts\autoNumeric-1.6.2.js" />
     <Content Include="Scripts\complex.js" />
     <Content Include="Scripts\date.format.js" />
@@ -382,6 +390,7 @@
     <EmbeddedResource Include="Views\Transaction\Report\RptJournal.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptLR.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptNeraca.rdlc" />
+    <Content Include="Views\Transaction\Report\RptPrintFactur.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptPrintFacturService.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptServiceOmzet.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptStockCard.rdlc" />
