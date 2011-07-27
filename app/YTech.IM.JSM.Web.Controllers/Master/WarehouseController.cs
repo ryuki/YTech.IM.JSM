@@ -22,13 +22,12 @@ namespace YTech.IM.JSM.Web.Controllers.Master
         private readonly IMWarehouseRepository _mWarehouseRepository;
         private readonly IRefAddressRepository _refAddressRepository;
         private readonly IMEmployeeRepository _mEmployeeRepository;
-        
-        public WarehouseController(IMWarehouseRepository mWarehouseRepository, IRefAddressRepository refAddressRepository, IMEmployeeRepository mEmployeeRepository, IMCostCenterRepository mCostCenterRepository)
+        public WarehouseController(IMWarehouseRepository mWarehouseRepository, IRefAddressRepository refAddressRepository, IMEmployeeRepository mEmployeeRepository)
         {
             Check.Require(mWarehouseRepository != null, "mWarehouseRepository may not be null");
             Check.Require(refAddressRepository != null, "refAddressRepository may not be null");
             Check.Require(mEmployeeRepository != null, "mEmployeeRepository may not be null");
-        
+
             this._mWarehouseRepository = mWarehouseRepository;
             this._refAddressRepository = refAddressRepository;
             this._mEmployeeRepository = mEmployeeRepository;
@@ -61,14 +60,18 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                         cell = new string[] {
                             warehouse.Id, 
                             warehouse.WarehouseName, 
-                            warehouse.WarehouseStatus,
+                             warehouse.WarehouseStatus,
                             warehouse.EmployeeId != null?  warehouse.EmployeeId.Id : null,
                             warehouse.EmployeeId != null?  warehouse.EmployeeId.PersonId.PersonFirstName : null,
-                            warehouse.AddressId != null?  warehouse.AddressId.AddressLine1 : null,
-                            warehouse.AddressId != null?  warehouse.AddressId.AddressLine2 : null,
-                            warehouse.AddressId != null?  warehouse.AddressId.AddressLine3 : null,
-                            warehouse.AddressId != null?  warehouse.AddressId.AddressPhone : null,
-                            warehouse.AddressId != null?  warehouse.AddressId.AddressCity : null,
+                       //     warehouse.CostCenterId != null?  warehouse.CostCenterId.CostCenterName : null,
+                       //     warehouse.CostCenterId != null?  warehouse.CostCenterId.Id : null,
+                       //GetAccountRef(warehouse.Id) != null ? GetAccountRef(warehouse.Id).AccountId.Id : null,
+                       //  GetAccountRef(warehouse.Id) != null ? GetAccountRef(warehouse.Id).AccountId.AccountName : null,
+                          warehouse.AddressId != null?  warehouse.AddressId.AddressLine1 : null,
+                          warehouse.AddressId != null?  warehouse.AddressId.AddressLine2 : null,
+                          warehouse.AddressId != null?  warehouse.AddressId.AddressLine3 : null,
+                          warehouse.AddressId != null?  warehouse.AddressId.AddressPhone : null,
+                          warehouse.AddressId != null?  warehouse.AddressId.AddressCity : null,
                             warehouse.WarehouseDesc
                         }
                     }).ToArray()
@@ -77,7 +80,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
 
             return Json(jsonData, JsonRequestBehavior.AllowGet);
         }
-        
+
         [Transaction]
         public ActionResult Insert(MWarehouse viewModel, FormCollection formCollection)
         {
@@ -142,29 +145,6 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content("success");
         }
 
-
-        //since upgrade to jqgrid 4, url property not run well
-        //so use formcollection "oper" to filter the action
-        //this just for insert and update, delete filter not change
-        [Transaction]
-        public ActionResult InsertOrUpdate(MWarehouse  viewModel, FormCollection formCollection)
-        {
-            if (formCollection["oper"].Equals("add"))
-            {
-                return Insert(viewModel, formCollection);
-            }
-            else if (formCollection["oper"].Equals("edit"))
-            {
-                return Update(viewModel, formCollection);
-            }
-            else if (formCollection["oper"].Equals("delete"))
-            {
-                return Delete(viewModel, formCollection);
-            }
-            return View();
-        }
-
-
         [Transaction]
         public ActionResult Update(MWarehouse viewModel, FormCollection formCollection)
         {
@@ -183,6 +163,8 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             mWarehouseToUpdate.AddressId.AddressCity = formCollection["AddressCity"];
 
             _mWarehouseRepository.Update(mWarehouseToUpdate);
+
+            bool isSave = false;
 
             try
             {
@@ -204,6 +186,23 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             mWarehouseToUpdate.WarehouseName = mWarehouseFromForm.WarehouseName;
             mWarehouseToUpdate.WarehouseDesc = mWarehouseFromForm.WarehouseDesc;
             mWarehouseToUpdate.WarehouseStatus = mWarehouseFromForm.WarehouseStatus;
+        }
+
+        //since upgrade to jqgrid 4, url property not run well
+        //so use formcollection "oper" to filter the action
+        //this just for insert and update, delete filter not change
+        [Transaction]
+        public ActionResult InsertOrUpdate(MWarehouse viewModel, FormCollection formCollection)
+        {
+            if (formCollection["oper"].Equals("add"))
+            {
+                return Insert(viewModel, formCollection);
+            }
+            else if (formCollection["oper"].Equals("edit"))
+            {
+                return Update(viewModel, formCollection);
+            }
+            return View();
         }
 
     }

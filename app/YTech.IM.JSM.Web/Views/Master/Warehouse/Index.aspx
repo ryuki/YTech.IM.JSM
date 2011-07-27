@@ -1,10 +1,21 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/MyMaster.master" AutoEventWireup="true"
     Inherits="System.Web.Mvc.ViewPage" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-
+<asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
+    <table id="list" class="scroll" cellpadding="0" cellspacing="0">
+    </table>
+    <div id="listPager" class="scroll" style="text-align: center;">
+    </div>
+    <div id="listPsetcols" class="scroll" style="text-align: center;">
+    </div>
+    <div id="dialog" title="Status">
+        <p>
+        </p>
+    </div>
+    <div id='popup'>
+        <iframe width='100%' height='380px' id="popup_frame" frameborder="0"></iframe>
+    </div>
     <script type="text/javascript">
-
         $(document).ready(function () {
 
             $("#dialog").dialog({
@@ -52,7 +63,7 @@
                 , closeAfterEdit: true
                 , modal: true
                 , afterShowForm: function (eparams) {
-                    $('#Id').attr('disabled', '');
+                   $('#Id').removeAttr('disabled');
                      $('#imgAccountId').click(function () {
                                    OpenPopupAccountSearch();
                                });
@@ -92,7 +103,7 @@
                    { name: 'WarehouseStatus', index: 'WarehouseStatus', width: 200, sortable: false, align: 'left', editable: true, edittype: 'checkbox', editoptions: { value: "Aktif:Tidak Aktif" }, editrules: { required: false} },
                      { name: 'EmployeeId', index: 'EmployeeId', width: 200, align: 'left', editable: true, edittype: 'select', editrules: { edithidden: true }, hidden: true },
                     { name: 'EmployeeName', index: 'EmployeeName', width: 200, align: 'left', editable: false, edittype: 'select', editrules: { edithidden: true} },
-                    { name: 'AddressLine1', index: 'AddressLine1', width: 200, align: 'left', editable: true, edittype: 'text', editrules: { required: false} },
+                   { name: 'AddressLine1', index: 'AddressLine1', width: 200, align: 'left', editable: true, edittype: 'text', editrules: { required: false} },
                    { name: 'AddressLine2', index: 'AddressLine2', width: 200, hidden: true, align: 'left', editable: true, edittype: 'text', editrules: { required: false, edithidden: true} },
                    { name: 'AddressLine3', index: 'AddressLine3', width: 200, hidden: true, align: 'left', editable: true, edittype: 'text', editrules: { required: false, edithidden: true} },
                    { name: 'AddressPhone', index: 'AddressPhone', width: 200, align: 'left', editable: true, edittype: 'text', editrules: { required: false} },
@@ -109,47 +120,23 @@
                 viewrecords: true,
                 height: 300,
                 caption: 'Daftar Gudang',
-                autowidth: true,
-                editurl: '<%= Url.Action("InsertOrUpdate", "Warehouse") %>',
+                autowidth: true, editurl: '<%= Url.Action("InsertOrUpdate", "Warehouse") %>',
                 loadComplete: function () {
                     $('#list').setColProp('EmployeeId', { editoptions: { value: employees} });
-                    $('#list').setColProp('CostCenterId', { editoptions: { value: costCenters} });
                 },
                 ondblClickRow: function (rowid, iRow, iCol, e) {
                     $("#list").editGridRow(rowid, editDialog);
                 }
-            });
-            jQuery("#list").jqGrid('navGrid', '#listPager',
-                 { edit: true, add: true, del: true, search: false, refresh: true }, //options 
-                  editDialog,
+            }).navGrid('#listPager',
+                {
+                    edit: true, add: true, del: true, search: false, refresh: true
+                },
+                editDialog,
                 insertDialog,
-                deleteDialog,
-                {}
+                deleteDialog
             );
         });    
             var employees = $.ajax({ url: '<%= Url.Action("GetList","Employee") %>', async: false, cache: false, success: function (data, result) { if (!result) alert('Failure to retrieve the employees.'); } }).responseText;
-               
-
-         
+           
     </script>
-    <div id="dialog" title="Status">
-        <p>
-        </p>
-    </div>
-    <div id='popup'>
-        <iframe width='100%' height='380px' id="popup_frame" frameborder="0"></iframe>
-    </div>
-</asp:Content>
-
-
-<asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
-    <table id="list" class="scroll" cellpadding="0" cellspacing="0">
-    </table>
-    <div id="listPager" class="scroll" style="text-align: center;">
-    </div>
-    <div id="listPsetcols" class="scroll" style="text-align: center;">
-    </div>
-    <div id="Div1" title="Status">
-        <p></p>
-    </div>
 </asp:Content>

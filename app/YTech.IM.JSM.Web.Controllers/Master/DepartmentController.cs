@@ -16,9 +16,9 @@ namespace YTech.IM.JSM.Web.Controllers.Master
     [HandleError]
     public class DepartmentController : Controller
     {
-        //public DepartmentController()
-        //  : this(new MDepartmentRepository())
-        //{ }
+        public DepartmentController()
+            : this(new MDepartmentRepository())
+        { }
 
         private readonly IMDepartmentRepository _mDepartmentRepository;
         public DepartmentController(IMDepartmentRepository mDepartmentRepository)
@@ -117,29 +117,6 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content("success");
         }
 
-
-        //since upgrade to jqgrid 4, url property not run well
-        //so use formcollection "oper" to filter the action
-        //this just for insert and update, delete filter not change
-        [Transaction]
-        public ActionResult InsertOrUpdate(MDepartment viewModel, FormCollection formCollection)
-        {
-            if (formCollection["oper"].Equals("add"))
-            {
-                return Insert(viewModel, formCollection);
-            }
-            else if (formCollection["oper"].Equals("edit"))
-            {
-                return Update(viewModel, formCollection);
-            }
-            else if (formCollection["oper"].Equals("delete"))
-            {
-                return Delete(viewModel, formCollection);
-            }
-            return View();
-        }
-
-
         [Transaction]
         public ActionResult Update(MDepartment viewModel, FormCollection formCollection)
         {
@@ -188,6 +165,23 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                     sb.Append(";");
             }
             return Content(sb.ToString());
+        }
+
+        //since upgrade to jqgrid 4, url property not run well
+        //so use formcollection "oper" to filter the action
+        //this just for insert and update, delete filter not change
+        [Transaction]
+        public ActionResult InsertOrUpdate(MDepartment viewModel, FormCollection formCollection)
+        {
+            if (formCollection["oper"].Equals("add"))
+            {
+                return Insert(viewModel, formCollection);
+            }
+            else if (formCollection["oper"].Equals("edit"))
+            {
+                return Update(viewModel, formCollection);
+            }
+            return View();
         }
     }
 }

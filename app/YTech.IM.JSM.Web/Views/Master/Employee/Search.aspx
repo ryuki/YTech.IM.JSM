@@ -1,5 +1,5 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/MasterPopup.master" AutoEventWireup="true"
-    Inherits="System.Web.Mvc.ViewPage<IEnumerable<MEmployee>>" %>
+    Inherits="System.Web.Mvc.ViewPage" %>
 
 <asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
     <table id="list" class="scroll" cellpadding="0" cellspacing="0">

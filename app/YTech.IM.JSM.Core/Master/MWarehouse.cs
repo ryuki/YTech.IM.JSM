@@ -12,7 +12,7 @@ namespace YTech.IM.JSM.Core.Master
 
         public virtual string WarehouseName { get; set; }
         public virtual RefAddress AddressId { get; set; }
-        public virtual MCostCenter CostCenterId { get; set; }
+        //public virtual MCostCenter CostCenterId { get; set; }
         public virtual string WarehouseType { get; set; }
         public virtual MEmployee EmployeeId { get; set; }
         public virtual string WarehouseStatus { get; set; }

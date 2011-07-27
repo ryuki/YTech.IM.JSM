@@ -97,13 +97,32 @@
     <Compile Include="Master\CustomerController.cs" />
     <Compile Include="Master\DepartmentController.cs" />
     <Compile Include="Master\EmployeeController.cs" />
+    <Compile Include="Master\ItemController.cs" />
     <Compile Include="Master\MasterAreaRegistration.cs" />
+    <Compile Include="Master\MItemCatController.cs" />
+    <Compile Include="Master\SupplierController.cs" />
     <Compile Include="Master\WarehouseController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RouteRegistrar.cs" />
+    <Compile Include="Transaction\InventoryController.cs" />
+    <Compile Include="Transaction\InventoryController.Stock.cs" />
+    <Compile Include="Transaction\PaymentController.cs" />
+    <Compile Include="Transaction\ReportController.cs" />
+    <Compile Include="Transaction\TransactionAreaRegistration.cs" />
     <Compile Include="Utility\UserAccountController.cs" />
     <Compile Include="Utility\UserAdministrationController.cs" />
     <Compile Include="Utility\UtilityAreaRegistration.cs" />
+    <Compile Include="ViewModel\PaymentViewModel.cs" />
+    <Compile Include="ViewModel\ReportParamViewModel.cs" />
+    <Compile Include="ViewModel\Reports\StockCardViewModel.cs" />
+    <Compile Include="ViewModel\Reports\StockItemViewModel.cs" />
+    <Compile Include="ViewModel\Reports\TransDetViewModel.cs" />
+    <Compile Include="ViewModel\Reports\TransTotalViewModel.cs" />
+    <Compile Include="ViewModel\Reports\TransViewModel.cs" />
+    <Compile Include="ViewModel\TransactionFormViewModel.cs" />
+    <Compile Include="ViewModel\TransDetViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ViewModel\UserAdministration\DetailsViewModel.cs" />
     <Compile Include="ViewModel\UserAdministration\IndexViewModel.cs" />
     <Compile Include="ViewModel\UserAdministration\RoleViewModel.cs" />

@@ -9,7 +9,35 @@
         </asp:ContentPlaceHolder>
     </title>
     <% Html.RenderPartial("Js"); %>
-  
+   <style type="text/css">
+        .selected 
+        {
+            background-color: #F6E46F;
+            border: 1px blue solid; 
+            text-decoration : none;
+        }
+       #accordion .child-menu-container
+        {
+            margin:0px;
+            padding:3px;
+            height : 20px;
+        }
+         #accordion .child-menu-container a
+        { 
+             border: none;  
+            border-bottom: 1px solid #C2C8D1;  
+            color: #999;  
+            padding: 5px 10px;  
+           color: #025185; text-decoration: none;
+           width : 220px;
+           float:left;
+        }
+         #accordion .child-menu-container a:hover
+        {
+            background-color: #cfe3fd;
+            border:solid 1px #7da2ce; 
+        }
+        </style>
     <script type="text/javascript">
     
         // bind save() to window.onunload
@@ -200,6 +228,7 @@
 		, initClosed: false
 	    //	add 'bounce' option to default 'slide' effect
 		, fxSettings_open: { easing: "easeOutBounce" }
+        , onresize: function () { $("#accordion").accordion("resize"); }
 	}
 	, east: {
 	    size: 250
@@ -228,13 +257,6 @@
         };
 
     </script>
-     <style type="text/css">
-        .selected
-        {
-            background-color: #F6E46F;
-            border: 1px blue solid;
-        }
-        </style>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>

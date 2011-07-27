@@ -16,14 +16,13 @@ namespace YTech.IM.JSM.Web.Controllers.Master
     [HandleError]
     public class EmployeeController : Controller
     {
-        public EmployeeController()
-            : this(new MEmployeeRepository(), new RefAddressRepository(), new RefPersonRepository(), new MDepartmentRepository())
-        { }
+        public EmployeeController() : this(new MEmployeeRepository(), new RefAddressRepository(), new RefPersonRepository(),new MDepartmentRepository())
+        {}
         private readonly IMEmployeeRepository _mEmployeeRepository;
         private readonly IRefAddressRepository _refAddressRepository;
         private readonly IRefPersonRepository _refPersonRepository;
         private readonly IMDepartmentRepository _mDepartmentRepository;
-        public EmployeeController(IMEmployeeRepository mEmployeeRepository, IRefAddressRepository refAddressRepository, IRefPersonRepository refPersonRepository, IMDepartmentRepository mDepartmentRepository)
+        public EmployeeController(IMEmployeeRepository mEmployeeRepository, IRefAddressRepository refAddressRepository, IRefPersonRepository refPersonRepository,IMDepartmentRepository mDepartmentRepository)
         {
             Check.Require(mEmployeeRepository != null, "mEmployeeRepository may not be null");
             Check.Require(refAddressRepository != null, "refAddressRepository may not be null");
@@ -74,11 +73,11 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                           employee.PersonId != null ?    employee.PersonId.PersonGender : null, 
                         employee.DepartmentId != null?  employee.DepartmentId.Id:null, 
                         employee.DepartmentId != null?  employee.DepartmentId.DepartmentName:null,
-                        //employee.EmployeeCommissionProductType,
-                        //employee.EmployeeCommissionProductVal.HasValue ?  employee.EmployeeCommissionProductVal.Value.ToString(Helper.CommonHelper.NumberFormat):null,  
-                        //employee.EmployeeCommissionServiceType,
-                        //employee.EmployeeCommissionServiceVal.HasValue ?  employee.EmployeeCommissionServiceVal.Value.ToString(Helper.CommonHelper.NumberFormat):null, 
-                        //  //itemCat.PersonId != null ?    itemCat.PersonId.PersonDob.Value.ToString(Helper.CommonHelper.DateFormat) : null, 
+                        employee.EmployeeCommissionProductType,
+                        employee.EmployeeCommissionProductVal.HasValue ?  employee.EmployeeCommissionProductVal.Value.ToString(Helper.CommonHelper.NumberFormat):null,  
+                        employee.EmployeeCommissionServiceType,
+                        employee.EmployeeCommissionServiceVal.HasValue ?  employee.EmployeeCommissionServiceVal.Value.ToString(Helper.CommonHelper.NumberFormat):null, 
+                          //itemCat.PersonId != null ?    itemCat.PersonId.PersonDob.Value.ToString(Helper.CommonHelper.DateFormat) : null, 
                           //itemCat.PersonId != null ?    itemCat.PersonId.PersonPob : null, 
                           //itemCat.PersonId != null ?    itemCat.PersonId.PersonPhone : null, 
                           //itemCat.PersonId != null ?    itemCat.PersonId.PersonMobile : null, 
@@ -122,7 +121,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                          employee.EmployeeDesc
                         }
                     }).ToArray()
-            };
+            }; 
             return Json(jsonData, JsonRequestBehavior.AllowGet);
         }
 
@@ -137,7 +136,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             person.DataStatus = EnumDataStatus.New.ToString();
             _refPersonRepository.Save(person);
 
-            //UpdateNumericData(viewModel, formCollection);
+            UpdateNumericData(viewModel, formCollection);
             MEmployee mEmployeeToInsert = new MEmployee();
             TransferFormValuesTo(mEmployeeToInsert, viewModel);
             mEmployeeToInsert.DepartmentId = _mDepartmentRepository.Get(formCollection["DepartmentId"]);
@@ -207,35 +206,11 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content("success");
         }
 
-
-        //since upgrade to jqgrid 4, url property not run well
-        //so use formcollection "oper" to filter the action
-        //this just for insert and update, delete filter not change
-        [Transaction]
-        public ActionResult InsertOrUpdate(MEmployee viewModel, FormCollection formCollection)
-        {
-            if (formCollection["oper"].Equals("add"))
-            {
-                return Insert(viewModel, formCollection);
-            }
-            else if (formCollection["oper"].Equals("edit"))
-            {
-                return Update(viewModel, formCollection);
-            }
-            else if (formCollection["oper"].Equals("delete"))
-            {
-                return Delete(viewModel, formCollection);
-            }
-            return View();
-        }
-
-
-
         [Transaction]
         public ActionResult Update(MEmployee viewModel, FormCollection formCollection)
         {
 
-            //UpdateNumericData(viewModel, formCollection);
+            UpdateNumericData(viewModel, formCollection);
 
             MEmployee mEmployeeToUpdate = _mEmployeeRepository.Get(viewModel.Id);
             TransferFormValuesTo(mEmployeeToUpdate, viewModel);
@@ -283,37 +258,37 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content("success");
         }
 
-        //private static void UpdateNumericData(MEmployee viewModel, FormCollection formCollection)
-        //{
-        //    if (!string.IsNullOrEmpty(formCollection["EmployeeCommissionProductVal"]))
-        //    {
-        //        string EmployeeCommissionProductVal = formCollection["EmployeeCommissionProductVal"].Replace(",", "");
-        //        viewModel.EmployeeCommissionProductVal = Convert.ToDecimal(EmployeeCommissionProductVal);
-        //    }
-        //    else
-        //    {
-        //        viewModel.EmployeeCommissionProductVal = null;
-        //    }
-        //    if (!string.IsNullOrEmpty(formCollection["EmployeeCommissionServiceVal"]))
-        //    {
-        //        string ItemUomSalePrice = formCollection["EmployeeCommissionServiceVal"].Replace(",", "");
-        //        viewModel.EmployeeCommissionServiceVal = Convert.ToDecimal(ItemUomSalePrice);
-        //    }
-        //    else
-        //    {
-        //        viewModel.EmployeeCommissionServiceVal = null;
-        //    }
-        //}
+        private static void UpdateNumericData(MEmployee viewModel, FormCollection formCollection)
+        {
+            if (!string.IsNullOrEmpty(formCollection["EmployeeCommissionProductVal"]))
+            {
+                string EmployeeCommissionProductVal = formCollection["EmployeeCommissionProductVal"].Replace(",", "");
+                viewModel.EmployeeCommissionProductVal = Convert.ToDecimal(EmployeeCommissionProductVal);
+            }
+            else
+            {
+                viewModel.EmployeeCommissionProductVal = null;
+            }
+            if (!string.IsNullOrEmpty(formCollection["EmployeeCommissionServiceVal"]))
+            {
+                string ItemUomSalePrice = formCollection["EmployeeCommissionServiceVal"].Replace(",", "");
+                viewModel.EmployeeCommissionServiceVal = Convert.ToDecimal(ItemUomSalePrice);
+            }
+            else
+            {
+                viewModel.EmployeeCommissionServiceVal = null;
+            }
+        }
 
         private void TransferFormValuesTo(MEmployee mEmployeeToUpdate, MEmployee mEmployeeFromForm)
         {
             mEmployeeToUpdate.DepartmentId = mEmployeeFromForm.DepartmentId;
             mEmployeeToUpdate.EmployeeStatus = mEmployeeFromForm.EmployeeStatus;
             mEmployeeToUpdate.EmployeeDesc = mEmployeeFromForm.EmployeeDesc;
-            //mEmployeeToUpdate.EmployeeCommissionProductType = mEmployeeFromForm.EmployeeCommissionProductType;
-            //mEmployeeToUpdate.EmployeeCommissionProductVal = mEmployeeFromForm.EmployeeCommissionProductVal;
-            //mEmployeeToUpdate.EmployeeCommissionServiceType = mEmployeeFromForm.EmployeeCommissionServiceType;
-            //mEmployeeToUpdate.EmployeeCommissionServiceVal = mEmployeeFromForm.EmployeeCommissionServiceVal;
+            mEmployeeToUpdate.EmployeeCommissionProductType = mEmployeeFromForm.EmployeeCommissionProductType;
+            mEmployeeToUpdate.EmployeeCommissionProductVal = mEmployeeFromForm.EmployeeCommissionProductVal;
+            mEmployeeToUpdate.EmployeeCommissionServiceType = mEmployeeFromForm.EmployeeCommissionServiceType;
+            mEmployeeToUpdate.EmployeeCommissionServiceVal = mEmployeeFromForm.EmployeeCommissionServiceVal;
         }
 
 
@@ -334,10 +309,21 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content(sb.ToString());
         }
 
-        //public virtual ActionResult GetCommissionTypeList()
-        //{
-        //    return Content(Helper.CommonHelper.GetEnumListForGrid<EnumCommissionType>("-Pilih Tipe Komisi-"));
-        //}
-
+        //since upgrade to jqgrid 4, url property not run well
+        //so use formcollection "oper" to filter the action
+        //this just for insert and update, delete filter not change
+        [Transaction]
+        public ActionResult InsertOrUpdate(MEmployee viewModel, FormCollection formCollection)
+        {
+            if (formCollection["oper"].Equals("add"))
+            {
+                return Insert(viewModel, formCollection);
+            }
+            else if (formCollection["oper"].Equals("edit"))
+            {
+                return Update(viewModel, formCollection);
+            }
+            return View();
+        }
     }
 }

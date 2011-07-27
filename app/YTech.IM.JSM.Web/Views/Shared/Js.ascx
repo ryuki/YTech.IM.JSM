@@ -25,11 +25,10 @@
         type="text/javascript"></script>
     <script src="<%= Url.Content("~/Scripts/MicrosoftMvcValidation.debug.js") %>" type="text/javascript"></script>--%>
 
-    <script src="<%= Url.Content("~/Scripts/jquery-1.6.1.min.js") %>" type="text/javascript"></script>
-   <%-- <script src="<%= Url.Content("~/Scripts/samplebrowser.js") %>" type="text/javascript"></script>--%>
+    <script src="<%= Url.Content("~/Scripts/jquery-1.6.2.min.js") %>" type="text/javascript"></script>
 
-    <script src="<%= Url.Content("~/Scripts/jquery-ui.min.js") %>" type="text/javascript"></script>
-    <script src="<%= Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"></script>
+    <script src="<%= Url.Content("~/Scripts/jquery-ui-1.8.14.min.js") %>" type="text/javascript"></script>
+    <script src="<%= Url.Content("~/Scripts/jquery.validate-1.8.1.min.js") %>" type="text/javascript"></script>
     <script src="<%= Url.Content("~/Scripts/grid.locale-en.js") %>" type="text/javascript"></script>
     <script src="<%= Url.Content("~/Scripts/jquery.jqGrid.min.js") %>" type="text/javascript"></script>
     <script src="<%= Url.Content("~/Scripts/jquery.maskedinput-1.2.2.min.js") %>" type="text/javascript"></script>

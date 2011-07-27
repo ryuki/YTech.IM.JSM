@@ -39,15 +39,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EnumCommonViewData.cs" />
     <Compile Include="EnumDataStatus.cs" />
     <Compile Include="EnumExportFormat.cs" />
     <Compile Include="EnumPaymentMethod.cs" />
+    <Compile Include="EnumPaymentType.cs" />
     <Compile Include="EnumPeriodType.cs" />
+    <Compile Include="EnumPersonGender.cs" />
+    <Compile Include="EnumPersonReligion.cs" />
     <Compile Include="EnumPrice.cs" />
     <Compile Include="EnumReferenceTable.cs" />
     <Compile Include="EnumReferenceType.cs" />
     <Compile Include="EnumReports.cs" />
     <Compile Include="EnumSaveState.cs" />
+    <Compile Include="EnumTransactionStatus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringValueAttribute.cs" />
   </ItemGroup>

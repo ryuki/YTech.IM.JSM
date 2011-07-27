@@ -37,11 +37,11 @@
                 }
             };
             var insertDialog = {
-                 closeAfterAdd: true
+                closeAfterAdd: true
                 , closeAfterEdit: true
                 , modal: true
                 , afterShowForm: function (eparams) {
-                    $('#Id').removeAttr('disabled');
+                   $('#Id').removeAttr('disabled');
 
                 }
                 , afterComplete: function (response, postdata, formid) {
@@ -80,13 +80,13 @@
                 pager: $('#listPager'),
                 rowNum: 20,
                 rowList: [20, 30, 50, 100],
-                rownumbers: true,
+                rownumbers: true, 
                 sortname: 'Id',
                 sortorder: "asc",
                 viewrecords: true,
                 height: 300,
                 caption: 'Daftar Merek',
-                autowidth: true,
+                autowidth: true, 
                 editurl: '<%= Url.Action("InsertOrUpdate", "Brand") %>',
                 ondblClickRow: function (rowid, iRow, iCol, e) {
                     $("#list").editGridRow(rowid, editDialog);

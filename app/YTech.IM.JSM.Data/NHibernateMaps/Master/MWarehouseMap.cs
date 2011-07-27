@@ -20,7 +20,7 @@ namespace YTech.IM.JSM.Data.NHibernateMaps.Master
 
             mapping.Map(x => x.WarehouseName, "WAREHOUSE_NAME");
             mapping.References(x => x.AddressId, "ADDRESS_ID").Fetch.Join();
-            mapping.References(x => x.CostCenterId, "COST_CENTER_ID").Fetch.Join();
+            //mapping.References(x => x.CostCenterId, "COST_CENTER_ID").Fetch.Join();
             mapping.Map(x => x.WarehouseType, "WAREHOUSE_TYPE");
             mapping.References(x => x.EmployeeId, "EMPLOYEE_ID").Fetch.Join();
             mapping.Map(x => x.WarehouseStatus, "WAREHOUSE_STATUS");

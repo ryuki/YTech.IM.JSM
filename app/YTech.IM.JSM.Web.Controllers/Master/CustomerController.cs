@@ -65,10 +65,6 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                             sup.Id,  
                           sup.PersonId != null?  sup.PersonId.PersonName : null,  
                           sup.PersonId != null?  sup.PersonId.PersonGender : null, 
-                            //sup.CustomerHealthProblem, 
-                            //sup.CustomerProductDisc.HasValue ? sup.CustomerProductDisc.Value.ToString(Helper.CommonHelper.NumberFormat) : null,
-                            //sup.CustomerServiceDisc.HasValue ? sup.CustomerServiceDisc.Value.ToString(Helper.CommonHelper.NumberFormat) : null, 
-                            //sup.CustomerMassageStrength,
                             sup.CustomerDesc,
                         }
                     }).ToArray()
@@ -109,13 +105,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                           sup.PersonId != null && sup.PersonId.PersonDob.HasValue ?  sup.PersonId.PersonDob.Value.ToString(Helper.CommonHelper.DateFormat) : null, 
                           sup.PersonId != null?  sup.PersonId.PersonReligion : null, 
                           sup.PersonId != null?  sup.PersonId.PersonRace : null, 
-                            //sup.CustomerHealthProblem,
-                            sup.CustomerJoinDate.HasValue ? sup.CustomerJoinDate.Value.ToString(Helper.CommonHelper.DateFormat) : null,
-                            sup.CustomerLastBuy.HasValue ? sup.CustomerLastBuy.Value.ToString(Helper.CommonHelper.DateFormat) : null,
-                            //sup.CustomerProductDisc.HasValue ? sup.CustomerProductDisc.Value.ToString(Helper.CommonHelper.NumberFormat) : null,
-                            //sup.CustomerServiceDisc.HasValue ? sup.CustomerServiceDisc.Value.ToString(Helper.CommonHelper.NumberFormat) : null,
                             sup.CustomerStatus,
-                            //sup.CustomerMassageStrength,
                             sup.CustomerDesc,
                         }
                     }).ToArray()
@@ -144,7 +134,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             person.DataStatus = EnumDataStatus.New.ToString();
             _refPersonRepository.Save(person);
 
-            //UpdateNumericData(viewModel, formCollection);
+            UpdateNumericData(viewModel, formCollection);
             MCustomer mCustomerToInsert = new MCustomer();
             TransferFormValuesTo(mCustomerToInsert, viewModel);
             mCustomerToInsert.SetAssignedIdTo(viewModel.Id);
@@ -200,35 +190,10 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content("success");
         }
 
-
-
-        //since upgrade to jqgrid 4, url property not run well
-        //so use formcollection "oper" to filter the action
-        //this just for insert and update, delete filter not change
-        [Transaction]
-        public ActionResult InsertOrUpdate(MCustomer viewModel, FormCollection formCollection)
-        {
-            if (formCollection["oper"].Equals("add"))
-            {
-                return Insert(viewModel, formCollection);
-            }
-            else if (formCollection["oper"].Equals("edit"))
-            {
-                return Update(viewModel, formCollection);
-            }
-            else if (formCollection["oper"].Equals("delete"))
-            {
-                return Delete(viewModel, formCollection);
-            }
-            return View();
-        }
-
-
-
         [Transaction]
         public ActionResult Update(MCustomer viewModel, FormCollection formCollection)
         {
-            //UpdateNumericData(viewModel, formCollection);
+            UpdateNumericData(viewModel, formCollection);
             MCustomer mCustomerToUpdate = _mCustomerRepository.Get(viewModel.Id);
             TransferFormValuesTo(mCustomerToUpdate, viewModel);
             mCustomerToUpdate.ModifiedDate = DateTime.Now;
@@ -265,27 +230,27 @@ namespace YTech.IM.JSM.Web.Controllers.Master
         }
 
 
-        //private static void UpdateNumericData(MCustomer viewModel, FormCollection formCollection)
-        //{
-        //    if (!string.IsNullOrEmpty(formCollection["CustomerProductDisc"]))
-        //    {
-        //        string CustomerProductDisc = formCollection["CustomerProductDisc"].Replace(",", "");
-        //        viewModel.CustomerProductDisc = Convert.ToDecimal(CustomerProductDisc);
-        //    }
-        //    else
-        //    {
-        //        viewModel.CustomerProductDisc = null;
-        //    }
-        //    if (!string.IsNullOrEmpty(formCollection["CustomerServiceDisc"]))
-        //    {
-        //        string CustomerServiceDisc = formCollection["CustomerServiceDisc"].Replace(",", "");
-        //        viewModel.CustomerServiceDisc = Convert.ToDecimal(CustomerServiceDisc);
-        //    }
-        //    else
-        //    {
-        //        viewModel.CustomerServiceDisc = null;
-        //    }
-        //}
+        private static void UpdateNumericData(MCustomer viewModel, FormCollection formCollection)
+        {
+            if (!string.IsNullOrEmpty(formCollection["CustomerProductDisc"]))
+            {
+                string CustomerProductDisc = formCollection["CustomerProductDisc"].Replace(",", "");
+                viewModel.CustomerProductDisc = Convert.ToDecimal(CustomerProductDisc);
+            }
+            else
+            {
+                viewModel.CustomerProductDisc = null;
+            }
+            if (!string.IsNullOrEmpty(formCollection["CustomerServiceDisc"]))
+            {
+                string CustomerServiceDisc = formCollection["CustomerServiceDisc"].Replace(",", "");
+                viewModel.CustomerServiceDisc = Convert.ToDecimal(CustomerServiceDisc);
+            }
+            else
+            {
+                viewModel.CustomerServiceDisc = null;
+            }
+        }
 
         private void TransferFormValuesTo(RefPerson person, FormCollection formCollection)
         {
@@ -310,13 +275,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
 
         private static void TransferFormValuesTo(MCustomer mCustomerToUpdate, MCustomer mCustomerFromForm)
         {
-            //mCustomerToUpdate.CustomerHealthProblem = mCustomerFromForm.CustomerHealthProblem;
-            mCustomerToUpdate.CustomerJoinDate = mCustomerFromForm.CustomerJoinDate;
-            mCustomerToUpdate.CustomerLastBuy = mCustomerFromForm.CustomerLastBuy;
-            //mCustomerToUpdate.CustomerProductDisc = mCustomerFromForm.CustomerProductDisc;
-            //mCustomerToUpdate.CustomerServiceDisc = mCustomerFromForm.CustomerServiceDisc;
             mCustomerToUpdate.CustomerStatus = mCustomerFromForm.CustomerStatus;
-            //mCustomerToUpdate.CustomerMassageStrength = mCustomerFromForm.CustomerMassageStrength;
             mCustomerToUpdate.CustomerDesc = mCustomerFromForm.CustomerDesc;
         }
 
@@ -330,13 +289,21 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             return Content(Helper.CommonHelper.GetEnumListForGrid<EnumPersonReligion>("-Pilih Agama-"));
         }
 
-
-
-        //public virtual ActionResult GetMassageStrengthList()
-        //{
-        //    return Content(Helper.CommonHelper.GetEnumListForGrid<EnumMassageStrength>("-Pilih Kekuatan Pijitan-"));
-        //}
-
-
+        //since upgrade to jqgrid 4, url property not run well
+        //so use formcollection "oper" to filter the action
+        //this just for insert and update, delete filter not change
+        [Transaction]
+        public ActionResult InsertOrUpdate(MCustomer viewModel, FormCollection formCollection)
+        {
+            if (formCollection["oper"].Equals("add"))
+            {
+                return Insert(viewModel, formCollection);
+            }
+            else if (formCollection["oper"].Equals("edit"))
+            {
+                return Update(viewModel, formCollection);
+            }
+            return View();
+        }
     }
 }

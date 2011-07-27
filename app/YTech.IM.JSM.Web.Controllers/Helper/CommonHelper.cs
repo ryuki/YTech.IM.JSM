@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Web.Mvc;
 using YTech.IM.JSM.Core.Master;
-//using YTech.IM.JSM.Core.Transaction;
-//using YTech.IM.JSM.Core.Transaction.Inventory;
+using YTech.IM.JSM.Core.Transaction;
+using YTech.IM.JSM.Core.Transaction.Inventory;
 using YTech.IM.JSM.Enums;
 using YTech.IM.JSM.Data.Repository;
 using YTech.IM.JSM.Core.RepositoryInterfaces;
@@ -16,8 +17,8 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
 {
     public class CommonHelper
     {
-        private const string CONST_FACTURFORMAT = "TIRTA/[TRANS]/[YEAR]/[MONTH]/[DAY]/[XXX]";
-        public const string CONST_VOUCHERNO = "TIRTA/VOUCHER/[YEAR]/[MONTH]/[DAY]/[XXX]";
+        private const string CONST_FACTURFORMAT = "JSM/[TRANS]/[YEAR]/[MONTH]/[DAY]/[XXX]";
+        public const string CONST_VOUCHERNO = "JSM/VOUCHER/[YEAR]/[MONTH]/[DAY]/[XXX]";
 
         public static string DateFormat
         {
@@ -36,99 +37,99 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
             get { return "N2"; }
         }
 
-        //public static TReference GetReference(EnumReferenceType referenceType)
-        //{
-        //    //check in cache first
-        //    object obj = System.Web.HttpContext.Current.Cache[referenceType.ToString()];
-        //    //if not available, set it first
-        //    if (obj == null)
-        //    {
-        //        ITReferenceRepository referenceRepository = new TReferenceRepository();
-        //        TReference reference = referenceRepository.GetByReferenceType(referenceType);
-        //        if (reference == null)
-        //        {
-        //            referenceRepository.DbContext.BeginTransaction();
-        //            reference = new TReference();
-        //            reference.SetAssignedIdTo(Guid.NewGuid().ToString());
-        //            reference.ReferenceType = referenceType.ToString();
-        //            reference.ReferenceValue = "";
-        //            reference.CreatedDate = DateTime.Now;
-        //            reference.DataStatus = EnumDataStatus.New.ToString();
-        //            referenceRepository.Save(reference);
-        //            referenceRepository.DbContext.CommitTransaction();
-        //        }
-        //        //save to cache
-        //        System.Web.HttpContext.Current.Cache[referenceType.ToString()] = reference;
-        //    }
+        public static TReference GetReference(EnumReferenceType referenceType)
+        {
+            //check in cache first
+            object obj = System.Web.HttpContext.Current.Cache[referenceType.ToString()];
+            //if not available, set it first
+            if (obj == null)
+            {
+                ITReferenceRepository referenceRepository = new TReferenceRepository();
+                TReference reference = referenceRepository.GetByReferenceType(referenceType);
+                if (reference == null)
+                {
+                    referenceRepository.DbContext.BeginTransaction();
+                    reference = new TReference();
+                    reference.SetAssignedIdTo(Guid.NewGuid().ToString());
+                    reference.ReferenceType = referenceType.ToString();
+                    reference.ReferenceValue = "0";
+                    reference.CreatedDate = DateTime.Now;
+                    reference.DataStatus = EnumDataStatus.New.ToString();
+                    referenceRepository.Save(reference);
+                    referenceRepository.DbContext.CommitTransaction();
+                }
+                //save to cache
+                System.Web.HttpContext.Current.Cache[referenceType.ToString()] = reference;
+            }
 
-        //    //return cache
-        //    return System.Web.HttpContext.Current.Cache[referenceType.ToString()] as TReference;
-        //}
+            //return cache
+            return System.Web.HttpContext.Current.Cache[referenceType.ToString()] as TReference;
+        }
 
-        //public static string GetFacturNo(EnumTransactionStatus transactionStatus)
-        //{
-        //    return GetFacturNo(transactionStatus, true);
-        //}
+        public static string GetFacturNo(EnumTransactionStatus transactionStatus)
+        {
+            return GetFacturNo(transactionStatus, true);
+        }
 
-        //public static string GetFacturNo(EnumTransactionStatus transactionStatus, bool automatedIncrease)
-        //{
-        //    TReference refer = GetReference((EnumReferenceType)Enum.Parse(typeof(EnumReferenceType), transactionStatus.ToString()));
-        //    decimal no = Convert.ToDecimal(refer.ReferenceValue) + 1;
-        //    refer.ReferenceValue = no.ToString();
-        //    if (automatedIncrease)
-        //    {
-        //        ITReferenceRepository referenceRepository = new TReferenceRepository();
-        //        referenceRepository.Update(refer);
-        //        referenceRepository.DbContext.CommitChanges();
-        //    }
+        public static string GetFacturNo(EnumTransactionStatus transactionStatus, bool automatedIncrease)
+        {
+            TReference refer = GetReference((EnumReferenceType)Enum.Parse(typeof(EnumReferenceType), transactionStatus.ToString()));
+            decimal no = Convert.ToDecimal(refer.ReferenceValue) + 1;
+            refer.ReferenceValue = no.ToString();
+            if (automatedIncrease)
+            {
+                ITReferenceRepository referenceRepository = new TReferenceRepository();
+                referenceRepository.Update(refer);
+                referenceRepository.DbContext.CommitChanges();
+            }
 
-        //    string tipeTrans = string.Empty;
-        //    char[] charTransArray = transactionStatus.ToString().ToCharArray();
-        //    char charTrans;
+            string tipeTrans = string.Empty;
+            char[] charTransArray = transactionStatus.ToString().ToCharArray();
+            char charTrans;
 
-        //    for (int i = 0; i < transactionStatus.ToString().Length; i++)
-        //    {
-        //        charTrans = charTransArray[i];
-        //        if (char.IsUpper(transactionStatus.ToString(), i))
-        //            tipeTrans += transactionStatus.ToString().Substring(i, 1);
-        //    }
+            for (int i = 0; i < transactionStatus.ToString().Length; i++)
+            {
+                charTrans = charTransArray[i];
+                if (char.IsUpper(transactionStatus.ToString(), i))
+                    tipeTrans += transactionStatus.ToString().Substring(i, 1);
+            }
 
-        //    StringBuilder result = new StringBuilder();
-        //    result.Append(CONST_FACTURFORMAT);
-        //    result.Replace("[TRANS]", tipeTrans);
-        //    result.Replace("[XXX]", GetFactur(5, no));
-        //    result.Replace("[DAY]", DateTime.Today.Day.ToString());
-        //    result.Replace("[MONTH]", DateTime.Today.ToString("MMM").ToUpper());
-        //    result.Replace("[YEAR]", DateTime.Today.Year.ToString());
-        //    return result.ToString();
-        //}
+            StringBuilder result = new StringBuilder();
+            result.Append(CONST_FACTURFORMAT);
+            result.Replace("[TRANS]", tipeTrans);
+            result.Replace("[XXX]", GetFactur(5, no));
+            result.Replace("[DAY]", DateTime.Today.Day.ToString());
+            result.Replace("[MONTH]", DateTime.Today.ToString("MMM").ToUpper());
+            result.Replace("[YEAR]", DateTime.Today.Year.ToString());
+            return result.ToString();
+        }
 
-        //public static string GetVoucherNo()
-        //{
-        //    return GetVoucherNo(false);
-        //}
+        public static string GetVoucherNo()
+        {
+            return GetVoucherNo(false);
+        }
 
-        //public static string GetVoucherNo(bool automatedIncrease)
-        //{
-        //    TReference refer = GetReference(EnumReferenceType.VoucherNo);
-        //    decimal no = Convert.ToDecimal(refer.ReferenceValue) + 1;
-        //    refer.ReferenceValue = no.ToString();
-        //    if (automatedIncrease)
-        //    {
-        //        ITReferenceRepository referenceRepository = new TReferenceRepository();
-        //        referenceRepository.DbContext.BeginTransaction();
-        //        referenceRepository.Update(refer);
-        //        referenceRepository.DbContext.CommitTransaction();
-        //    }
+        public static string GetVoucherNo(bool automatedIncrease)
+        {
+            TReference refer = GetReference(EnumReferenceType.VoucherNo);
+            decimal no = Convert.ToDecimal(refer.ReferenceValue) + 1;
+            refer.ReferenceValue = no.ToString();
+            if (automatedIncrease)
+            {
+                ITReferenceRepository referenceRepository = new TReferenceRepository();
+                referenceRepository.DbContext.BeginTransaction();
+                referenceRepository.Update(refer);
+                referenceRepository.DbContext.CommitTransaction();
+            }
 
-        //    StringBuilder result = new StringBuilder();
-        //    result.Append(CONST_VOUCHERNO);
-        //    result.Replace("[XXX]", GetFactur(5, no));
-        //    result.Replace("[DAY]", DateTime.Today.Day.ToString());
-        //    result.Replace("[MONTH]", DateTime.Today.ToString("MMM").ToUpper());
-        //    result.Replace("[YEAR]", DateTime.Today.Year.ToString());
-        //    return result.ToString();
-        //}
+            StringBuilder result = new StringBuilder();
+            result.Append(CONST_VOUCHERNO);
+            result.Replace("[XXX]", GetFactur(5, no));
+            result.Replace("[DAY]", DateTime.Today.Day.ToString());
+            result.Replace("[MONTH]", DateTime.Today.ToString("MMM").ToUpper());
+            result.Replace("[YEAR]", DateTime.Today.Year.ToString());
+            return result.ToString();
+        }
 
         private static string GetFactur(int maxLength, decimal no)
         {
@@ -156,14 +157,12 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
             var lists = from T e in Enum.GetValues(typeof(T))
                         select new { ID = e, Name = e.ToString() };
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("{0}:{1};", string.Empty, defaultText);
+            sb.AppendFormat("{0}:{1}", string.Empty, defaultText);
 
             for (int i = 0; i < lists.Count(); i++)
             {
                 var obj = lists.ElementAt(i);
-                sb.AppendFormat("{0}:{1}", obj.ID, obj.Name);
-                if (i < lists.Count() - 1)
-                    sb.Append(";");
+                sb.AppendFormat(";{0}:{1}", obj.ID, obj.Name);
             }
             return (sb.ToString());
         }
@@ -188,18 +187,40 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
             return System.Web.HttpContext.Current.Cache[EnumReferenceType.DefaultWarehouse.ToString()] as MWarehouse;
         }
 
-        //internal static bool CheckStock(MWarehouse mWarehouse, MItem item, decimal? qty)
-        //{
-        //    ITStockItemRepository stockItemRepository = new TStockItemRepository();
-        //    TStockItem stockItem = stockItemRepository.GetByItemAndWarehouse(item, mWarehouse);
-        //    if (stockItem != null)
-        //    {
-        //        if (stockItem.ItemStock > qty)
-        //        {
-        //            return true;
-        //        }
-        //    }
-        //    return false;
-        //}
+        internal static bool CheckStock(MWarehouse mWarehouse, MItem item, decimal? qty)
+        {
+            ITStockItemRepository stockItemRepository = new TStockItemRepository();
+            TStockItem stockItem = stockItemRepository.GetByItemAndWarehouse(item, mWarehouse);
+            if (stockItem != null)
+            {
+                if (stockItem.ItemStock > qty)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        /// <summary>
+        /// Will get the string value for a given enums value, this will
+        /// only work if you assign the StringValue attribute to
+        /// the items in your enum.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string GetStringValue(Enum value)
+        {
+            // Get the type
+            Type type = value.GetType();
+
+            // Get fieldinfo for this type
+            FieldInfo fieldInfo = type.GetField(value.ToString());
+
+            // Get the stringvalue attributes
+            StringValueAttribute[] attribs = fieldInfo.GetCustomAttributes(
+                typeof(StringValueAttribute), false) as StringValueAttribute[];
+
+            // Return the first if there was a match.
+            return attribs.Length > 0 ? attribs[0].StringValue : value.ToString();
+        }
     }
 }

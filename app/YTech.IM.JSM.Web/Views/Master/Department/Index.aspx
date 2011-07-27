@@ -1,8 +1,13 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/MyMaster.master" AutoEventWireup="true"
     Inherits="System.Web.Mvc.ViewPage" %>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
-    
+<asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
+    <table id="list" class="scroll" cellpadding="0" cellspacing="0">
+    </table>
+    <div id="listPager" class="scroll" style="text-align: center;">
+    </div>
+    <div id="listPsetcols" class="scroll" style="text-align: center;">
+    </div>
     <script type="text/javascript">
 
         $(document).ready(function () {
@@ -41,7 +46,7 @@
                 , closeAfterEdit: true
                 , modal: true
                 , afterShowForm: function (eparams) {
-                    $('#Id').removeAttr('disabled');
+                   $('#Id').removeAttr('disabled');
 
                 }
                 , afterComplete: function (response, postdata, formid) {
@@ -80,13 +85,13 @@
                 pager: $('#listPager'),
                 rowNum: 20,
                 rowList: [20, 30, 50, 100],
-                rownumbers: true,
+                rownumbers: true, 
                 sortname: 'Id',
                 sortorder: "asc",
                 viewrecords: true,
                 height: 300,
                 caption: 'Daftar Departemen',
-                autowidth: true,
+                autowidth: true, 
                 editurl: '<%= Url.Action("InsertOrUpdate", "Department") %>',
                 ondblClickRow: function (rowid, iRow, iCol, e) {
                     $("#list").editGridRow(rowid, editDialog);
@@ -101,17 +106,7 @@
             );
         });       
     </script>
- </asp:Content>
-
-
-<asp:Content ID="indexContent" ContentPlaceHolderID="MainContent" runat="server">
-    <table id="list" class="scroll" cellpadding="0" cellspacing="0">
-    </table>
-    <div id="listPager" class="scroll" style="text-align: center;">
-    </div>
-    <div id="listPsetcols" class="scroll" style="text-align: center;">
-    </div>
-    <div id="Div1" title="Status">
+    <div id="dialog" title="Status">
         <p></p>
     </div>
 </asp:Content>

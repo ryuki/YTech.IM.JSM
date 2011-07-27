@@ -62,7 +62,6 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Master\MBrand.cs" />
-    <Compile Include="Master\MCostCenter.cs" />
     <Compile Include="Master\MCustomer.cs" />
     <Compile Include="Master\MDepartment.cs" />
     <Compile Include="Master\MEmployee.cs" />
@@ -75,7 +74,6 @@
     <Compile Include="Master\RefPerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryInterfaces\IMBrandRepository.cs" />
-    <Compile Include="RepositoryInterfaces\IMCostCenterRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMCustomerRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMDepartmentRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMEmployeeRepository.cs" />
@@ -86,10 +84,37 @@
     <Compile Include="RepositoryInterfaces\IMWarehouseRepository.cs" />
     <Compile Include="RepositoryInterfaces\IRefAddressRepository.cs" />
     <Compile Include="RepositoryInterfaces\IRefPersonRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITPaymentDetRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITPaymentRepository.cs" />
     <Compile Include="RepositoryInterfaces\ITReferenceRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITStockCardRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITStockItemRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITStockRefRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITStockRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITTransDetItemRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITTransDetRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITTransRefRepository.cs" />
+    <Compile Include="RepositoryInterfaces\ITTransRepository.cs" />
+    <Compile Include="Transaction\Inventory\TShift.cs" />
+    <Compile Include="Transaction\Inventory\TStock.cs" />
+    <Compile Include="Transaction\Inventory\TStockCard.cs" />
+    <Compile Include="Transaction\Inventory\TStockItem.cs" />
+    <Compile Include="Transaction\Inventory\TStockRef.cs" />
+    <Compile Include="Transaction\Inventory\TTrans.cs" />
+    <Compile Include="Transaction\Inventory\TTransDet.cs" />
+    <Compile Include="Transaction\Inventory\TTransDetItem.cs" />
+    <Compile Include="Transaction\Inventory\TTransRef.cs" />
+    <Compile Include="Transaction\Payment\TGiro.cs" />
+    <Compile Include="Transaction\Payment\TPayment.cs" />
+    <Compile Include="Transaction\Payment\TPaymentDet.cs" />
     <Compile Include="Transaction\TReference.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\YTech.IM.JSM.Enums\YTech.IM.JSM.Enums.csproj">
+      <Project>{455A8C9C-DD24-4C6B-8292-F363A159DA99}</Project>
+      <Name>YTech.IM.JSM.Enums</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

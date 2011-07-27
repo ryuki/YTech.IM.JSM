@@ -1,0 +1,1550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="YTechIMPhoneShopWebControllersViewModelReports">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>19e5d500-349d-4770-84af-231e3c467a5e</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="YTechIMPhoneShopWebControllersViewModelReports1">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>886c7b5e-49c3-4722-b3d4-976f212a1bd3</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="TransDetViewModel">
+      <Fields>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedDate">
+          <DataField>CreatedDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="DataStatus">
+          <DataField>DataStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeId">
+          <DataField>EmployeeId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MEmployee</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeName">
+          <DataField>EmployeeName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemId">
+          <DataField>ItemId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MItem</rd:TypeName>
+        </Field>
+        <Field Name="ItemName">
+          <DataField>ItemName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ItemUomId">
+          <DataField>ItemUomId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MItemUom</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedBy">
+          <DataField>ModifiedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="PacketId">
+          <DataField>PacketId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MPacket</rd:TypeName>
+        </Field>
+        <Field Name="PacketName">
+          <DataField>PacketName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RowVersion">
+          <DataField>RowVersion</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="TotalUsed">
+          <DataField>TotalUsed</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="TransDetCommissionProduct">
+          <DataField>TransDetCommissionProduct</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransDetCommissionService">
+          <DataField>TransDetCommissionService</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransDetDesc">
+          <DataField>TransDetDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransDetDisc">
+          <DataField>TransDetDisc</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransDetNo">
+          <DataField>TransDetNo</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransDetPrice">
+          <DataField>TransDetPrice</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransDetQty">
+          <DataField>TransDetQty</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransDetTotal">
+          <DataField>TransDetTotal</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransId">
+          <DataField>TransId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Transaction.TTrans</rd:TypeName>
+        </Field>
+        <Field Name="WarehouseId">
+          <DataField>WarehouseId</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="WarehouseName">
+          <DataField>WarehouseName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>YTechIMPhoneShopWebControllersViewModelReports</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>YTech.IM.JSM.Web.Controllers.ViewModel.Reports</rd:DataSetName>
+        <rd:TableName>TransDetViewModel</rd:TableName>
+        <rd:ObjectDataSourceType>YTech.IM.JSM.Web.Controllers.ViewModel.Reports.TransDetViewModel, YTech.IM.JSM.Web.Controllers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="TransRoomViewModel">
+      <Fields>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedDate">
+          <DataField>CreatedDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="DataStatus">
+          <DataField>DataStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedBy">
+          <DataField>ModifiedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RoomBookDate">
+          <DataField>RoomBookDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RoomCashPaid">
+          <DataField>RoomCashPaid</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RoomCommissionProduct">
+          <DataField>RoomCommissionProduct</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RoomCommissionService">
+          <DataField>RoomCommissionService</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RoomCreditPaid">
+          <DataField>RoomCreditPaid</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RoomDesc">
+          <DataField>RoomDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RoomId">
+          <DataField>RoomId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MRoom</rd:TypeName>
+        </Field>
+        <Field Name="RoomInDate">
+          <DataField>RoomInDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RoomOutDate">
+          <DataField>RoomOutDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RoomStatus">
+          <DataField>RoomStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="RoomVoucherPaid">
+          <DataField>RoomVoucherPaid</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RowVersion">
+          <DataField>RowVersion</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>YTechIMPhoneShopWebControllersViewModelReports</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>YTech.IM.JSM.Web.Controllers.ViewModel.Reports</rd:DataSetName>
+        <rd:TableName>TransRoomViewModel</rd:TableName>
+        <rd:ObjectDataSourceType>YTech.IM.JSM.Web.Controllers.ViewModel.Reports.TransRoomViewModel, YTech.IM.JSM.Web.Controllers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="TransViewModel">
+      <Fields>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CreatedDate">
+          <DataField>CreatedDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DataStatus">
+          <DataField>DataStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EmployeeId">
+          <DataField>EmployeeId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MEmployee</rd:TypeName>
+        </Field>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedBy">
+          <DataField>ModifiedBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ModifiedDate">
+          <DataField>ModifiedDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="RowVersion">
+          <DataField>RowVersion</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="TransBy">
+          <DataField>TransBy</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransDate">
+          <DataField>TransDate</DataField>
+          <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransDesc">
+          <DataField>TransDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransDiscount">
+          <DataField>TransDiscount</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransDueDate">
+          <DataField>TransDueDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransFactur">
+          <DataField>TransFactur</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransPaymentMethod">
+          <DataField>TransPaymentMethod</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransRefId">
+          <DataField>TransRefId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Transaction.TTrans</rd:TypeName>
+        </Field>
+        <Field Name="TransStatus">
+          <DataField>TransStatus</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransSubTotal">
+          <DataField>TransSubTotal</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="TransTax">
+          <DataField>TransTax</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="WarehouseId">
+          <DataField>WarehouseId</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MWarehouse</rd:TypeName>
+        </Field>
+        <Field Name="WarehouseIdTo">
+          <DataField>WarehouseIdTo</DataField>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MWarehouse</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>YTechIMPhoneShopWebControllersViewModelReports1</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>YTech.IM.JSM.Web.Controllers.ViewModel.Reports</rd:DataSetName>
+        <rd:TableName>TransViewModel</rd:TableName>
+        <rd:ObjectDataSourceType>YTech.IM.JSM.Web.Controllers.ViewModel.Reports.TransViewModel, YTech.IM.JSM.Web.Controllers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Tablix Name="Tablix1">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>0.42325in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>0.97404in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.20595in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="PacketName">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!PacketName.Value</Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>PacketName</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>2</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="EmployeeName">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!EmployeeName.Value</Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>EmployeeName</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.23622in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TransDetQty">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TransDetQty.Value</Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <Format>N0</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TransDetQty</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TransDetPrice">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TransDetPrice.Value</Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <Format>N2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TransDetPrice</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TransDetTotal">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TransDetTotal.Value</Value>
+                              <Style>
+                                <FontFamily>Times New Roman</FontFamily>
+                                <Format>N2</Format>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TransDetTotal</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Style>None</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Details" />
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>TransDetViewModel</DataSetName>
+        <Top>0.77882in</Top>
+        <Height>0.47244in</Height>
+        <Width>2.60324in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Rectangle Name="Rectangle1">
+        <ReportItems>
+          <Textbox Name="TransSubTotal">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TransSubTotal.Value, "TransViewModel")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Left>1.40433in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.17481in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="RoomCashPaid">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!RoomCashPaid.Value, "TransRoomViewModel")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>RoomCashPaid</rd:DefaultName>
+            <Top>0.97244in</Top>
+            <Left>1.40433in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.17481in</Width>
+            <ZIndex>1</ZIndex>
+            <Visibility>
+              <Hidden>=iif(First(Fields!RoomCashPaid.Value, "TransRoomViewModel")=0,true,false)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="RoomCreditPaid">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!RoomCreditPaid.Value, "TransRoomViewModel")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>RoomCreditPaid</rd:DefaultName>
+            <Top>1.20866in</Top>
+            <Left>1.40433in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.17481in</Width>
+            <ZIndex>2</ZIndex>
+            <Visibility>
+              <Hidden>=iif(First(Fields!RoomCreditPaid.Value, "TransRoomViewModel")=0,true,false)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="RoomVoucherPaid">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!RoomVoucherPaid.Value, "TransRoomViewModel")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>RoomVoucherPaid</rd:DefaultName>
+            <Top>0.73622in</Top>
+            <Left>1.40433in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.17481in</Width>
+            <ZIndex>3</ZIndex>
+            <Visibility>
+              <Hidden>=iif(First(Fields!RoomVoucherPaid.Value, "TransRoomViewModel")=0,true,false)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Sub Total (Rp) :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Left>0.29124in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.11309in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal3">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Voucher :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>0.73622in</Top>
+            <Left>0.29124in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.11309in</Width>
+            <ZIndex>5</ZIndex>
+            <Visibility>
+              <Hidden>=iif(First(Fields!RoomVoucherPaid.Value, "TransRoomViewModel")=0,true,false)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Tunai :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>0.97244in</Top>
+            <Left>0.29124in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.11309in</Width>
+            <ZIndex>6</ZIndex>
+            <Visibility>
+              <Hidden>=iif(First(Fields!RoomCashPaid.Value, "TransRoomViewModel")=0,true,false)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal5">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Kartu Kredit :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>1.20866in</Top>
+            <Left>0.29124in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.11309in</Width>
+            <ZIndex>7</ZIndex>
+            <Visibility>
+              <Hidden>=iif(First(Fields!RoomCreditPaid.Value, "TransRoomViewModel")=0,true,false)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TransDiscount.Value, "TransViewModel")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>0.23622in</Top>
+            <Left>1.40433in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.17481in</Width>
+            <ZIndex>8</ZIndex>
+            <Visibility>
+              <Hidden>=iif(First(Fields!TransDiscount.Value, "TransViewModel")=0,true,false)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal9">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Diskon (%) :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>0.23622in</Top>
+            <Left>0.29124in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.11309in</Width>
+            <ZIndex>9</ZIndex>
+            <Visibility>
+              <Hidden>=iif(First(Fields!TransDiscount.Value, "TransViewModel")=0,true,false)</Hidden>
+            </Visibility>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal10">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TransSubTotal.Value, "TransViewModel") - (First(Fields!TransSubTotal.Value, "TransViewModel")*First(Fields!TransDiscount.Value, "TransViewModel")/100)</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>0.47244in</Top>
+            <Left>1.40433in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.17481in</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <TopBorder>
+                <Style>Solid</Style>
+              </TopBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal11">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Grand Total (Rp) :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>0.47244in</Top>
+            <Left>0.29124in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.11309in</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <TopBorder>
+                <Style>Solid</Style>
+              </TopBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal12">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=(First(Fields!TransSubTotal.Value, "TransViewModel") - (First(Fields!TransSubTotal.Value, "TransViewModel")*First(Fields!TransDiscount.Value, "TransViewModel")/100)-First(Fields!RoomCashPaid.Value, "TransRoomViewModel")-First(Fields!RoomVoucherPaid.Value, "TransRoomViewModel")-First(Fields!RoomCreditPaid.Value, "TransRoomViewModel"))*-1</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>1.50409in</Top>
+            <Left>1.42058in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.17481in</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <TopBorder>
+                <Style>Solid</Style>
+              </TopBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal13">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Kembali (Rp) :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Right</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>1.50409in</Top>
+            <Left>0.30749in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.11309in</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <TopBorder>
+                <Style>Solid</Style>
+              </TopBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Top>1.32646in</Top>
+        <Height>1.74031in</Height>
+        <Width>2.59539in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Rectangle Name="Rectangle2">
+        <ReportItems>
+          <Textbox Name="TransBy">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!CustomerName.Value, "TransViewModel")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransBy</rd:DefaultName>
+            <Top>0.23622in</Top>
+            <Left>0.78406in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.81133in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransFactur">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!TransFactur.Value, "TransViewModel")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransFactur</rd:DefaultName>
+            <Left>0.78406in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.81133in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal6">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>No Faktur :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Left>0.00943in</Left>
+            <Height>0.6cm</Height>
+            <Width>0.77463in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal7">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Kepada :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>0.23622in</Top>
+            <Left>0.00943in</Left>
+            <Height>0.6cm</Height>
+            <Width>0.77463in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransBy2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>=First(Fields!RoomOutDate.Value, "TransRoomViewModel")</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>dd-MMM-yyyy HH:mm</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransBy</rd:DefaultName>
+            <Top>0.47244in</Top>
+            <Left>0.79191in</Left>
+            <Height>0.6cm</Height>
+            <Width>1.81133in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="TransSubTotal14">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Tanggal :</Value>
+                    <Style>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <Format>N2</Format>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>TransSubTotal</rd:DefaultName>
+            <Top>0.47244in</Top>
+            <Left>0.01728in</Left>
+            <Height>0.6cm</Height>
+            <Width>0.77463in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Height>0.70866in</Height>
+        <Width>2.60324in</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Terima kasih atas kunjungan Anda.</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Untuk saran / kritik / info franchise</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SMS ke 0821-73908818</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox10</rd:DefaultName>
+        <Top>3.07638in</Top>
+        <Height>0.52301in</Height>
+        <Width>2.5812in</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox29">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>The Art of Spa</Value>
+                <Style>
+                  <FontFamily>Times New Roman</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox29</rd:DefaultName>
+        <Top>9.21856cm</Top>
+        <Left>0.00001cm</Left>
+        <Height>0.6cm</Height>
+        <Width>6.61222cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>9.81856cm</Height>
+    <Style />
+  </Body>
+  <Width>7.60001cm</Width>
+  <Page>
+    <PageHeader>
+      <Height>3.28976cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox10">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Jl. H.R. Soebrantas No.85 A-B </Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Panam Pekanbaru</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Telp. (0761) 564082, 4881828</Value>
+                  <Style>
+                    <FontFamily>Times New Roman</FontFamily>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox10</rd:DefaultName>
+          <Top>0.75in</Top>
+          <Height>0.54518in</Height>
+          <Width>2.60324in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>tirtallogobw</Value>
+          <Sizing>FitProportional</Sizing>
+          <Top>0cm</Top>
+          <Left>1.08927cm</Left>
+          <Height>0.70833in</Height>
+          <Width>2.13443in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>7.6cm</PageWidth>
+    <LeftMargin>0cm</LeftMargin>
+    <RightMargin>0cm</RightMargin>
+    <TopMargin>0cm</TopMargin>
+    <BottomMargin>0cm</BottomMargin>
+    <ColumnSpacing>1.27cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logotirtasmall">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="logotirtasmallbw">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+    <EmbeddedImage Name="tirtallogobw">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportID>eebd57ba-8cf5-4ebc-bb01-f326fd31f8b5</rd:ReportID>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+</Report>

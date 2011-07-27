@@ -7,6 +7,11 @@ namespace YTech.IM.JSM.Enums
 {
     public enum EnumReports
     {
-        RptDueInstallment
+        RptBrand,
+        RptStockCard,
+        RptStockItem,
+        RptAnalyzeBudgetDetail,
+        RptTransDetail,
+        RptTransDetailByTransBy
     }
 }
