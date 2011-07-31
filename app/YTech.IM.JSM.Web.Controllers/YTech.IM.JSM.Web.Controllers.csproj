@@ -123,6 +123,7 @@
     <Compile Include="ViewModel\TransDetViewModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ViewModel\TransDetWithRef.cs" />
     <Compile Include="ViewModel\UserAdministration\DetailsViewModel.cs" />
     <Compile Include="ViewModel\UserAdministration\IndexViewModel.cs" />
     <Compile Include="ViewModel\UserAdministration\RoleViewModel.cs" />

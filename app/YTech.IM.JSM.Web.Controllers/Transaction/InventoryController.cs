@@ -417,7 +417,7 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
             return Content("success");
         }
 
-        public ActionResult Insert(TTransDet viewModel, FormCollection formCollection, bool IsAddStock, string warehouseId)
+        public ActionResult Insert(TTransDet viewModel, FormCollection formCollection, bool IsAddStock, string WarehouseId)
         {
             //format numeric 
             UpdateNumericData(viewModel, formCollection);
@@ -427,7 +427,7 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
             //return Content(IsAddStock.ToString());
             if (!IsAddStock)
             {
-                MWarehouse warehouse = _mWarehouseRepository.Get(warehouseId);
+                MWarehouse warehouse = _mWarehouseRepository.Get(WarehouseId);
                 bool isStockValid = Helper.CommonHelper.CheckStock(warehouse, item, viewModel.TransDetQty);
                 if (!isStockValid)
                 {
@@ -984,29 +984,29 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
 
         private void SetReportDataForPrint(string TransId)
         {
-            ReportDataSource[] repCol = new ReportDataSource[3];
+            ReportDataSource[] repCol = new ReportDataSource[1];
             TTrans trans = _tTransRepository.Get(TransId);
 
             IList<TTransDet> listDetail = trans.TransDets;
             var listDet = from det in listDetail
                           select new
                           {
-                              ItemId = det.ItemId.Id,
-                              det.ItemId.ItemName,
+                              ItemId = det.ItemId != null ? det.ItemId.Id : null,
+                              ItemName = det.ItemId != null ? det.ItemId.ItemName : null,
                               det.TransDetPrice,
                               det.TransDetQty,
                               det.TransDetDisc,
                               det.TransDetNo,
                               det.TransDetTotal,
-                              CustomerName = Helper.CommonHelper.GetCustomerName(_mCustomerRepository, det.TransId.TransBy),
-                              det.TransId.TransFactur,
-                              det.TransId.TransDate,
-                              det.TransId.TransBy,
-                              det.TransId.TransGrandTotal
+                              CustomerName = Helper.CommonHelper.GetCustomerName(_mCustomerRepository, trans.TransBy),
+                              trans.TransFactur,
+                              trans.TransDate,
+                              trans.TransBy,
+                              trans.TransGrandTotal
                           }
       ;
             ReportDataSource reportDataSource = new ReportDataSource("TransTotalViewModel", listDet.ToList());
-            repCol[1] = reportDataSource;
+            repCol[0] = reportDataSource;
 
             Session["ReportData"] = repCol;
         }

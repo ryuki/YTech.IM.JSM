@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
   <DataSources>
-    <DataSource Name="YTechIMParamitaWebControllersViewModelReports">
+    <DataSource Name="YTechIMJSMWebControllersViewModelReports">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>9bfd1e4c-1554-41ee-87ff-c69b33d5de68</rd:DataSourceID>
+      <rd:DataSourceID>ae00c7e5-42fc-405d-8489-5fbb27f28f81</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -20,6 +20,10 @@
           <DataField>CreatedDate</DataField>
           <rd:TypeName>System.Nullable`1[[System.DateTime, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
         </Field>
+        <Field Name="CustomerName">
+          <DataField>CustomerName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="DataStatus">
           <DataField>DataStatus</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -30,7 +34,7 @@
         </Field>
         <Field Name="ItemId">
           <DataField>ItemId</DataField>
-          <rd:TypeName>YTech.IM.Paramita.Core.Master.MItem</rd:TypeName>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MItem</rd:TypeName>
         </Field>
         <Field Name="ItemName">
           <DataField>ItemName</DataField>
@@ -38,7 +42,7 @@
         </Field>
         <Field Name="ItemUomId">
           <DataField>ItemUomId</DataField>
-          <rd:TypeName>YTech.IM.Paramita.Core.Master.MItemUom</rd:TypeName>
+          <rd:TypeName>YTech.IM.JSM.Core.Master.MItemUom</rd:TypeName>
         </Field>
         <Field Name="ModifiedBy">
           <DataField>ModifiedBy</DataField>
@@ -52,8 +56,20 @@
           <DataField>RowVersion</DataField>
           <rd:TypeName>System.Byte[]</rd:TypeName>
         </Field>
+        <Field Name="StockRefPrice">
+          <DataField>StockRefPrice</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
+        <Field Name="StockRefQty">
+          <DataField>StockRefQty</DataField>
+          <rd:TypeName>System.Nullable`1[[System.Decimal, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]</rd:TypeName>
+        </Field>
         <Field Name="SupplierName">
           <DataField>SupplierName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransBy">
+          <DataField>TransBy</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="TransDate">
@@ -94,7 +110,7 @@
         </Field>
         <Field Name="TransId">
           <DataField>TransId</DataField>
-          <rd:TypeName>YTech.IM.Paramita.Core.Transaction.Inventory.TTrans</rd:TypeName>
+          <rd:TypeName>YTech.IM.JSM.Core.Transaction.Inventory.TTrans</rd:TypeName>
         </Field>
         <Field Name="TransName">
           <DataField>TransName</DataField>
@@ -158,13 +174,13 @@
         </Field>
       </Fields>
       <Query>
-        <DataSourceName>YTechIMParamitaWebControllersViewModelReports</DataSourceName>
+        <DataSourceName>YTechIMJSMWebControllersViewModelReports</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <rd:DataSetInfo>
-        <rd:DataSetName>YTech.IM.Paramita.Web.Controllers.ViewModel.Reports</rd:DataSetName>
+        <rd:DataSetName>YTech.IM.JSM.Web.Controllers.ViewModel.Reports</rd:DataSetName>
         <rd:TableName>TransTotalViewModel</rd:TableName>
-        <rd:ObjectDataSourceType>YTech.IM.Paramita.Web.Controllers.ViewModel.Reports.TransTotalViewModel, YTech.IM.Paramita.Web.Controllers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>YTech.IM.JSM.Web.Controllers.ViewModel.Reports.TransTotalViewModel, YTech.IM.JSM.Web.Controllers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -179,7 +195,7 @@
               <TextRun>
                 <Value>Faktur Penjualan</Value>
                 <Style>
-                  <FontFamily>Verdana</FontFamily>
+                  <FontFamily>Calibri</FontFamily>
                   <FontSize>14pt</FontSize>
                 </Style>
               </TextRun>
@@ -193,7 +209,7 @@
         <Top>0.125in</Top>
         <Left>0.1366in</Left>
         <Height>0.31604in</Height>
-        <Width>4.18632in</Width>
+        <Width>3.97799in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -208,12 +224,12 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>4.18632in</Width>
+              <Width>3.97799in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>3.37106in</Height>
+              <Height>3.15231in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -227,7 +243,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!TransFactur.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -237,9 +255,9 @@
                           </Paragraphs>
                           <rd:DefaultName>TransFactur</rd:DefaultName>
                           <Top>0.33491in</Top>
-                          <Left>1.50943in</Left>
+                          <Left>0.88443in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.78302in</Width>
+                          <Width>2.40801in</Width>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -259,6 +277,7 @@
                                 <TextRun>
                                   <Value>=Fields!TransDate.Value</Value>
                                   <Style>
+                                    <FontFamily>Calibri</FontFamily>
                                     <Format>dd-MMM-yyyy</Format>
                                   </Style>
                                 </TextRun>
@@ -270,9 +289,9 @@
                           </Paragraphs>
                           <rd:DefaultName>TransDate</rd:DefaultName>
                           <Top>0.08491in</Top>
-                          <Left>1.50943in</Left>
+                          <Left>0.88443in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.78302in</Width>
+                          <Width>2.40801in</Width>
                           <ZIndex>1</ZIndex>
                           <Style>
                             <Border>
@@ -292,7 +311,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>No Faktur :</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -301,7 +322,7 @@
                           <rd:DefaultName>TransFactur</rd:DefaultName>
                           <Top>0.33491in</Top>
                           <Height>0.25in</Height>
-                          <Width>1.50943in</Width>
+                          <Width>0.88443in</Width>
                           <ZIndex>2</ZIndex>
                           <Style>
                             <Border>
@@ -321,7 +342,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Tanggal :</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -330,7 +353,7 @@
                           <rd:DefaultName>TransDate</rd:DefaultName>
                           <Top>0.08491in</Top>
                           <Height>0.25in</Height>
-                          <Width>1.50943in</Width>
+                          <Width>0.88443in</Width>
                           <ZIndex>3</ZIndex>
                           <Style>
                             <Border>
@@ -350,7 +373,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Kepada :</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -358,9 +383,8 @@
                           </Paragraphs>
                           <rd:DefaultName>TransDate</rd:DefaultName>
                           <Top>0.5988in</Top>
-                          <Left>0in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.50943in</Width>
+                          <Width>0.88443in</Width>
                           <ZIndex>4</ZIndex>
                           <Visibility>
                             <Hidden>=not Fields!ViewSupplier.Value</Hidden>
@@ -382,8 +406,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=First(Fields!SupplierName.Value)</Value>
-                                  <Style />
+                                  <Value>=First(Fields!CustomerName.Value)</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -391,9 +417,9 @@
                           </Paragraphs>
                           <rd:DefaultName>TransDate</rd:DefaultName>
                           <Top>0.58491in</Top>
-                          <Left>1.50943in</Left>
+                          <Left>0.88443in</Left>
                           <Height>0.25in</Height>
-                          <Width>1.78302in</Width>
+                          <Width>2.40801in</Width>
                           <ZIndex>5</ZIndex>
                           <Visibility>
                             <Hidden>=not Fields!ViewSupplier.Value</Hidden>
@@ -432,7 +458,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Barang</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Calibri</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
@@ -443,8 +471,7 @@
                                         <rd:DefaultName>Textbox10</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
@@ -464,7 +491,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>Total (Rp)</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Calibri</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
@@ -475,8 +504,7 @@
                                         <rd:DefaultName>Textbox12</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
@@ -501,7 +529,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Fields!ItemName.Value</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Calibri</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style />
@@ -510,8 +540,7 @@
                                         <rd:DefaultName>ItemName</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
@@ -538,7 +567,9 @@
                                             <TextRuns>
                                               <TextRun>
                                                 <Value>=Format(Fields!TransDetQty.Value,"N0") &amp; " @ " &amp; Format(Fields!TransDetPrice.Value,"N2")</Value>
-                                                <Style />
+                                                <Style>
+                                                  <FontFamily>Calibri</FontFamily>
+                                                </Style>
                                               </TextRun>
                                             </TextRuns>
                                             <Style>
@@ -549,8 +580,7 @@
                                         <rd:DefaultName>Textbox17</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
@@ -571,6 +601,7 @@
                                               <TextRun>
                                                 <Value>=Fields!TransDetTotal.Value</Value>
                                                 <Style>
+                                                  <FontFamily>Calibri</FontFamily>
                                                   <Format>N2</Format>
                                                 </Style>
                                               </TextRun>
@@ -583,8 +614,7 @@
                                         <rd:DefaultName>TransDetTotal</rd:DefaultName>
                                         <Style>
                                           <Border>
-                                            <Color>LightGrey</Color>
-                                            <Style>Solid</Style>
+                                            <Style>None</Style>
                                           </Border>
                                           <PaddingLeft>2pt</PaddingLeft>
                                           <PaddingRight>2pt</PaddingRight>
@@ -622,7 +652,7 @@
                           <Top>2.66131cm</Top>
                           <Left>0cm</Left>
                           <Height>1.8cm</Height>
-                          <Width>8.36282cm</Width>
+                          <Width>8.3628cm</Width>
                           <ZIndex>6</ZIndex>
                           <Style>
                             <Border>
@@ -637,8 +667,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Barang yang sudah dibeli tidak dapat di kembalikan</Value>
-                                  <Style />
+                                  <Value>NB : Barang yang sudah dibeli tidak dapat ditukar / dikembalikan</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -647,9 +680,141 @@
                           <rd:DefaultName>Textbox20</rd:DefaultName>
                           <Top>4.96319cm</Top>
                           <Left>0cm</Left>
-                          <Height>1.10271cm</Height>
-                          <Width>8.36282cm</Width>
+                          <Height>0.82604cm</Height>
+                          <Width>8.3628cm</Width>
                           <ZIndex>7</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox21">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Tanda Terima,</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Top>5.85979cm</Top>
+                          <Left>0.33898cm</Left>
+                          <Height>0.67938cm</Height>
+                          <Width>2.40969cm</Width>
+                          <ZIndex>8</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox22">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Hormat Kami,</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Top>5.85978cm</Top>
+                          <Left>5.54054cm</Left>
+                          <Height>0.67938cm</Height>
+                          <Width>2.40969cm</Width>
+                          <ZIndex>9</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox23">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>_____________</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Top>7.07687cm</Top>
+                          <Left>0.33899cm</Left>
+                          <Height>0.67938cm</Height>
+                          <Width>2.40969cm</Width>
+                          <ZIndex>10</ZIndex>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                        <Textbox Name="Textbox24">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>_____________</Value>
+                                  <Style>
+                                    <FontFamily>Calibri</FontFamily>
+                                    <FontSize>9pt</FontSize>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style />
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox20</rd:DefaultName>
+                          <Top>7.07687cm</Top>
+                          <Left>5.54054cm</Left>
+                          <Height>0.67938cm</Height>
+                          <Width>2.40969cm</Width>
+                          <ZIndex>11</ZIndex>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -694,8 +859,8 @@
         <DataSetName>TransTotalViewModel</DataSetName>
         <Top>0.43849in</Top>
         <Left>0.1366in</Left>
-        <Height>3.37106in</Height>
-        <Width>4.18632in</Width>
+        <Height>3.15231in</Height>
+        <Width>3.97799in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -704,7 +869,7 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>14cm</Height>
+    <Height>11.98916cm</Height>
     <Style />
   </Body>
   <Width>12cm</Width>

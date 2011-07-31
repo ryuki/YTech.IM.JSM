@@ -72,6 +72,7 @@ namespace YTech.IM.JSM.Web.Controllers.ViewModel
         public bool ShowRecPeriod { get; internal set; }
         public bool ShowItem { get; internal set; }
         public bool ShowShiftNo { get; internal set; }
+        public bool ShowCustomer { get; internal set; }
 
         public DateTime? DateFrom { get; set; }
         public DateTime? DateTo { get; set; }
@@ -81,6 +82,7 @@ namespace YTech.IM.JSM.Web.Controllers.ViewModel
         public string ItemId { get; set; }
         public string TransId { get; set; }
         public int? ShiftNo { get; set; }
+        public string CustomerId { get; set; }
 
         public SelectList WarehouseList { get; internal set; }
         public SelectList SupplierList { get; internal set; }

@@ -93,11 +93,9 @@
             <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetail, EnumTransactionStatus.Sales), "Lap. Detail Penjualan")%>
             <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetail, EnumTransactionStatus.ReturSales), "Lap. Detail Retur Penjualan")%>        
            <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetail, EnumTransactionStatus.Mutation), "Lap. Detail Mutasi Stok")%>   
-            <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetail, EnumTransactionStatus.Adjusment), "Lap. Detail Penyesuaian")%>
-
-            <hr />        
-             <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetailByTransBy, EnumTransactionStatus.Purchase), "Lap. Rekap Detail Pembelian")%>
-            <hr />
+            <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetail, EnumTransactionStatus.Adjusment), "Lap. Detail Penyesuaian")%>     
+             <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetailByTransBy, EnumTransactionStatus.Purchase), "Lap. Rekap Pembelian Per Barang")%> 
+             <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptLRDetailSales, EnumTransactionStatus.Sales), "Lap. Detail Laba Kotor")%> 
 
             <%= Html.ActionLinkForAreas<ReportController>(c => c.Report(EnumReports.RptStockCard), "Kartu Stok")%>
        

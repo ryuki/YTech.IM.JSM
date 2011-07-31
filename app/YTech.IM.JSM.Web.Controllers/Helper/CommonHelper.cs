@@ -193,7 +193,7 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
             TStockItem stockItem = stockItemRepository.GetByItemAndWarehouse(item, mWarehouse);
             if (stockItem != null)
             {
-                if (stockItem.ItemStock > qty)
+                if (stockItem.ItemStock >= qty)
                 {
                     return true;
                 }

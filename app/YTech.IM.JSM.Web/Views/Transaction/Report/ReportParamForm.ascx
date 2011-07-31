@@ -130,9 +130,17 @@
 <script language="javascript" type="text/javascript">
     function onSavedSuccess(e) {
         var json = e.get_response().get_object();
-        var urlreport ='<%= ResolveUrl("~/ReportViewer.aspx?rpt=") %>' + json.UrlReport;
-        //alert(urlreport);
-        window.open(urlreport);
+        var status = json.Status;
+        if (!status) {
+            if (status == false) {
+                alert(json.Message);
+            }
+            else {
+                var urlreport = '<%= ResolveUrl("~/ReportViewer.aspx?rpt=") %>' + json.UrlReport;
+                //alert(urlreport);
+                window.open(urlreport);
+            }
+        }
     }
     
     $(document).ready(function () {

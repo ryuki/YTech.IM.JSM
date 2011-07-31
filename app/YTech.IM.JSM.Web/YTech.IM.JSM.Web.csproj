@@ -319,11 +319,9 @@
     <Content Include="Views\Shared\Status.ascx" />
     <Content Include="Views\Transaction\Inventory\Adjusment.aspx" />
     <Content Include="Views\Transaction\Inventory\Budgeting.aspx" />
-    <Content Include="Views\Transaction\Inventory\DetailItem.aspx" />
     <Content Include="Views\Transaction\Inventory\Index.aspx" />
     <Content Include="Views\Transaction\Inventory\ListTransaction.aspx" />
     <Content Include="Views\Transaction\Inventory\Mutation.aspx" />
-    <Content Include="Views\Transaction\Inventory\Payment.ascx" />
     <Content Include="Views\Transaction\Inventory\Purchase.aspx" />
     <Content Include="Views\Transaction\Inventory\Received.aspx" />
     <Content Include="Views\Transaction\Inventory\ReturPurchase.aspx" />
@@ -384,15 +382,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\Transaction\Report\RptAnalyzeBudgetDetail.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptBrand.rdlc" />
-    <EmbeddedResource Include="Views\Transaction\Report\RptCommission.rdlc" />
-    <EmbeddedResource Include="Views\Transaction\Report\RptCommissionRecap.rdlc" />
-    <EmbeddedResource Include="Views\Transaction\Report\RptCostCenter.rdlc" />
-    <EmbeddedResource Include="Views\Transaction\Report\RptJournal.rdlc" />
-    <EmbeddedResource Include="Views\Transaction\Report\RptLR.rdlc" />
-    <EmbeddedResource Include="Views\Transaction\Report\RptNeraca.rdlc" />
+    <Content Include="Views\Transaction\Report\RptLRDetailSales.rdlc" />
     <Content Include="Views\Transaction\Report\RptPrintFactur.rdlc" />
-    <EmbeddedResource Include="Views\Transaction\Report\RptPrintFacturService.rdlc" />
-    <EmbeddedResource Include="Views\Transaction\Report\RptServiceOmzet.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptStockCard.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptStockItem.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptTransDetail.rdlc" />

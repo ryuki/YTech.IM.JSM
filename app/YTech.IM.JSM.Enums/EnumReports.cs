@@ -12,6 +12,7 @@ namespace YTech.IM.JSM.Enums
         RptStockItem,
         RptAnalyzeBudgetDetail,
         RptTransDetail,
-        RptTransDetailByTransBy
+        RptTransDetailByTransBy,
+        RptLRDetailSales
     }
 }

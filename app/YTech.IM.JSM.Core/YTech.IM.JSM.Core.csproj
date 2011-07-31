@@ -95,7 +95,6 @@
     <Compile Include="RepositoryInterfaces\ITTransDetRepository.cs" />
     <Compile Include="RepositoryInterfaces\ITTransRefRepository.cs" />
     <Compile Include="RepositoryInterfaces\ITTransRepository.cs" />
-    <Compile Include="Transaction\Inventory\TShift.cs" />
     <Compile Include="Transaction\Inventory\TStock.cs" />
     <Compile Include="Transaction\Inventory\TStockCard.cs" />
     <Compile Include="Transaction\Inventory\TStockItem.cs" />

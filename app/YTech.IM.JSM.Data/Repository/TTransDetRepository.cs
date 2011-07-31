@@ -191,5 +191,34 @@ namespace YTech.IM.JSM.Data.Repository
                 q.SetString("warehouseId", warehouseId);
             return q.List<TTransDet>();
         }
+
+        public IList GetRefStockByDateWarehouseTransBy(DateTime? dateFrom, DateTime? dateTo, string transBy, string warehouseId, string transStatus)
+        {
+            StringBuilder sql = new StringBuilder();
+            sql.AppendLine(@"   select det, s.StockPrice, r.StockRefQty
+                                from TTransDet as det
+                                    inner join det.TransId trans
+                                    , TStockRef r 
+                                    , TStock s
+                                where  r.TransDetId = det
+                                    and r.StockId = s
+                                    and trans.TransStatus = :TransStatus
+                                    and trans.TransDate between :dateFrom and :dateTo ");
+            if (!string.IsNullOrEmpty(transBy))
+                sql.AppendLine(@"   and trans.TransBy = :transBy");
+            if (!string.IsNullOrEmpty(warehouseId))
+                sql.AppendLine(@"   and trans.WarehouseId.Id = :warehouseId");
+
+            IQuery q = Session.CreateQuery(sql.ToString());
+            q.SetString("TransStatus", transStatus);
+            q.SetDateTime("dateFrom", dateFrom.Value);
+            q.SetDateTime("dateTo", dateTo.Value);
+            if (!string.IsNullOrEmpty(transBy))
+                q.SetString("transBy", transBy);
+            if (!string.IsNullOrEmpty(warehouseId))
+                q.SetString("warehouseId", warehouseId);
+            IList l = q.List();
+            return l;
+        }
     }
 }

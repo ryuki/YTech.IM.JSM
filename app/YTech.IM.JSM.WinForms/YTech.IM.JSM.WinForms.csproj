@@ -84,6 +84,7 @@
     <Content Include="RptStockItem.rdlc" />
     <Content Include="RptTransDetail.rdlc" />
     <Content Include="RptTransDetailByTransBy.rdlc" />
+    <Content Include="RptLRDetailSales.rdlc" />
     <None Include="Properties\DataSources\YTech.IM.JSM.Web.Controllers.ViewModel.Reports.StockCardViewModel.datasource" />
     <None Include="Properties\DataSources\YTech.IM.JSM.Web.Controllers.ViewModel.Reports.StockItemViewModel.datasource" />
     <None Include="Properties\DataSources\YTech.IM.JSM.Web.Controllers.ViewModel.Reports.TransDetViewModel.datasource" />

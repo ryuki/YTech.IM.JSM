@@ -20,6 +20,8 @@ namespace YTech.IM.JSM.Web.Controllers.ViewModel.Reports
         public string TransName { get; set; }
         public string TransBy { get; set; }
         public string CustomerName { get; set; }
+        public decimal? StockRefQty { get; set; }
+        public decimal? StockRefPrice { get; set; }
 
         public bool ViewWarehouse { get;  set; }
         public bool ViewWarehouseTo { get;  set; }

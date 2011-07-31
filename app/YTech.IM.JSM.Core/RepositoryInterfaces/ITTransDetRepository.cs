@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using SharpArch.Core.PersistenceSupport.NHibernate;
 using YTech.IM.JSM.Core.Master;
 using YTech.IM.JSM.Core.Transaction;
@@ -26,5 +27,7 @@ namespace YTech.IM.JSM.Core.RepositoryInterfaces
         IList<TTransDet> GetByDateWarehouse(System.DateTime? dateFrom, System.DateTime? dateTo, MWarehouse warehouse, string transStatus);
 
         IList<TTransDet> GetByDateWarehouseTransBy(System.DateTime? dateFrom, System.DateTime? dateTo, string transBy, string warehouseId, string transStatus);
+
+        IList GetRefStockByDateWarehouseTransBy(System.DateTime? dateFrom, System.DateTime? dateTo, string transBy, string warehouseId, string transStatus);
     }
 }
