@@ -68,6 +68,7 @@
     </Compile>
     <Compile Include="NHibernateMaps\Master\MBrandMap.cs" />
     <Compile Include="NHibernateMaps\Master\MCustomerMap.cs" />
+    <Compile Include="NHibernateMaps\Master\MCustomerPriceMap.cs" />
     <Compile Include="NHibernateMaps\Master\MDepartmentMap.cs" />
     <Compile Include="NHibernateMaps\Master\MEmployeeMap.cs" />
     <Compile Include="NHibernateMaps\Master\MItemCatMap.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\EnumReferenceType.cs" />
     <Compile Include="Repository\MBrandRepository.cs" />
+    <Compile Include="Repository\MCustomerPriceRepository.cs" />
     <Compile Include="Repository\MCustomerRepository.cs" />
     <Compile Include="Repository\MDepartmentRepository.cs" />
     <Compile Include="Repository\MEmployeeRepository.cs" />

@@ -63,6 +63,7 @@
     </Compile>
     <Compile Include="Master\MBrand.cs" />
     <Compile Include="Master\MCustomer.cs" />
+    <Compile Include="Master\MCustomerPrice.cs" />
     <Compile Include="Master\MDepartment.cs" />
     <Compile Include="Master\MEmployee.cs" />
     <Compile Include="Master\MItem.cs" />
@@ -74,6 +75,7 @@
     <Compile Include="Master\RefPerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepositoryInterfaces\IMBrandRepository.cs" />
+    <Compile Include="RepositoryInterfaces\IMCustomerPriceRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMCustomerRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMDepartmentRepository.cs" />
     <Compile Include="RepositoryInterfaces\IMEmployeeRepository.cs" />

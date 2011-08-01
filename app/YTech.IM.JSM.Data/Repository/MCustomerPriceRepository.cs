@@ -8,15 +8,15 @@ using YTech.IM.JSM.Core.RepositoryInterfaces;
 
 namespace YTech.IM.JSM.Data.Repository
 {
-    public class MCustomerPriceRepository : NHibernateRepositoryWithTypedId<MItemUom, string>, IMItemUomRepository
+    public class MCustomerPriceRepository : NHibernateRepositoryWithTypedId<MCustomerPrice, string>, IMCustomerPriceRepository
     {
         #region Implementation of IMItemUomRepository
 
-        public MItemUom GetByItem(MItem item)
+        public MCustomerPrice GetByItem(MItem item)
         {
-            ICriteria criteria = Session.CreateCriteria(typeof(MItemUom));
+            ICriteria criteria = Session.CreateCriteria(typeof(MCustomerPrice));
             criteria.Add(Expression.Eq("ItemId", item));
-            return criteria.UniqueResult() as MItemUom;
+            return criteria.UniqueResult() as MCustomerPrice;
         }
 
         #endregion
