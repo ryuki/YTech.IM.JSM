@@ -4,7 +4,7 @@ using FluentNHibernate.Automapping.Alterations;
 
 namespace YTech.IM.JSM.Data.NHibernateMaps.Master
 {
-    public class MCustomerPriceMap : IAutoMappingOverride<MCustomer>
+    public class MCustomerMap : IAutoMappingOverride<MCustomer>
     {
         #region Implementation of IAutoMappingOverride<MCustomer>
 

@@ -8,7 +8,7 @@ using YTech.IM.JSM.Core.RepositoryInterfaces;
 
 namespace YTech.IM.JSM.Data.Repository
 {
-    public class MCustomerPriceRepository : NHibernateRepositoryWithTypedId<MItemUom, string>, IMItemUomRepository
+    public class MItemUomRepository : NHibernateRepositoryWithTypedId<MItemUom, string>, IMItemUomRepository
     {
         #region Implementation of IMItemUomRepository
 
