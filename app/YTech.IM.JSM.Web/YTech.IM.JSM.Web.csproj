@@ -301,6 +301,7 @@
     <Content Include="Scripts\Templates\MicrosoftAjaxTemplates.js" />
     <Content Include="Views\Home\Index.aspx" />
     <Content Include="Views\Master\Brand\Index.aspx" />
+    <Content Include="Views\Master\CustomerPrice\AddCustomerPrice.aspx" />
     <Content Include="Views\Master\Customer\Index.aspx" />
     <Content Include="Views\Master\Customer\Search.aspx" />
     <Content Include="Views\Master\Department\Index.aspx" />

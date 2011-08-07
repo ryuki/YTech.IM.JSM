@@ -128,12 +128,63 @@
                 deleteDialog,
                 {}
             );
+
+
+
+
+
+
+            loadComplete: function () {
+                    var ids = jQuery("#list").getDataIDs();
+                    for (var i = 0; i < ids.length; i++) {
+                        var cl = ids[i];
+                        var be = "<input type='button' value='T' tooltips='Tambah Customer Price' onClick=\"OpenPopup('"+cl+"');\" />";
+                        $(this).setRowData(ids[i], { act: be });
+                    }
+                },
+                multiselect: false,
+                subGrid: true,
+                subGridUrl: '<%= Url.Action("ListForSubGrid", "CustomerPrice") %>',
+                subGridModel: [{ name: [ 'Kategori Item', 'Kuantitas', 'Status', 'Deskripsi'],
+                    width: [  55, 80, 80, 80],
+                       //subrig columns aligns
+                       align: ['left', 'right', 'left', 'left'],
+                    params: ['Id']
+                }],
+                ondblClickRow: function (rowid, iRow, iCol, e) {
+                    $('#list').editGridRow(rowid, editDialog);
+                }
+
+
+             $("#popup").dialog({
+                autoOpen: false,
+                height: 420,
+                width: '80%',
+                modal: true,
+                close: function(event, ui) {                 
+                    $("#list").trigger("reloadGrid");
+                 }
+            });
+
+
+
         });
 
             var itemCats = $.ajax({ url: '<%= Url.Action("GetList","MItemCat") %>', async: false, cache: false, success: function (data, result) { if (!result) alert('Failure to retrieve the ItemCats.'); } }).responseText;
             var brands = $.ajax({ url: '<%= Url.Action("GetList","Brand") %>', async: false, cache: false, success: function (data, result) { if (!result) alert('Failure to retrieve the Brands.'); } }).responseText;
 
             //            alert(brands.toString());
+
+
+
+        function OpenPopup(id)
+        {
+            $("#popup_frame").attr("src", "<%= Url.Action("AddCustomerPrice", "CustomerPrice")%>/"+id);
+            $("#popup").dialog("open");
+            return false;   
+        }
+
+
     </script>
     <div id="dialog" title="Status">
         <p>
