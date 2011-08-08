@@ -305,5 +305,21 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             }
             return View();
         }
+
+        [Transaction]
+        public virtual ActionResult GetList()
+        {
+            var brands = _mCustomerRepository.GetAll();
+            StringBuilder sb = new StringBuilder();
+            MCustomer cust = new MCustomer();
+            sb.AppendFormat("{0}:{1}", string.Empty, "-Pilih Konsumen-");
+            for (int i = 0; i < brands.Count; i++)
+            {
+                cust = brands[i];
+                sb.AppendFormat(";{0}:{1}", cust.Id, cust.PersonId.PersonName);
+            }
+            return Content(sb.ToString());
+        }
     }
+
 }

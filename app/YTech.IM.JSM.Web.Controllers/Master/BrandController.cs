@@ -159,13 +159,11 @@ namespace YTech.IM.JSM.Web.Controllers.Master
             var brands = _mBrandRepository.GetAll();
             StringBuilder sb = new StringBuilder();
             MBrand mBrand = new MBrand();
-            sb.AppendFormat("{0}:{1};", string.Empty, "-Pilih Merek-");
+            sb.AppendFormat("{0}:{1}", string.Empty, "-Pilih Merek-");
             for (int i = 0; i < brands.Count; i++)
             {
                 mBrand = brands[i];
-                sb.AppendFormat("{0}:{1}", mBrand.Id, mBrand.BrandName);
-                if (i < brands.Count - 1)
-                    sb.Append(";");
+                sb.AppendFormat(";{0}:{1}", mBrand.Id, mBrand.BrandName);
             }
             return Content(sb.ToString());
         }

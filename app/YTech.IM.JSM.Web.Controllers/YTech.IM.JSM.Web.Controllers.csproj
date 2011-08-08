@@ -95,6 +95,7 @@
     </Compile>
     <Compile Include="Master\BrandController.cs" />
     <Compile Include="Master\CustomerController.cs" />
+    <Compile Include="Master\CustomerPriceController.cs" />
     <Compile Include="Master\DepartmentController.cs" />
     <Compile Include="Master\EmployeeController.cs" />
     <Compile Include="Master\ItemController.cs" />

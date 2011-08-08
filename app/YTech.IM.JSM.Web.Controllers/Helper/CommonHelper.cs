@@ -36,6 +36,16 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
         {
             get { return "N2"; }
         }
+        public static string IntegerFormat
+        {
+            get { return "N0"; }
+        }
+
+        //set culture to en-US for standardization
+        public static CultureInfo DefaultCulture
+        {
+            get { return CultureInfo.GetCultureInfo("en-US"); }
+        }
 
         public static TReference GetReference(EnumReferenceType referenceType)
         {
@@ -234,6 +244,55 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
                 }
             }
             return string.Empty;
+        }
+
+
+        public static decimal? ConvertToDecimal(string value)
+        {
+            decimal? result = null;
+            if (!string.IsNullOrEmpty(value))
+                result = decimal.Parse(value, NumberStyles.Number, DefaultCulture);
+            return result;
+        }
+
+        public static int ConvertToInteger(string value)
+        {
+            int result = 0;
+            if (!string.IsNullOrEmpty(value))
+                result = int.Parse(value, NumberStyles.Integer, DefaultCulture);
+            return result;
+        }
+
+        public static string ConvertToString(decimal? value)
+        {
+            string result = string.Empty;
+            if (value.HasValue)
+                result = value.Value.ToString(NumberFormat, DefaultCulture);
+            return result;
+        }
+
+        public static string ConvertToString(int? value)
+        {
+            string result = string.Empty;
+            if (value.HasValue)
+                result = value.Value.ToString(IntegerFormat, DefaultCulture);
+            return result;
+        }
+
+        public static DateTime? ConvertToDate(string value)
+        {
+            DateTime? result = null;
+            if (!string.IsNullOrEmpty(value))
+                result = DateTime.Parse(value, DefaultCulture, DateTimeStyles.AllowWhiteSpaces);
+            return result;
+        }
+
+        public static string ConvertToString(DateTime? value)
+        {
+            string result = string.Empty;
+            if (value.HasValue)
+                result = value.Value.ToString(DateFormat, DefaultCulture);
+            return result;
         }
     }
 }
