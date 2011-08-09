@@ -17,8 +17,8 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
 {
     public class CommonHelper
     {
-        private const string CONST_FACTURFORMAT = "JSM/[TRANS]/[YEAR]/[MONTH]/[DAY]/[XXX]";
-        public const string CONST_VOUCHERNO = "JSM/VOUCHER/[YEAR]/[MONTH]/[DAY]/[XXX]";
+        private const string CONST_FACTURFORMAT = "GL/[TRANS]/[YEAR]/[MONTH]/[DAY]/[XXX]";
+        public const string CONST_VOUCHERNO = "GL/VOUCHER/[YEAR]/[MONTH]/[DAY]/[XXX]";
 
         public static string DateFormat
         {

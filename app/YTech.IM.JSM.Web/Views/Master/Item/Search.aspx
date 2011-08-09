@@ -38,7 +38,8 @@
             $("#list").jqGrid({
                 url: '<%=Url.Action("ListSearch", "Item")%>',
                   postData: {
-                    itemCatId: function () { return '<%= Request.QueryString["itemCatId"] %>'; }
+                    itemCatId: function () { return '<%= Request.QueryString["itemCatId"] %>'; },
+                     customerId: function () { return '<%= Request.QueryString["customerId"] %>'; }
                 },
                 datatype: 'json',
                 mtype: 'GET',

@@ -34,10 +34,11 @@
         Baru</a>
         <button id="btnSave" name="btnSave" type="submit">
             Simpan</button>
-            <% if (ViewData.Model.Trans.TransStatus.Equals(EnumTransactionStatus.Sales.ToString())) { %>
+        <% if (ViewData.Model.Trans.TransStatus.Equals(EnumTransactionStatus.Sales.ToString()))
+           { %>
         <button id="btnPrint" name="btnPrint" type="submit">
             Cetak Faktur</button>
-            <% } %>
+        <% } %>
         <button id="btnDelete" name="btnDelete" type="submit">
             Hapus</button>
         <button id="btnList" name="btnList" type="button">
@@ -517,7 +518,12 @@ var imgerror = '<%= Url.Content("~/Content/Images/cross.gif") %>';
 
         function OpenPopupItemSearch()
         {
-          $("#popup_frame").attr("src", "<%= ResolveUrl("~/Master/Item/Search?Price=") %><%= Model.UsePrice.ToString() %>");
+            var popup_frame = $("#popup_frame");
+            var new_url = '<%= ResolveUrl("~/Master/Item/Search?Price=") %><%= Model.UsePrice.ToString() %>&customerId='+$('#Trans_TransBy option:selected').val();
+
+            if (popup_frame.attr("src") != new_url) {
+                popup_frame.attr("src", new_url);
+            }
             $("#popup").dialog("open");
             return false;   
         }

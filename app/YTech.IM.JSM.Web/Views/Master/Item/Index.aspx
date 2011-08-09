@@ -238,6 +238,8 @@
                         { edit: true, add: true, del: true, search: false, refresh: true },
                         editSubDialog, addSubDialog, deleteSubDialog
                     );
+                    $('#' + pagerId + '_center').remove();
+                    $('#' + pagerId + '_right').remove();
                 }
             });
             jQuery("#list").jqGrid('navGrid', '#listPager',

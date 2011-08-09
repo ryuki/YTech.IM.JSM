@@ -16,22 +16,21 @@ namespace YTech.IM.JSM.Web.Controllers.Master
     [HandleError]
     public class ItemController : Controller
     {
-        public ItemController()
-            : this(new MItemRepository(), new MItemCatRepository(), new MBrandRepository())
-        { }
-
         private readonly IMItemRepository _mItemRepository;
         private readonly IMItemCatRepository _mItemCatRepository;
         private readonly IMBrandRepository _mBrandRepository;
-        public ItemController(IMItemRepository mItemRepository, IMItemCatRepository mItemCatRepository, IMBrandRepository mBrandRepository)
+        private readonly IMCustomerPriceRepository _mCustomerPriceRepository;
+        public ItemController(IMItemRepository mItemRepository, IMItemCatRepository mItemCatRepository, IMBrandRepository mBrandRepository, IMCustomerPriceRepository mCustomerPriceRepository)
         {
             Check.Require(mItemRepository != null, "mItemRepository may not be null");
             Check.Require(mItemCatRepository != null, "mItemCatRepository may not be null");
             Check.Require(mBrandRepository != null, "mBrandRepository may not be null");
+            Check.Require(mCustomerPriceRepository != null, "mCustomerPriceRepository may not be null");
 
             this._mItemRepository = mItemRepository;
             this._mItemCatRepository = mItemCatRepository;
             this._mBrandRepository = mBrandRepository;
+            this._mCustomerPriceRepository = mCustomerPriceRepository;
         }
 
         public ActionResult Search()
@@ -40,7 +39,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
         }
 
         [Transaction]
-        public virtual ActionResult ListSearch(string sidx, string sord, int page, int rows, string itemId, string itemName, string itemCatId)
+        public virtual ActionResult ListSearch(string sidx, string sord, int page, int rows, string itemId, string itemName, string itemCatId, string customerId)
         {
             int totalRecords = 0;
             MItemCat itemCat = null;
@@ -54,6 +53,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
 
             var jsonData = new
             {
+
                 total = totalPages,
                 page = page,
                 records = totalRecords,
@@ -69,7 +69,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                            item.BrandId != null ? item.BrandId.BrandName : null,
                            item.ItemUoms.Count > 0 ? item.ItemUoms[0].ItemUomName : null,
                        item.ItemUoms.Count > 0 ?  item.ItemUoms[0].ItemUomPurchasePrice.HasValue ? item.ItemUoms[0].ItemUomPurchasePrice.Value.ToString(Helper.CommonHelper.NumberFormat) : "0" : "0",
-                       item.ItemUoms.Count > 0 ?  item.ItemUoms[0].ItemUomSalePrice.HasValue ? item.ItemUoms[0].ItemUomSalePrice.Value.ToString(Helper.CommonHelper.NumberFormat) : "0" : "0", 
+                    GetCustomerPrice(item,customerId),   
                             item.ItemDesc
                         }
                     }).ToArray()
@@ -77,6 +77,19 @@ namespace YTech.IM.JSM.Web.Controllers.Master
 
 
             return Json(jsonData, JsonRequestBehavior.AllowGet);
+        }
+
+        private string GetCustomerPrice(MItem item, string customerId)
+        {
+            if (!string.IsNullOrEmpty(customerId))
+            {
+                MCustomerPrice cp = _mCustomerPriceRepository.GetByItemCustomer(item.Id, customerId);
+                if (cp != null)
+                {
+                    return cp.Price.HasValue ? cp.Price.Value.ToString(Helper.CommonHelper.NumberFormat) : "0";
+                }
+            }
+            return item.ItemUoms.Count > 0 ? item.ItemUoms[0].ItemUomSalePrice.HasValue ? item.ItemUoms[0].ItemUomSalePrice.Value.ToString(Helper.CommonHelper.NumberFormat) : "0" : "0";
         }
 
 
