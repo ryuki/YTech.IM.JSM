@@ -74,7 +74,7 @@
                             <%=Html.ValidationMessage("PaymentDate")%>
                         </td>
                     </tr>
-                    <tr>
+                   <%-- <tr>
                         <td>
                             <label for="CashAccountId">
                                 <%=Model.CashAccountLabel%></label>
@@ -92,7 +92,7 @@
                             <%=Html.TextBox("CashAccountName", Model.CashAccountName)%>
                             <%=Html.ValidationMessage("CashAccountName")%>
                         </td>
-                    </tr>
+                    </tr>--%>
                     <tr>
                         <td>
                             <label for="PaymentDesc">

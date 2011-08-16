@@ -385,6 +385,7 @@
     <EmbeddedResource Include="Views\Transaction\Report\RptBrand.rdlc" />
     <Content Include="Views\Transaction\Report\RptLRDetailSales.rdlc" />
     <Content Include="Views\Transaction\Report\RptPrintFactur.rdlc" />
+    <Content Include="Views\Transaction\Report\RptMostItemSales.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptStockCard.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptStockItem.rdlc" />
     <EmbeddedResource Include="Views\Transaction\Report\RptTransDetail.rdlc" />

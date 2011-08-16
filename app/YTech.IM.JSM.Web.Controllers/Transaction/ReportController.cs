@@ -103,6 +103,12 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
                     viewModel.ShowDateTo = true;
                     viewModel.ShowCustomer = true;
                     break;
+                case EnumReports.RptMostItemSales:
+                    title = "Lap. Penjualan Terbanyak";
+                    viewModel.ShowDateFrom = true;
+                    viewModel.ShowDateTo = true;
+                    viewModel.ShowWarehouse = true;
+                    break;
             }
             ViewData["CurrentItem"] = title;
 
@@ -161,6 +167,9 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
                     case EnumReports.RptLRDetailSales:
                         repCol[0] = GetTransTotalAndRef(viewModel.DateFrom, viewModel.DateTo, null, viewModel.CustomerId, stat);
                         break;
+                    case EnumReports.RptMostItemSales:
+                        repCol[0] = GetTransDetail(viewModel.DateFrom, viewModel.DateTo, viewModel.WarehouseId, stat);
+                        break;
                 }
                 Session["ReportData"] = repCol;
             }
@@ -178,6 +187,29 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
                 UrlReport = string.Format("{0}", reports.ToString())
             };
             return Json(e, JsonRequestBehavior.AllowGet);
+        }
+
+        private ReportDataSource GetTransDetail(DateTime? dateFrom, DateTime? dateTo, string warehouseId, EnumTransactionStatus transStatus)
+        {
+            Check.Require(transStatus != EnumTransactionStatus.None, "transStatus may not be None");
+            IList<TTransDet> dets = _tTransDetRepository.GetByDateWarehouseTransBy(dateFrom, dateTo, string.Empty, warehouseId, transStatus.ToString());
+
+            var list = from det in dets
+                       select new
+                       {
+                           det.TransDetNo,
+                           det.TransDetQty,
+                           det.TransDetDesc,
+                           det.TransDetTotal,
+                           det.TransDetPrice,
+                           det.TransDetDisc,
+                           ItemId = det.ItemId.Id,
+                           det.ItemId.ItemName
+                       }
+            ;
+
+            ReportDataSource reportDataSource = new ReportDataSource("TransDetViewModel", list.ToList());
+            return reportDataSource;
         }
 
         private ReportDataSource ConvertToReportDatasource(IList<TTransDet> dets, EnumTransactionStatus transStatus)

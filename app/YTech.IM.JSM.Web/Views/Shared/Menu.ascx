@@ -96,6 +96,7 @@
             <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetail, EnumTransactionStatus.Adjusment), "Lap. Detail Penyesuaian")%>     
              <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptTransDetailByTransBy, EnumTransactionStatus.Purchase), "Lap. Rekap Pembelian Per Barang")%> 
              <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptLRDetailSales, EnumTransactionStatus.Sales), "Lap. Detail Laba Kotor")%> 
+             <%= Html.ActionLinkForAreas<ReportController>(c => c.ReportTrans(EnumReports.RptMostItemSales, EnumTransactionStatus.Sales), "Lap. Penjualan Terbanyak")%> 
 
             <%= Html.ActionLinkForAreas<ReportController>(c => c.Report(EnumReports.RptStockCard), "Kartu Stok")%>
        
@@ -128,10 +129,10 @@
          <%= Html.ActionLinkForAreas<InventoryController>(c => c.ListBilling(), "Daftar Billing")%>--%>
 
             <%= Html.ActionLinkForAreas<UserAdministrationController>(c => c.Index(null), "Daftar Pengguna")%>
+        <a href="#" >Ganti Password</a>
+            <a href="#" >Backup Database</a>
        
-            Ganti Password
-       
-            Backup Database
+            
     <% } %>
 
     <%

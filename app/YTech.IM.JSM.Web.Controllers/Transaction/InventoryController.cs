@@ -15,6 +15,8 @@ using YTech.IM.JSM.Core.Transaction.Inventory;
 using YTech.IM.JSM.Data.Repository;
 using YTech.IM.JSM.Enums;
 using YTech.IM.JSM.Web.Controllers.ViewModel;
+using YTech.IM.JSM.Web.Controllers.ViewModel.Reports;
+using TransDetViewModel = YTech.IM.JSM.Web.Controllers.ViewModel.TransDetViewModel;
 
 namespace YTech.IM.JSM.Web.Controllers.Transaction
 {
@@ -989,23 +991,29 @@ namespace YTech.IM.JSM.Web.Controllers.Transaction
 
             IList<TTransDet> listDetail = trans.TransDets;
             var listDet = from det in listDetail
-                          select new
+                          select new TransTotalViewModel
                           {
                               ItemId = det.ItemId != null ? det.ItemId.Id : null,
                               ItemName = det.ItemId != null ? det.ItemId.ItemName : null,
-                              det.TransDetPrice,
-                              det.TransDetQty,
-                              det.TransDetDisc,
-                              det.TransDetNo,
-                              det.TransDetTotal,
+                              TransDetPrice = det.TransDetPrice,
+                              TransDetQty = det.TransDetQty,
+                              TransDetDisc = det.TransDetDisc,
+                              TransDetNo = det.TransDetNo,
+                              TransDetTotal = det.TransDetTotal,
                               CustomerName = Helper.CommonHelper.GetCustomerName(_mCustomerRepository, trans.TransBy),
-                              trans.TransFactur,
-                              trans.TransDate,
-                              trans.TransBy,
-                              trans.TransGrandTotal
+                              TransFactur = trans.TransFactur,
+                              TransDate = trans.TransDate,
+                              TransBy = trans.TransBy,
+                              TransGrandTotal = trans.TransGrandTotal
                           }
       ;
-            ReportDataSource reportDataSource = new ReportDataSource("TransTotalViewModel", listDet.ToList());
+            int addManual = listDetail.Count % 10;
+            var list = listDet.ToList();
+            for (int i = 0; i < 10 - addManual; i++)
+            {
+                list.Add(new TransTotalViewModel());
+            }
+            ReportDataSource reportDataSource = new ReportDataSource("TransTotalViewModel", list);
             repCol[0] = reportDataSource;
 
             Session["ReportData"] = repCol;

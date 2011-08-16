@@ -22,3 +22,16 @@ function () {
 $(function () {
     $('.btn').append($('<span />').addClass('helper'));
 });
+
+function RemoveAttribute(ctlId, attr) {
+   // alert($.browser.msie);
+   // alert($.browser.version);
+    if ($.browser.msie && $.browser.version == '6.0') {
+       // alert('this ie6 and ie');
+        //ie6 bugs
+        document.getElementById(ctlId).setAttribute(attr, "");
+    }
+    else {
+        $("#" + ctlId).removeAttr(attr);
+    }
+}

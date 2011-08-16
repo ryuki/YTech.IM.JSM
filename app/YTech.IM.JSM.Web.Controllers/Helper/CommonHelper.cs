@@ -233,7 +233,7 @@ namespace YTech.IM.JSM.Web.Controllers.Helper
             return attribs.Length > 0 ? attribs[0].StringValue : value.ToString();
         }
 
-        internal static object GetCustomerName(IMCustomerRepository _mCustomerRepository, string customerId)
+        internal static string GetCustomerName(IMCustomerRepository _mCustomerRepository, string customerId)
         {
             if (!string.IsNullOrEmpty(customerId))
             {

@@ -5,6 +5,7 @@ namespace YTech.IM.JSM.Web.Controllers.ViewModel.Reports
 {
     public class TransTotalViewModel : TTransDet
     {
+        public string ItemId { get; set; }
         public string ItemName { get; set; }
         public string SupplierName { get; set; }
         public string TransFactur { get; set; }
@@ -22,6 +23,7 @@ namespace YTech.IM.JSM.Web.Controllers.ViewModel.Reports
         public string CustomerName { get; set; }
         public decimal? StockRefQty { get; set; }
         public decimal? StockRefPrice { get; set; }
+        public decimal? TransGrandTotal { get; set; }
 
         public bool ViewWarehouse { get;  set; }
         public bool ViewWarehouseTo { get;  set; }

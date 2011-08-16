@@ -195,7 +195,7 @@ function onSavedSuccess(e) {
     else{
         $("#btnSave").attr('disabled', 'disabled');
         $("#btnDelete").attr('disabled', 'disabled');
-        $("#btnPrint").removeAttr('disabled');
+        RemoveAttribute("btnPrint","disabled");  
         $('#dialog p:first').text(msg);
         $("#dialog").dialog("open"); 
     }
@@ -278,20 +278,10 @@ var imgerror = '<%= Url.Content("~/Content/Images/cross.gif") %>';
 //        $("#Save").button();
         $("#Trans_TransDate").datepicker({ dateFormat: "dd-M-yy" });
         $("#Trans_TransDueDate").datepicker({ dateFormat: "dd-M-yy" });
-
-          <% if (TempData[EnumCommonViewData.SaveState.ToString()] != null)
-{
-    if (TempData[EnumCommonViewData.SaveState.ToString()].Equals(EnumSaveState.Failed))
-    {%>
-   $("#btnPrint").attr('disabled', 'disabled');
-    <%
-    }
-} else { %>
-  $("#btnPrint").attr('disabled', 'disabled');
-<% } %>
     });
 
     $(document).ready(function () {
+        $("#btnPrint").attr('disabled', 'disabled');
      $("form").mouseover(function () {
                 generateTooltips();
             });
@@ -573,8 +563,9 @@ var imgerror = '<%= Url.Content("~/Content/Images/cross.gif") %>';
             $("#Trans_WarehouseIdTo").val(trans.WarehouseIdTo);
 
             setTimeout("$('#list').trigger('reloadGrid')",1000); 
-             $("#btnPrint").removeAttr('disabled');
-             $("#btnDelete").removeAttr('disabled');
+
+              RemoveAttribute("btnPrint","disabled");            
+              RemoveAttribute("btnDelete","disabled");
         }
 
         }
