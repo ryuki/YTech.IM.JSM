@@ -128,7 +128,7 @@
        <%--
          <%= Html.ActionLinkForAreas<InventoryController>(c => c.ListBilling(), "Daftar Billing")%>--%>
 
-            <%= Html.ActionLinkForAreas<UserAdministrationController>(c => c.Index(null), "Daftar Pengguna")%>
+            <%= Html.ActionLinkForAreas<UserAdministrationController>(c => c.ListUsers(), "Daftar Pengguna")%>
         <a href="#" >Ganti Password</a>
             <a href="#" >Backup Database</a>
        

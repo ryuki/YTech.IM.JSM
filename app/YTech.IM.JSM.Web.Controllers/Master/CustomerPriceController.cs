@@ -44,7 +44,8 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                             cp.Id,
                            cp.CustomerId != null ? cp.CustomerId.Id : null,
                            cp.CustomerId != null ? cp.CustomerId.PersonId.PersonName : null,
-                            Helper.CommonHelper.ConvertToString(cp.Price)
+                           cp.Price.Value.ToString(Helper.CommonHelper.NumberFormat)
+                            //Helper.CommonHelper.ConvertToString(cp.Price)
                         }
                     }
                 ).ToArray()
@@ -62,7 +63,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                 MCustomerPrice cp = new MCustomerPrice();
                 cp.CustomerId = viewModel.CustomerId;
                 cp.ItemId = _mitemRepository.Get(itemId);
-                cp.Price = Helper.CommonHelper.ConvertToDecimal(formCollection["Price"]);
+                cp.Price = decimal.Parse(formCollection["Price"].Replace(",", "")); //Helper.CommonHelper.ConvertToDecimal(formCollection["Price"]);
                 cp.SetAssignedIdTo(Guid.NewGuid().ToString());
                 cp.CreatedDate = DateTime.Now;
                 cp.CreatedBy = User.Identity.Name;
@@ -92,7 +93,7 @@ namespace YTech.IM.JSM.Web.Controllers.Master
                 MCustomerPrice cp = _mCustomerPriceRepository.Get(viewModel.Id);
                 cp.CustomerId = viewModel.CustomerId;
                 cp.ItemId = _mitemRepository.Get(itemId);
-                cp.Price = Helper.CommonHelper.ConvertToDecimal(formCollection["Price"]);
+                cp.Price = decimal.Parse(formCollection["Price"].Replace(",", "")); //Helper.CommonHelper.ConvertToDecimal(formCollection["Price"]);
                 cp.ModifiedDate = DateTime.Now;
                 cp.ModifiedBy = User.Identity.Name;
                 cp.DataStatus = EnumDataStatus.Updated.ToString();
